@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BTS Anglais – Révision</title>
+<title>BTS English – Revision</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -114,26 +114,26 @@ body.show-fr .en{display:none;}
 .back-top.show{opacity:1;pointer-events:auto;}
 </style>
 </head>
-<body class="show-fr">
+<body class="show-en">
 
 <nav>
   <div class="logo">BTS <span>Anglais</span></div>
   <div class="nav-tabs">
-    <button class="nav-tab active"  onclick="showTheme('accueil',this)">🏠 Accueil</button>
-    <button class="nav-tab" onclick="showTheme('travail',this)">💼 Marché du Travail</button>
-    <button class="nav-tab" onclick="showTheme('genz',this)">👾 Génération Z</button>
+    <button class="nav-tab active"  onclick="showTheme('accueil',this)">🏠 Home</button>
+    <button class="nav-tab" onclick="showTheme('travail',this)">💼 Labour Market</button>
+    <button class="nav-tab" onclick="showTheme('genz',this)">👾 Generation Z</button>
     <button class="nav-tab" onclick="showTheme('smartcities',this)">🏙️ Smart Cities</button>
-    <button class="nav-tab" onclick="showTheme('ia',this)">🤖 IA & Tech</button>
+    <button class="nav-tab" onclick="showTheme('ia',this)">🤖 AI & Tech</button>
     <button class="nav-tab" onclick="showTheme('cloud',this)">☁️ Cloud & IoT</button>
-    <button class="nav-tab" onclick="showTheme('cyber',this)">🔐 Cyberattaques</button>
+    <button class="nav-tab" onclick="showTheme('cyber',this)">🔐 Cyberattacks</button>
     <button class="nav-tab" onclick="showTheme('addiction',this)">📵 Addiction</button>
     <button class="nav-tab" onclick="showTheme('ewaste',this)">♻️ E-waste</button>
-    <button class="nav-tab" onclick="showTheme('grammaire',this)">📝 Grammaire</button>
-    <button class="nav-tab" onclick="showTheme('courriel',this)">✉️ Courriel</button>
+    <button class="nav-tab" onclick="showTheme('grammaire',this)">📝 Grammar</button>
+    <button class="nav-tab" onclick="showTheme('courriel',this)">✉️ Email</button>
   </div>
   <button class="lang-btn" id="langBtn" onclick="toggleLang()">
-    <span id="flagIcon">🇬🇧</span>
-    <span id="langLabel">Switch to EN</span>
+    <span id="flagIcon">🇫🇷</span>
+    <span id="langLabel">Passer en FR</span>
   </button>
 </nav>
 
@@ -141,27 +141,27 @@ body.show-fr .en{display:none;}
 <div id="accueil" class="theme-section active">
   <div class="hero">
     <div class="hero-badge">📚 BTS SIO / Tertiaires · Sessions 2017–2025</div>
-    <h1>Maîtrise tes thèmes<br>en <span class="hl">anglais</span></h1>
-    <p>Définitions · Avantages · Risques · Solutions — en français et en anglais, en un clic.</p>
+    <h1>Master your themes<br>in <span class="hl">English</span></h1>
+    <p>Definitions · Advantages · Risks · Solutions — all in one click.</p>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-n">10</div><div class="stat-l">Thèmes</div></div>
-      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Sections/thème</div></div>
-      <div class="stat"><div class="stat-n">2</div><div class="stat-l">Langues</div></div>
-      <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Exemples grammaire</div></div>
+      <div class="stat"><div class="stat-n">10</div><div class="stat-l">Themes</div></div>
+      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Sections/theme</div></div>
+      <div class="stat"><div class="stat-n">2</div><div class="stat-l">Languages</div></div>
+      <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Grammar examples</div></div>
     </div>
   </div>
   <div class="container">
     <div class="cards">
-      <div class="card" style="cursor:pointer" onclick="showTheme('travail',null)"><div style="font-size:22px;margin-bottom:9px;">💼</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Marché du Travail</h3><p style="font-size:12.5px;color:var(--text2);">Premier emploi attractif · Pénurie · Courriel pro</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('genz',null)"><div style="font-size:22px;margin-bottom:9px;">👾</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Génération Z</h3><p style="font-size:12.5px;color:var(--text2);">Gen Z au travail · 4-day week · Gap Year</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('smartcities',null)"><div style="font-size:22px;margin-bottom:9px;">🏙️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Smart Cities</h3><p style="font-size:12.5px;color:var(--text2);">Villes intelligentes · 5 avantages · Défis</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('travail',null)"><div style="font-size:22px;margin-bottom:9px;">💼</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Labour Market</h3><p style="font-size:12.5px;color:var(--text2);">First attractive job · Shortage · Professional email</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('genz',null)"><div style="font-size:22px;margin-bottom:9px;">👾</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Generation Z</h3><p style="font-size:12.5px;color:var(--text2);">Gen Z at work · 4-day week · Gap Year</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('smartcities',null)"><div style="font-size:22px;margin-bottom:9px;">🏙️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Smart Cities</h3><p style="font-size:12.5px;color:var(--text2);">Smart cities · 5 advantages · Challenges</p></div>
       <div class="card" style="cursor:pointer" onclick="showTheme('ia',null)"><div style="font-size:22px;margin-bottom:9px;">🤖</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">IA, LLMs & Surveillance</h3><p style="font-size:12.5px;color:var(--text2);">AI · Malware · BYOD · Smarthomes</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('cloud',null)"><div style="font-size:22px;margin-bottom:9px;">☁️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Cloud Computing & IoT</h3><p style="font-size:12.5px;color:var(--text2);">Stockage · Avantages · Risques · IoT mondial</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('cloud',null)"><div style="font-size:22px;margin-bottom:9px;">☁️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Cloud Computing & IoT</h3><p style="font-size:12.5px;color:var(--text2);">Storage · Advantages · Risks · Global IoT</p></div>
       <div class="card" style="cursor:pointer" onclick="showTheme('cyber',null)"><div style="font-size:22px;margin-bottom:9px;">🔐</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Cyberattaques</h3><p style="font-size:12.5px;color:var(--text2);">Phishing · Ransomware · MITM · Botnet…</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('addiction',null)"><div style="font-size:22px;margin-bottom:9px;">📵</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Addiction numérique</h3><p style="font-size:12.5px;color:var(--text2);">Causes · Mécanismes · Conséquences · Solutions</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('ewaste',null)"><div style="font-size:22px;margin-bottom:9px;">♻️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">E-waste</h3><p style="font-size:12.5px;color:var(--text2);">Déchets électroniques · 41M tonnes/an · Recyclage</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('grammaire',null)"><div style="font-size:22px;margin-bottom:9px;">📝</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Grammaire BTS SIO</h3><p style="font-size:12.5px;color:var(--text2);">Prevent · Risk · Warn · Avoid · Provide</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('courriel',null)"><div style="font-size:22px;margin-bottom:9px;">✉️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Courriel professionnel</h3><p style="font-size:12.5px;color:var(--text2);">Format · Formules · Modèles complets</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('addiction',null)"><div style="font-size:22px;margin-bottom:9px;">📵</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Digital Addiction</h3><p style="font-size:12.5px;color:var(--text2);">Causes · Mechanisms · Consequences · Solutions</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('ewaste',null)"><div style="font-size:22px;margin-bottom:9px;">♻️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">E-waste</h3><p style="font-size:12.5px;color:var(--text2);">Electronic waste · 41M tonnes/year · Recycling</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('grammaire',null)"><div style="font-size:22px;margin-bottom:9px;">📝</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">BTS SIO Grammar</h3><p style="font-size:12.5px;color:var(--text2);">Prevent · Risk · Warn · Avoid · Provide</p></div>
+      <div class="card" style="cursor:pointer" onclick="showTheme('courriel',null)"><div style="font-size:22px;margin-bottom:9px;">✉️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Professional Email</h3><p style="font-size:12.5px;color:var(--text2);">Format · Phrases · Full templates</p></div>
     </div>
   </div>
 </div>
@@ -171,18 +171,18 @@ body.show-fr .en{display:none;}
 <div class="container">
   <div class="section-title">
     <div class="section-icon" style="background:var(--blue-bg);">💼</div>
-    <div><h2 class="fr">Marché du Travail</h2><h2 class="en">The Labour Market</h2>
+    <div><h2 class="fr">Labour Market</h2><h2 class="en">The Labour Market</h2>
     <p class="fr">Premier emploi · Pénurie de main-d'œuvre · Conditions de travail</p>
     <p class="en">First job · Labour shortage · Working conditions</p></div>
   </div>
   <div class="cards">
     <div class="card full">
-      <div class="card-label label-def">📖 Définition</div>
+      <div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Le <strong>marché du travail</strong> met en relation les employeurs (qui offrent des postes) et les chercheurs d'emploi (qui offrent leur force de travail). Depuis la pandémie, une <strong>hausse record des démissions</strong> frappe de nombreux secteurs (hôtellerie, services, transport…). Les travailleurs exigent de meilleures conditions, un meilleur salaire et plus de sens au travail.</p></div>
       <div class="en"><p>The <strong>labour market</strong> connects employers (offering jobs) and job seekers (offering their labour). Since the pandemic, a <strong>record surge in resignations</strong> has hit many sectors (hospitality, services, transport…). Workers are demanding better pay, better conditions and more meaning in their work.</p></div>
     </div>
     <div class="card avantages-card">
-      <div class="card-label label-avantages">✅ Ce qui rend un emploi attractif / What makes a job attractive</div>
+      <div class="card-label label-avantages">✅ What makes a job attractive</div>
       <ul>
         <li class="fr"><strong>Adéquation avec les diplômes</strong> : les tâches doivent correspondre aux études effectuées</li><li class="en"><strong>Match with qualifications</strong>: tasks must match the studies completed</li>
         <li class="fr"><strong>Compétences transférables</strong> qui augmentent la valeur sur le marché</li><li class="en"><strong>Transferable skills</strong> that increase market value</li>
@@ -231,18 +231,18 @@ body.show-fr .en{display:none;}
     <p>The Guardian (2025) · 4-day week · Gap Year</p></div>
   </div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
-      <div class="fr"><p>La <strong>Génération Z</strong> (nés entre 1997–2012) est la première génération entièrement numérique. Au travail, elle est souvent décrite comme indisciplinée ou "unemployable" — critiques récurrentes à chaque nouvelle génération. Elle valorise le <strong>smart-work</strong>, l'équilibre vie pro/perso et le sens au travail. La <strong>semaine de 4 jours</strong> consiste à compresser les heures contractuelles sur 4 jours. L'<strong>année de césure (gap year)</strong> est une année dédiée au voyage, bénévolat ou travail entre le lycée et l'université.</p></div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
+      <div class="fr"><p>La <strong>Generation Z</strong> (nés entre 1997–2012) est la première génération entièrement numérique. Au travail, elle est souvent décrite comme indisciplinée ou "unemployable" — critiques récurrentes à chaque nouvelle génération. Elle valorise le <strong>smart-work</strong>, l'équilibre vie pro/perso et le sens au travail. La <strong>semaine de 4 jours</strong> consiste à compresser les heures contractuelles sur 4 jours. L'<strong>année de césure (gap year)</strong> est une année dédiée au voyage, bénévolat ou travail entre le lycée et l'université.</p></div>
       <div class="en"><p><strong>Generation Z</strong> (born 1997–2012) is the first fully digital generation. At work, they are often labelled undisciplined or "unemployable" — recurring criticism for every new generation. They value <strong>smart-work</strong>, work-life balance and purpose. The <strong>4-day week</strong> compresses contracted hours into 4 days. A <strong>gap year</strong> is a year for travel, volunteering or work between school and university.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages / Advantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
       <li class="fr"><strong>Smart-work</strong> : utilise l'IA pour accomplir en 5h ce qui prenait 10h</li><li class="en"><strong>Smart-work</strong>: uses AI to complete in 5h what used to take 10h</li>
       <li class="fr">Forte <strong>conscience éthique et sociale</strong> (valeurs, sens, impact)</li><li class="en">Strong <strong>ethical and social awareness</strong> (values, purpose, impact)</li>
       <li class="fr"><strong>4-day week</strong> : moins de stress, moins d'arrêts maladie, productivité/h élevée</li><li class="en"><strong>4-day week</strong>: less stress, fewer sick days, higher hourly productivity</li>
       <li class="fr"><strong>Gap year</strong> : autonomie, compétences culturelles, communication</li><li class="en"><strong>Gap year</strong>: independence, cultural skills, communication</li>
       <li class="fr">89 % de Gen Z exige un <strong>sens du but</strong> au travail (Deloitte)</li><li class="en">89% of Gen Z require a <strong>sense of purpose</strong> at work (Deloitte)</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques / Risks</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr">Perçue comme <strong>manquant de loyauté</strong> et de résistance</li><li class="en">Perceived as <strong>lacking loyalty</strong> and resilience</li>
       <li class="fr">Recherche d'emploi <strong>très longue</strong> (quasi 1 000 candidatures)</li><li class="en"><strong>Very long job search</strong> (nearly 1,000 applications)</li>
       <li class="fr"><strong>Désillusion</strong> envers les institutions (licenciements, promesses brisées)</li><li class="en"><strong>Disillusionment</strong> with institutions (layoffs, broken promises)</li>
@@ -270,18 +270,18 @@ body.show-fr .en{display:none;}
     <p class="en">Smart cities · Technologies · Sustainability</p></div>
   </div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Une <strong>Smart City</strong> utilise les <strong>technologies numériques, la data et les systèmes intelligents</strong> pour améliorer la qualité de vie, optimiser les services et renforcer la durabilité. Elle intègre les <strong>TIC</strong> (Technologies de l'Information et de la Communication) aux infrastructures urbaines pour faire face à l'urbanisation rapide et aux ressources limitées.</p></div>
       <div class="en"><p>A <strong>smart city</strong> uses <strong>digital technologies, data, and intelligent systems</strong> to improve quality of life, optimise services and enhance sustainability. It integrates <strong>ICT</strong> (Information and Communication Technologies) with urban infrastructure to tackle rapid urbanisation and limited resources.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ 5 Avantages / 5 Advantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ 5 Advantages</div><ul>
       <li class="fr"><strong>Qualité de vie</strong> : transports intelligents, parking optimisé, moins de bouchons</li><li class="en"><strong>Quality of life</strong>: smart transport, optimised parking, less traffic</li>
       <li class="fr"><strong>Durabilité</strong> : smart grids, gestion de l'eau et des déchets</li><li class="en"><strong>Sustainability</strong>: smart grids, water and waste management</li>
       <li class="fr"><strong>Croissance économique</strong> : attire entreprises, startups, investisseurs</li><li class="en"><strong>Economic growth</strong>: attracts businesses, startups, investors</li>
       <li class="fr"><strong>Gouvernance</strong> : e-services, open data, transparence, participation citoyenne</li><li class="en"><strong>Governance</strong>: e-services, open data, transparency, citizen participation</li>
       <li class="fr"><strong>Résilience</strong> : alertes précoces pour catastrophes et crises sanitaires</li><li class="en"><strong>Resilience</strong>: early warning systems for disasters and health crises</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques / Risks</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr"><strong>Vie privée</strong> : surveillance massive, collecte de données personnelles</li><li class="en"><strong>Privacy</strong>: mass surveillance, personal data collection</li>
       <li class="fr"><strong>Cybersécurité</strong> : infrastructure connectée = cible pour hackers</li><li class="en"><strong>Cybersecurity</strong>: connected infrastructure = hacker target</li>
       <li class="fr"><strong>Fracture numérique</strong> : toutes les populations n'en bénéficient pas</li><li class="en"><strong>Digital divide</strong>: not all residents benefit equally</li>
@@ -309,17 +309,17 @@ body.show-fr .en{display:none;}
 
   <div class="sub-label">🤖 Intelligence Artificielle & LLMs</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>L'<strong>IA</strong> permet aux machines d'accomplir des tâches nécessitant l'intelligence humaine. Les <strong>LLMs</strong> (Large Language Models) sont entraînés sur d'immenses corpus pour comprendre et générer du langage (architecture Transformer, 2017). Ex : ChatGPT, Claude.</p></div>
       <div class="en"><p><strong>AI</strong> enables machines to perform tasks normally requiring human intelligence. <strong>LLMs</strong> (Large Language Models) are trained on massive datasets to understand and generate language (Transformer architecture, 2017). E.g.: ChatGPT, Claude.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
       <li class="fr">Automatise les tâches répétitives → <strong>gain de productivité</strong></li><li class="en">Automates repetitive tasks → <strong>productivity gains</strong></li>
       <li class="fr">Crée de <strong>nouveaux emplois</strong> : data scientists, prompt engineers</li><li class="en">Creates <strong>new jobs</strong>: data scientists, prompt engineers</li>
       <li class="fr">Assiste médecins, programmeurs, journalistes</li><li class="en">Assists doctors, programmers, journalists</li>
       <li class="fr">Détecte anomalies et malwares en <strong>cybersécurité</strong></li><li class="en">Detects anomalies and malware in <strong>cybersecurity</strong></li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr"><strong>Destruction d'emplois</strong> dans les secteurs répétitifs</li><li class="en"><strong>Job displacement</strong> in repetitive sectors</li>
       <li class="fr"><strong>Hallucinations</strong> : informations fausses générées</li><li class="en"><strong>AI hallucinations</strong>: incorrect information generated</li>
       <li class="fr"><strong>Biais</strong> dans les données → discriminations reproduites</li><li class="en"><strong>Bias</strong> in data → discrimination reproduced</li>
@@ -335,7 +335,7 @@ body.show-fr .en{display:none;}
 
   <div class="sub-label">🦠 Malware & Cybersécurité</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Un <strong>malware</strong> est tout logiciel malveillant conçu pour endommager ou accéder illégalement à un système. Types : <strong>virus</strong> (corrompent fichiers), <strong>worms</strong> (se propagent via réseau sans hôte), <strong>trojans</strong> (semblent légitimes, ouvrent des backdoors), <strong>spyware</strong> (vole données personnelles).</p></div>
       <div class="en"><p>A <strong>malware</strong> is any malicious software designed to damage or illegally access a system. Types: <strong>viruses</strong> (corrupt files), <strong>worms</strong> (self-replicate via network without host), <strong>trojans</strong> (appear legitimate, open backdoors), <strong>spyware</strong> (steals personal data).</p></div>
     </div>
@@ -356,16 +356,16 @@ body.show-fr .en{display:none;}
 
   <div class="sub-label">📱 BYOD – Bring Your Own Device</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Le <strong>BYOD</strong> autorise les employés à utiliser leurs appareils personnels (PC, smartphone, tablette) à des fins professionnelles.</p></div>
       <div class="en"><p><strong>BYOD</strong> allows employees to use their personal devices (PC, smartphone, tablet) for work purposes.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
       <li class="fr">Employé <strong>maîtrise son outil</strong> → meilleure productivité</li><li class="en">Employee <strong>masters their device</strong> → better productivity</li>
       <li class="fr"><strong>Personnalisation</strong> complète, favorise le télétravail</li><li class="en">Full <strong>customisation</strong>, supports remote work</li>
       <li class="fr"><strong>Réduction des coûts IT</strong> pour l'entreprise</li><li class="en"><strong>Reduces IT costs</strong> for the company</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr"><strong>Sécurité</strong> : malware mobile, fuites de données</li><li class="en"><strong>Security</strong>: mobile malware, data leaks</li>
       <li class="fr">Données pro mélangées aux données <strong>personnelles</strong></li><li class="en">Work data mixed with <strong>personal</strong> data</li>
       <li class="fr"><strong>Support technique</strong> complexe sur appareils variés</li><li class="en">Complex <strong>technical support</strong> for varied devices</li>
@@ -380,18 +380,18 @@ body.show-fr .en{display:none;}
 
   <div class="sub-label">🏠 Smarthomes / IoT</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Une <strong>maison connectée</strong> est équipée d'appareils interconnectés contrôlables à distance via smartphone. Un <strong>hub</strong> assure l'interopérabilité. L'<strong>IoT</strong> (Internet of Things) désigne tous les objets physiques connectés à Internet.</p></div>
       <div class="en"><p>A <strong>smart home</strong> is equipped with interconnected devices controllable remotely via smartphone. A <strong>hub</strong> ensures interoperability. The <strong>IoT</strong> (Internet of Things) refers to all physical objects connected to the internet.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
       <li class="fr"><strong>Commodité</strong> : automatisation (lumières, chauffage, serrures)</li><li class="en"><strong>Convenience</strong>: automation (lights, heating, locks)</li>
       <li class="fr"><strong>Économies d'énergie</strong> : thermostat intelligent, lumières auto</li><li class="en"><strong>Energy savings</strong>: smart thermostat, auto lights</li>
       <li class="fr"><strong>Sécurité</strong> : détection d'intrusion, CCTV à distance</li><li class="en"><strong>Security</strong>: intrusion detection, remote CCTV</li>
       <li class="fr"><strong>Accessibilité</strong> pour personnes âgées ou à mobilité réduite</li><li class="en"><strong>Accessibility</strong> for elderly or disabled people</li>
       <li class="fr"><strong>Big data</strong> : permet l'analytics en médecine, météo, finance, urbanisme</li><li class="en"><strong>Big data</strong>: enables analytics in medicine, weather, finance, urban planning</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr"><strong>Hacking</strong> : contrôle total du réseau si le hub est piraté</li><li class="en"><strong>Hacking</strong>: full network control if hub is hacked</li>
       <li class="fr"><strong>Manque de standardisation</strong> : protocoles incompatibles (WiFi, Zigbee, ZWave)</li><li class="en"><strong>Lack of standardisation</strong>: incompatible protocols</li>
       <li class="fr"><strong>Vie privée</strong> : données d'usage collectées et exploitées</li><li class="en"><strong>Privacy</strong>: usage data collected and exploited</li>
@@ -418,17 +418,17 @@ body.show-fr .en{display:none;}
   <div class="section-title">
     <div class="section-icon" style="background:rgba(167,139,250,.12);">☁️</div>
     <div><h2 class="fr">Cloud Computing & IoT Mondial</h2><h2 class="en">Cloud Computing & Global IoT</h2>
-    <p class="fr">Stockage à distance · Avantages · Risques · IoT à grande échelle</p>
+    <p class="en">Remote storage · Advantages · Risks · Large-scale IoT</p>
     <p class="en">Remote storage · Advantages · Risks · Large-scale IoT</p></div>
   </div>
 
   <div class="sub-label">☁️ Cloud Computing</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Le <strong>cloud computing</strong> est un service de stockage et de traitement des données à distance via Internet. Il permet aux entreprises d'accéder à leurs données <strong>n'importe où</strong> (bureau, domicile, déplacements) sans avoir à gérer leurs propres serveurs. Le prestataire se charge de la <strong>sauvegarde, de la maintenance et de la sécurité</strong>.</p></div>
       <div class="en"><p><strong>Cloud computing</strong> is a remote data storage and processing service via the internet. It allows companies to access their data <strong>from anywhere</strong> (office, home, while travelling) without managing their own servers. The provider handles <strong>backup, maintenance and security</strong>.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages / Advantages</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
       <li class="fr"><strong>Accès universel</strong> aux données depuis n'importe quel endroit (idéal pour les commerciaux)</li><li class="en"><strong>Universal access</strong> to data from anywhere (ideal for salespeople)</li>
       <li class="fr"><strong>Partage facilité</strong> des fichiers entre collègues sans emails volumineux</li><li class="en"><strong>Easy file sharing</strong> with colleagues without heavy emails</li>
       <li class="fr"><strong>Solution économique</strong> pour PME : stockage sans achat de serveurs coûteux</li><li class="en"><strong>Cost-effective solution</strong> for SMEs: storage without expensive servers</li>
@@ -437,7 +437,7 @@ body.show-fr .en{display:none;}
       <li class="fr">L'entreprise se concentre sur son <strong>activité principale</strong> (core activity)</li><li class="en">The company focuses on its <strong>core activity</strong></li>
       <li class="fr">Pas de maintenance d'équipement ni de logiciel à gérer</li><li class="en">No equipment or software maintenance to manage</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques / Risks</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr">Les données restent <strong>accessibles aux hackers</strong> via Internet malgré la sécurité</li><li class="en">Data remains <strong>accessible to hackers</strong> via the internet despite security</li>
       <li class="fr">Si les serveurs cloud sont <strong>en panne</strong>, l'entreprise n'a plus accès à ses données</li><li class="en">If cloud servers are <strong>down</strong>, the company cannot access its data</li>
       <li class="fr">Risque de <strong>perte de contrôle</strong> sur les données en cas de fin de contrat ou litige</li><li class="en">Risk of <strong>loss of control</strong> over data when contract ends or in case of dispute</li>
@@ -457,16 +457,16 @@ body.show-fr .en{display:none;}
 
   <div class="sub-label">🌐 IoT à grande échelle / Large-scale IoT</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition élargie</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition élargie</div>
       <div class="fr"><p>L'<strong>IoT</strong> (Internet of Things) peut être appréhendé à plusieurs niveaux : la <strong>maison</strong> (smarthome), la <strong>ville</strong> (smart city), le <strong>pays</strong> et la <strong>planète</strong>. L'interconnexion des objets génère de la <strong>big data</strong> qui alimente l'analytics et la prédiction dans des domaines variés : finance, médecine, météorologie, gestion urbaine, marketing.</p></div>
       <div class="en"><p>The <strong>IoT</strong> (Internet of Things) can be understood at several levels: the <strong>home</strong> (smart home), the <strong>city</strong> (smart city), the <strong>country</strong> and the <strong>planet</strong>. The interconnection of devices generates <strong>big data</strong> that fuels analytics and prediction in many fields: finance, medicine, meteorology, urban management, marketing.</p></div>
     </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Avantages à grande échelle</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages à grande échelle</div><ul>
       <li class="fr"><strong>Commodité, économies, contrôle à distance</strong> et facilité d'usage</li><li class="en"><strong>Convenience, cost-efficiency, remote control</strong> and ease of use</li>
       <li class="fr">Génération de <strong>big data</strong> : analytics et prédictions en médecine, météo, finance</li><li class="en">Generation of <strong>big data</strong>: analytics and predictions in medicine, weather, finance</li>
       <li class="fr">À l'échelle d'une ville : <strong>économies d'énergie</strong>, régulation du trafic, gestion de l'eau</li><li class="en">At city scale: <strong>energy savings</strong>, traffic regulation, water management</li>
     </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques à grande échelle</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks à grande échelle</div><ul>
       <li class="fr"><strong>Compatibilité</strong> : protocoles différents = impossibilité d'interopérer</li><li class="en"><strong>Compatibility</strong>: different protocols = inability to interoperate</li>
       <li class="fr"><strong>Accès aux données</strong> : qui y accède, dans quel but, pour combien de temps ?</li><li class="en"><strong>Data access</strong>: who accesses it, for what purpose, for how long?</li>
       <li class="fr">Risque d'<strong>atteinte aux libertés civiles</strong> par des gouvernements ou entreprises</li><li class="en">Risk of <strong>civil liberties infringement</strong> by governments or corporations</li>
@@ -564,12 +564,12 @@ body.show-fr .en{display:none;}
     <p class="en">Apps · Social media · Video games · Consequences</p></div>
   </div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>Une <strong>addiction numérique</strong> est une pulsion psychologique qui pousse quelqu'un à utiliser une application ou un appareil <strong>plus que raisonnablement</strong>. C'est un désir auquel la victime ne peut résister, qui finit par avoir des <strong>conséquences sociales, sanitaires et économiques</strong> sur sa vie.</p></div>
       <div class="en"><p><strong>Digital addiction</strong> is a psychological drive that compels someone to use an app or device <strong>more than is reasonable</strong>. It is a desire the victim cannot resist, which ends up having <strong>social, health and economic consequences</strong> on their life.</p></div>
     </div>
 
-    <div class="card extra-card"><div class="card-label label-extra">🧠 Causes & Mécanismes / Causes & Mechanisms</div><ul>
+    <div class="card extra-card"><div class="card-label label-extra">🧠 Causes & Mechanisms</div><ul>
       <li class="fr">Applications conçues pour <strong>garder les utilisateurs accrochés</strong> (revenus publicitaires)</li><li class="en">Apps designed to keep users <strong>hooked</strong> (advertising revenues)</li>
       <li class="fr">Système de <strong>récompenses</strong> (likes, followers) → libération de <strong>dopamine</strong> dans le cerveau</li><li class="en"><strong>Reward systems</strong> (likes, followers) → release of <strong>dopamine</strong> in the brain</li>
       <li class="fr"><strong>FOMO</strong> (Fear Of Missing Out) : peur de rater quelque chose d'important</li><li class="en"><strong>FOMO</strong> (Fear Of Missing Out): fear of missing something important</li>
@@ -612,11 +612,11 @@ body.show-fr .en{display:none;}
     <p class="en">Pollution · 41M tonnes/year · Recycling · Solutions</p></div>
   </div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Définition</div>
+    <div class="card full"><div class="card-label label-def">📖 Definition</div>
       <div class="fr"><p>L'<strong>e-waste</strong> désigne tous les appareils électriques et numériques arrivés en fin de vie : téléphones, ordinateurs, TV, télécommandes… Leur quantité explose à cause du <strong>renouvellement rapide des technologies</strong> et de l'<strong>obsolescence programmée</strong>. <strong>41 millions de tonnes</strong> de déchets électroniques sont générées chaque année dans le monde.</p></div>
       <div class="en"><p><strong>E-waste</strong> refers to all end-of-life electrical and digital devices: phones, computers, TVs, remote controls… Their quantity is exploding due to the <strong>fast pace of technological renewal</strong> and <strong>planned obsolescence</strong>. <strong>41 million tonnes</strong> of e-waste are generated every year worldwide.</p></div>
     </div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risques / Risks</div><ul>
+    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
       <li class="fr">Matériaux <strong>toxiques</strong> : plomb, mercure, métaux lourds dans les décharges</li><li class="en"><strong>Toxic materials</strong>: lead, mercury, heavy metals in landfills</li>
       <li class="fr">Exportés vers les <strong>pays en développement</strong> : traitement dans des conditions dangereuses</li><li class="en">Exported to <strong>developing countries</strong>: processed in dangerous conditions</li>
       <li class="fr">Brûlage → <strong>fumées cancérigènes</strong>, pollution air, sol, nappes phréatiques</li><li class="en">Burning → <strong>carcinogenic fumes</strong>, air, soil and water table pollution</li>
@@ -648,7 +648,7 @@ body.show-fr .en{display:none;}
     <div><h2 class="fr">Grammaire & Expressions Clés – BTS SIO</h2><h2 class="en">Grammar & Key Structures – BTS SIO</h2></div>
   </div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">🔒 Prevent somebody from doing something — empêcher quelqu'un de faire qqch</div>
+    <div class="card full"><div class="card-label label-def">🔒 Prevent somebody from doing something</div>
       <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
         <tr><td>Complex passwords prevent hackers from accessing bank accounts.</td><td>Les mots de passe complexes empêchent les pirates d'accéder aux comptes bancaires.</td></tr>
         <tr><td>The security system prevents unauthorised users from modifying data.</td><td>Le système de sécurité empêche les utilisateurs non autorisés de modifier les données.</td></tr>
@@ -658,7 +658,7 @@ body.show-fr .en{display:none;}
         <tr><td>The software blocks certain actions to prevent users from downloading dangerous files.</td><td>Le logiciel bloque certaines actions pour empêcher les utilisateurs de télécharger des fichiers dangereux.</td></tr>
       </table>
     </div>
-    <div class="card full"><div class="card-label label-avantages">⚡ Risk + V-ING — risquer de faire qqch</div>
+    <div class="card full"><div class="card-label label-avantages">⚡ Risk + V-ING</div>
       <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
         <tr><td>Companies risk losing important data after a cyberattack.</td><td>Les entreprises risquent de perdre des informations importantes après une cyberattaque.</td></tr>
         <tr><td>Users risk getting hacked if they use weak passwords.</td><td>Les utilisateurs risquent de se faire pirater s'ils utilisent des mots de passe faibles.</td></tr>
@@ -668,7 +668,7 @@ body.show-fr .en{display:none;}
         <tr><td>Victims risk losing money because of online scams.</td><td>Les victimes risquent de perdre de l'argent à cause des arnaques en ligne.</td></tr>
       </table>
     </div>
-    <div class="card full"><div class="card-label label-risques">🔔 Warn somebody against something — avertir qqn de qqch</div>
+    <div class="card full"><div class="card-label label-risques">🔔 Warn somebody against something</div>
       <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
         <tr><td>Experts warn users against the dangers of phishing.</td><td>Les experts avertissent les utilisateurs des dangers du phishing.</td></tr>
         <tr><td>The system warns the user when a login attempt is suspicious.</td><td>Le système avertit l'utilisateur lorsqu'une tentative de connexion est suspecte.</td></tr>
@@ -678,7 +678,7 @@ body.show-fr .en{display:none;}
         <tr><td>Authorities warn the public against new cyber threats.</td><td>Les autorités avertissent le public contre les nouvelles cybermenaces.</td></tr>
       </table>
     </div>
-    <div class="card full"><div class="card-label label-solutions">🚫 Avoid + V-ING — éviter de faire qqch</div>
+    <div class="card full"><div class="card-label label-solutions">🚫 Avoid + V-ING</div>
       <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
         <tr><td>You should avoid sharing your personal information online.</td><td>Il faut éviter de partager ses informations personnelles en ligne.</td></tr>
         <tr><td>Users must avoid opening unknown attachments.</td><td>Les utilisateurs doivent éviter d'ouvrir des pièces jointes inconnues.</td></tr>
@@ -688,7 +688,7 @@ body.show-fr .en{display:none;}
         <tr><td>Internet users must avoid downloading illegal programmes.</td><td>Les internautes doivent éviter de télécharger des programmes illégaux.</td></tr>
       </table>
     </div>
-    <div class="card full"><div class="card-label label-def">🎁 Provide somebody with something — fournir qqch à qqn</div>
+    <div class="card full"><div class="card-label label-def">🎁 Provide somebody with something</div>
       <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
         <tr><td>Companies must provide employees with cybersecurity training.</td><td>Les entreprises doivent fournir aux employés une formation en cybersécurité.</td></tr>
         <tr><td>The software provides users with protection against viruses.</td><td>Le logiciel fournit aux utilisateurs une protection contre les virus.</td></tr>
@@ -707,36 +707,36 @@ body.show-fr .en{display:none;}
 <div class="container">
   <div class="section-title">
     <div class="section-icon" style="background:var(--green-bg);">✉️</div>
-    <div><h2 class="fr">Courriel Professionnel – Format & Modèles</h2><h2 class="en">Professional Email – Format & Templates</h2></div>
+    <div><h2 class="fr">Professional Email – Format & Templates</h2><h2 class="en">Professional Email – Format & Templates</h2></div>
   </div>
 
-  <div class="sub-label">📋 Structure générale / General structure</div>
+  <div class="sub-label">📋 General structure</div>
   <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Éléments obligatoires / Required elements</div>
+    <div class="card full"><div class="card-label label-def">📖 Required elements</div>
       <div class="email-block">
         <div><span class="e-label">From : </span><span class="e-val">james.brian@gmail.com</span></div>
         <div><span class="e-label">To : </span><span class="e-val">john.berry@gmail.com</span></div>
-        <div><span class="e-label">Subject : </span><span class="e-val">Cybercriminality [sujet clair et précis]</span></div>
+        <div><span class="e-label">Subject : </span><span class="e-val">Cybercriminality [clear and precise subject]</span></div>
         <div style="margin-top:8px;"><span class="e-label">Date : </span><span class="e-val">London, November the 3rd 2020</span></div>
         <div style="margin-top:12px;"><span class="e-val">Dear Mr Berry,  /  Dear Sir,  /  Dear Madam,</span></div>
-        <div style="margin-top:12px;color:var(--text3);">[Corps du mail — paragraphes structurés]</div>
+        <div style="margin-top:12px;color:var(--text3);">[Email body — structured paragraphs]</div>
         <div style="margin-top:12px;"><span class="e-val">Yours Sincerely  /  Yours faithfully</span></div>
         <div><span class="e-val">James Brian</span></div>
       </div>
     </div>
 
-    <div class="card full"><div class="card-label label-def">📌 Quand utiliser quoi / When to use what</div>
+    <div class="card full"><div class="card-label label-def">📌 When to use what</div>
       <table class="vocab-table">
-        <tr><th>Formule</th><th>Quand ?</th><th>EN equivalent</th></tr>
-        <tr><td>Dear Mr / Mrs [Nom]</td><td class="fr">Vous connaissez le nom</td><td>You know the name</td></tr>
-        <tr><td>Dear Sir / Dear Madam</td><td class="fr">Vous ne connaissez pas le nom</td><td>You don't know the name</td></tr>
-        <tr><td>Yours Sincerely</td><td class="fr">Vous connaissez le nom (Dear Mr X)</td><td>You know the name</td></tr>
-        <tr><td>Yours faithfully</td><td class="fr">Vous ne connaissez pas le nom (Dear Sir)</td><td>You don't know the name</td></tr>
-        <tr><td>Best regards / Kind regards</td><td class="fr">Ton moins formel, semi-pro</td><td>Semi-formal, friendly</td></tr>
+        <tr><th>Phrase</th><th>When?</th><th>Usage</th></tr>
+        <tr><td>Dear Mr / Mrs [Nom]</td><td>You know the name</td><td>You know the name</td></tr>
+        <tr><td>Dear Sir / Dear Madam</td><td>You don't know the name</td><td>You don't know the name</td></tr>
+        <tr><td>Yours Sincerely</td><td>You know the name (Dear Mr X)</td><td>You know the name</td></tr>
+        <tr><td>Yours faithfully</td><td>You don't know the name (Dear Sir)</td><td>You don't know the name</td></tr>
+        <tr><td>Best regards / Kind regards</td><td>Semi-formal, friendly</td><td>Semi-formal, friendly</td></tr>
       </table>
     </div>
 
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Formules d'ouverture / Opening phrases</div><ul>
+    <div class="card avantages-card"><div class="card-label label-avantages">✅ Opening phrases</div><ul>
       <li><span class="fr">With reference to your email dated…, I would like to…</span><span class="en">With reference to your email dated…, I would like to…</span></li>
       <li><span class="fr">In reply to your mail, I would like to thank you for…</span><span class="en">In reply to your mail, I would like to thank you for…</span></li>
       <li><span class="fr">I am writing to you regarding…</span><span class="en">I am writing to you regarding…</span></li>
@@ -744,14 +744,14 @@ body.show-fr .en{display:none;}
       <li><span class="fr">Following our last meeting / conversation…</span><span class="en">Following our last meeting / conversation…</span></li>
     </ul></div>
 
-    <div class="card extra-card"><div class="card-label label-extra">💬 Formules de clôture / Closing phrases</div><ul>
+    <div class="card extra-card"><div class="card-label label-extra">💬 Closing phrases</div><ul>
       <li><span class="fr">Should you need more information, please do not hesitate to contact me.</span><span class="en">Should you need more information, please do not hesitate to contact me.</span></li>
       <li><span class="fr">I remain at your disposal for any further questions.</span><span class="en">I remain at your disposal for any further questions.</span></li>
       <li><span class="fr">Do not hesitate to get back to me.</span><span class="en">Do not hesitate to get back to me.</span></li>
       <li><span class="fr">I look forward to hearing from you.</span><span class="en">I look forward to hearing from you.</span></li>
     </ul></div>
 
-    <div class="card full"><div class="card-label label-solutions">📧 Modèle 1 – Courriel cybercriminalité / Cybercrime email</div>
+    <div class="card full"><div class="card-label label-solutions">📧 Template 1 – Cybercrime email</div>
       <div class="email-block">
         <div>From : james.brian@gmail.com</div>
         <div>To : john.berry@gmail.com</div>
@@ -759,14 +759,14 @@ body.show-fr .en{display:none;}
         <div style="margin-top:8px;">London, November the 3rd 2020</div>
         <div style="margin-top:12px;">Dear Mr Berry,</div>
         <div style="margin-top:10px;">With reference to your email dated September the 20th, I would like to comment on / discuss / present the different malware and precautions that should be taken against them.</div>
-        <div style="margin-top:10px;">[Développer : phishing, ransomware, BYOD risks, solutions…]</div>
+        <div style="margin-top:10px;">[Develop: phishing, ransomware, BYOD risks, solutions…]</div>
         <div style="margin-top:10px;">Should you need more information on this topic, please do not hesitate to get back to me.</div>
         <div style="margin-top:12px;">Yours Sincerely</div>
         <div>James Brian</div>
       </div>
     </div>
 
-    <div class="card full"><div class="card-label label-solutions">📧 Modèle 2 – Courriel CDD → CDI (Sam Burton)</div>
+    <div class="card full"><div class="card-label label-solutions">📧 Template 2 – Fixed-term to permanent contract (Sam Burton)</div>
       <div class="email-block">
         <div>From : sam.burton@....com</div>
         <div>To : m.blanchett@spinbrands.co.uk</div>
@@ -788,7 +788,7 @@ body.show-fr .en{display:none;}
 <a href="#" class="back-top" id="backTop">↑</a>
 
 <script>
-let currentLang='fr';
+let currentLang='en';
 function showTheme(id,btn){
   document.querySelectorAll('.theme-section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
