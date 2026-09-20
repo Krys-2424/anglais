@@ -137,6 +137,13 @@ td.fr { color: var(--ink-soft); }
 body.hide-en .vocab td.en, body.hide-fr .vocab td.fr { filter: blur(7px); cursor: pointer; user-select: none; transition: filter .15s; }
 body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none; user-select: auto; }
 
+/* phrases explicatives traduites en anglais */
+.enx { display: block; margin-top: .15rem; color: var(--blue); font-style: italic; }
+.vocab.three td:first-child { width: 20%; }
+.vocab.three td.en, .vocab.three td.fr { width: 40%; }
+body.hide-en .enx { filter: blur(7px); cursor: pointer; user-select: none; transition: filter .15s; }
+body.hide-en .enx.shown { filter: none; user-select: auto; }
+
 /* exemples et modèles */
 .model { border: 1.5px dashed var(--line); border-radius: 8px; padding: .3rem .9rem; margin: .8rem 0; background: var(--paper); }
 .model summary { cursor: pointer; font-weight: 700; padding: .4rem 0; font-family: var(--font-head); }
@@ -165,7 +172,7 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
   .fiche > header, h3 { break-after: avoid; }
   .retenir, .piege, .astuce, .model, tr, .timeline { break-inside: avoid; }
   .model:not([open]) > *:not(summary) { display: block; }
-  body.hide-en .vocab td.en, body.hide-fr .vocab td.fr { filter: none; }
+  body.hide-en .vocab td.en, body.hide-fr .vocab td.fr, body.hide-en .enx { filter: none; }
   .tw { overflow: visible; }
   table { min-width: 0; }
 }
@@ -219,7 +226,7 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
       <li>Plan annoncé en 3 temps, exemples mis de côté, rien de lu au jury.</li>
       <li>Réponses aux questions : définir, décrire, conseiller (<i>you should…</i>).</li></ul></div>
   </div>
-  <p class="small" style="margin-top:1rem">Astuce : les boutons « Cacher l'anglais / le français » de la barre du haut floutent une colonne des tableaux de vocabulaire pour t'auto-tester (clique sur une case pour la révéler).</p>
+  <p class="small" style="margin-top:1rem">Astuce : « Cacher l'anglais » (barre du haut) floute la colonne anglaise des tableaux de vocabulaire et aussi les phrases anglaises en bleu placées sous chaque explication en français ; « Cacher le français » floute la colonne française. Clique sur un texte flouté pour le révéler. Impossible de le lire sans y penser d'abord : c'est fait pour ça.</p>
 </div>
 <div class="group-title" data-group="cadre">Cadre et méthode</div>
 
@@ -685,27 +692,26 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
   <header><span class="num">10</span><h2>Cybersécurité et cybercriminalité</h2></header>
 
   <h3>Les attaques (fiche « cyberattacks » du cours)</h3>
-  <div class="tw"><table class="vocab">
-    <tr><th>Attack</th><th>In one sentence / en français</th></tr>
-    <tr><td class="en"><b>Phishing</b></td><td class="fr">Faux e-mails imitant une source officielle pour obtenir des informations personnelles (identifiants bancaires).</td></tr>
-    <tr><td class="en"><b>Spear phishing</b></td><td class="fr">Hameçonnage ciblé sur une personne en particulier.</td></tr>
-    <tr><td class="en"><b>Pharming</b></td><td class="fr">Redirection vers un faux site pour voler des données financières ou des identifiants.</td></tr>
-    <tr><td class="en"><b>Man-in-the-middle</b></td><td class="fr">Interception des communications entre deux utilisateurs (espionnage, usurpation d'identité, virements, changement de mot de passe).</td></tr>
-    <tr><td class="en"><b>Denial of service (DoS)</b></td><td class="fr">Surcharge d'un serveur de requêtes : il ralentit puis tombe (<i>saturated with requests</i>).</td></tr>
-    <tr><td class="en"><b>Zero-day attack</b></td><td class="fr">Exploitation d'une faille (<i>security loophole</i>) inconnue du fabricant, au lancement d'un logiciel.</td></tr>
-    <tr><td class="en"><b>Botnet / zombie network</b></td><td class="fr">Réseau d'ordinateurs infectés qui diffusent le code malveillant (vers, chevaux de Troie, pièces jointes piégées).</td></tr>
-    <tr><td class="en"><b>Ransomware</b></td><td class="fr">Logiciel qui chiffre les données ; on ne les récupère qu'en payant une rançon. Payer est risqué : aucune garantie.</td></tr>
-    <tr><td class="en"><b>DNS spoofing</b></td><td class="fr">Modification du DNS pour rediriger vers un faux site.</td></tr>
+  <div class="tw"><table class="vocab three"><tr><th>Attack</th><th>In English</th><th>En français</th></tr>
+    <tr><td><b>Phishing</b></td><td class="en">Fake emails that look like they come from an official source, to trick people into giving away personal information such as bank details.</td><td class="fr">Faux e-mails imitant une source officielle pour obtenir des informations personnelles (identifiants bancaires).</td></tr>
+    <tr><td><b>Spear phishing</b></td><td class="en">Phishing aimed at one particular person or company.</td><td class="fr">Hameçonnage ciblé sur une personne en particulier.</td></tr>
+    <tr><td><b>Pharming</b></td><td class="en">Redirecting users to a fake website in order to steal financial data or login details.</td><td class="fr">Redirection vers un faux site pour voler des données financières ou des identifiants.</td></tr>
+    <tr><td><b>Man-in-the-middle</b></td><td class="en">Intercepting the communication between two users, to spy on them, steal their identity, make transfers or change passwords.</td><td class="fr">Interception des communications entre deux utilisateurs (espionnage, usurpation d'identité, virements, changement de mot de passe).</td></tr>
+    <tr><td><b>Denial of service (DoS)</b></td><td class="en">Flooding a server with requests until it slows down and crashes (<i>saturated with requests</i>).</td><td class="fr">Surcharge d'un serveur de requêtes : il ralentit puis tombe.</td></tr>
+    <tr><td><b>Zero-day attack</b></td><td class="en">Exploiting a security loophole unknown to the manufacturer, when a program is launched.</td><td class="fr">Exploitation d'une faille inconnue du fabricant, au lancement d'un logiciel.</td></tr>
+    <tr><td><b>Botnet / zombie network</b></td><td class="en">A network of infected computers which spread malicious code (worms, Trojan horses, infected attachments).</td><td class="fr">Réseau d'ordinateurs infectés qui diffusent le code malveillant (vers, chevaux de Troie, pièces jointes piégées).</td></tr>
+    <tr><td><b>Ransomware</b></td><td class="en">Software which encrypts data; the victim can only recover it by paying a ransom. Paying is risky: there is no guarantee.</td><td class="fr">Logiciel qui chiffre les données ; on ne les récupère qu'en payant une rançon. Payer est risqué : aucune garantie.</td></tr>
+    <tr><td><b>DNS spoofing</b></td><td class="en">Altering the DNS to redirect users to a fake website.</td><td class="fr">Modification du DNS pour rediriger vers un faux site.</td></tr>
   </table></div>
 
   <h3>Les logiciels malveillants</h3>
   <ul>
-    <li><b>Virus</b> : cause des dégâts aux <b>fichiers</b>. <b>Worm</b> : se réplique et cause des dégâts aux <b>réseaux</b> (de nœud en nœud).</li>
-    <li><b>Trojan horse</b> : semble inoffensif (<i>harmless</i>) mais exécute une tâche malveillante ; peut ouvrir une <i>backdoor</i>.</li>
-    <li><b>Spyware</b> : espionne. <b>Ransomware</b> : chiffre et rançonne.</li>
+    <li><b>Virus</b> : cause des dégâts aux <b>fichiers</b>. <b>Worm</b> : se réplique et cause des dégâts aux <b>réseaux</b> (de nœud en nœud).<br><span class="enx">A virus damages files. A worm replicates itself and damages networks, moving from node to node.</span></li>
+    <li><b>Trojan horse</b> : semble inoffensif (<i>harmless</i>) mais exécute une tâche malveillante ; peut ouvrir une <i>backdoor</i>.<br><span class="enx">A Trojan horse looks harmless but performs a malicious task; it can open a backdoor.</span></li>
+    <li><b>Spyware</b> : espionne. <b>Ransomware</b> : chiffre et rançonne.<br><span class="enx">Spyware spies on you. Ransomware encrypts your data and demands a ransom.</span></li>
   </ul>
   <div class="retenir"><b>Règle sur -ware</b>
-    <p>Les mots en <i>-ware</i> (<i>malware, software, hardware, ransomware</i>) ne prennent <b>jamais de s</b>. On dit aussi <i>computer science</i>, <i>IT</i>, <i>computing</i> : le mot « informatique » n'existe pas en anglais.</p></div>
+    <p>Les mots en <i>-ware</i> (<i>malware, software, hardware, ransomware</i>) ne prennent <b>jamais de s</b>. On dit aussi <i>computer science</i>, <i>IT</i>, <i>computing</i> : le mot « informatique » n'existe pas en anglais.<br><span class="enx">Words ending in -ware (malware, software, hardware, ransomware) never take an s. English has no word “informatique”: say IT, computer science or computing.</span></p></div>
 
   <h3>Se protéger</h3>
   <p><i>antivirus · firewall · regular updates · back-ups · strong, unique passwords · two-factor authentication · VPN for remote work · no unknown attachments · no dubious websites · encryption · staff training</i></p>
@@ -739,8 +745,8 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
   </table></div>
   <div class="piege"><b>Corrections de ma part</b>
     <ul>
-      <li>Plusieurs corrigés écrivent « cause <u>damages</u> ». En anglais standard, <b>damage</b> est indénombrable : <i>cause damage to</i> (« damages » = dommages-intérêts, en droit).</li>
-      <li><i>Malware</i>, <i>software</i> et <i>ransomware</i> sont des noms indénombrables : j'ai mis le singulier (<i>malware is / aims at</i>, <i>software which aims at</i>). Ton corrigé écrit parfois le pluriel (<i>malware aim</i>) ; il reste admis, mais garde le même choix dans toute ta copie.</li>
+      <li>Plusieurs corrigés écrivent « cause <u>damages</u> ». En anglais standard, <b>damage</b> est indénombrable : <i>cause damage to</i> (« damages » = dommages-intérêts, en droit).<br><span class="enx">Several answer keys write “cause damages”. In standard English, damage is uncountable: cause damage to (“damages” only means compensation, in law).</span></li>
+      <li><i>Malware</i>, <i>software</i> et <i>ransomware</i> sont des noms indénombrables : j'ai mis le singulier (<i>malware is / aims at</i>, <i>software which aims at</i>). Ton corrigé écrit parfois le pluriel (<i>malware aim</i>) ; il reste admis, mais garde le même choix dans toute ta copie.<br><span class="enx">Malware, software and ransomware are uncountable nouns, so I used the singular (malware is / aims at, software which aims at). Your answer key sometimes uses the plural (malware aim): it is accepted, but stay consistent throughout your paper.</span></li>
     </ul></div>
 </section>
 
@@ -751,46 +757,46 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
     <p><i>The Internet of Things (IoT) refers to all the physical devices which are connected to the internet, collect data, communicate with each other through a hub and sometimes act automatically, without human intervention.</i></p></div>
 
   <h3>Comment ça marche</h3>
-  <p><b>sense → send → analyse → act</b> : capteurs (<i>sensors</i>) ; connexion (Wi-Fi, Bluetooth Low Energy, <b>Thread</b>, <b>Matter</b>) ; traitement (cloud ou local) ; interface (appli, tableau de bord). <i>Matter</i> définit un langage commun pour tous les appareils ; <i>Thread</i> est un protocole maillé adapté à la domotique.</p>
+  <p><b>sense → send → analyse → act</b> : capteurs (<i>sensors</i>) ; connexion (Wi-Fi, Bluetooth Low Energy, <b>Thread</b>, <b>Matter</b>) ; traitement (cloud ou local) ; interface (appli, tableau de bord). <i>Matter</i> définit un langage commun pour tous les appareils ; <i>Thread</i> est un protocole maillé adapté à la domotique.<br><span class="enx">Sensors collect data; a connection (Wi-Fi, Bluetooth Low Energy, Thread, Matter) sends it; the data is processed in the cloud or locally; the user controls it through an app or dashboard. Matter is a common language for all devices; Thread is a mesh protocol suited to home automation.</span></p>
 
   <div class="cols">
     <div>
       <h3>Avantages</h3>
       <ul>
-        <li>Confort, gain de temps, automatisation des tâches.</li>
-        <li>Contrôle à distance depuis un smartphone.</li>
-        <li>Factures d'énergie réduites : lumière éteinte si la pièce est vide, thermostat programmé quand on est absent.</li>
-        <li>Consommation plus responsable, moins de gaspillage, empreinte carbone réduite.</li>
-        <li>Sécurité : alerte sur mobile en cas d'effraction, caméras consultables à distance.</li>
-        <li>Accessibilité : commandes vocales, utiles aux personnes en situation de handicap.</li>
+        <li>Confort, gain de temps, automatisation des tâches.<br><span class="enx">Comfort, time saved, automation of tasks.</span></li>
+        <li>Contrôle à distance depuis un smartphone.<br><span class="enx">Remote control from a smartphone.</span></li>
+        <li>Factures d'énergie réduites : lumière éteinte si la pièce est vide, thermostat programmé quand on est absent.<br><span class="enx">Lower energy bills: lights switch off when a room is empty, and the thermostat is scheduled when nobody is at home.</span></li>
+        <li>Consommation plus responsable, moins de gaspillage, empreinte carbone réduite.<br><span class="enx">More responsible consumption, less waste, a smaller carbon footprint.</span></li>
+        <li>Sécurité : alerte sur mobile en cas d'effraction, caméras consultables à distance.<br><span class="enx">Security: mobile alerts in case of a break-in, cameras that can be checked remotely.</span></li>
+        <li>Accessibilité : commandes vocales, utiles aux personnes en situation de handicap.<br><span class="enx">Accessibility: voice commands, useful for people with disabilities.</span></li>
       </ul>
     </div>
     <div>
       <h3>Risques</h3>
       <ul>
-        <li>Mots de passe par défaut, mises à jour désactivées, réseau mal configuré.</li>
-        <li>Une seule faille peut ouvrir tout le réseau.</li>
-        <li>Vie privée : quelles données, qui y accède, combien de temps ?</li>
-        <li>Manque de standardisation : les appareils ne <i>interoperate</i> pas toujours.</li>
-        <li>Dépendance à la connexion ; une panne touche plusieurs appareils.</li>
-        <li>Villes et infrastructures : le piratage devient une perturbation physique.</li>
+        <li>Mots de passe par défaut, mises à jour désactivées, réseau mal configuré.<br><span class="enx">Default passwords, disabled updates, poorly configured networks.</span></li>
+        <li>Une seule faille peut ouvrir tout le réseau.<br><span class="enx">A single vulnerability can open the whole network.</span></li>
+        <li>Vie privée : quelles données, qui y accède, combien de temps ?<br><span class="enx">Privacy: what data is collected, who can access it, and for how long?</span></li>
+        <li>Manque de standardisation : les appareils ne <i>interoperate</i> pas toujours.<br><span class="enx">Lack of standardization: devices do not always interoperate.</span></li>
+        <li>Dépendance à la connexion ; une panne touche plusieurs appareils.<br><span class="enx">Dependence on the connection; one outage affects several devices.</span></li>
+        <li>Villes et infrastructures : le piratage devient une perturbation physique.<br><span class="enx">Cities and infrastructures: hacking becomes a physical disruption.</span></li>
       </ul>
     </div>
   </div>
 
   <h3>Conseils de sécurité (pour particuliers et entreprises)</h3>
   <ol>
-    <li>Changer les mots de passe par défaut (longs, uniques).</li>
-    <li>Activer les mises à jour automatiques (firmware).</li>
-    <li>Isoler les objets connectés sur un réseau Wi-Fi invité.</li>
-    <li>Désactiver les fonctions inutiles (moins de points d'entrée).</li>
-    <li>Chiffrement WPA2 ou WPA3, pare-feu, désactiver le WPS.</li>
-    <li>Choisir des marques fiables ; vérifier les autorisations des applis.</li>
-    <li>En entreprise, former les utilisateurs.</li>
+    <li>Changer les mots de passe par défaut (longs, uniques).<br><span class="enx">Change the default passwords (long and unique).</span></li>
+    <li>Activer les mises à jour automatiques (firmware).<br><span class="enx">Turn on automatic updates (firmware).</span></li>
+    <li>Isoler les objets connectés sur un réseau Wi-Fi invité.<br><span class="enx">Isolate connected devices on a guest Wi-Fi network.</span></li>
+    <li>Désactiver les fonctions inutiles (moins de points d'entrée).<br><span class="enx">Disable useless features (fewer entry points).</span></li>
+    <li>Chiffrement WPA2 ou WPA3, pare-feu, désactiver le WPS.<br><span class="enx">Use WPA2 or WPA3 encryption and a firewall, and disable WPS.</span></li>
+    <li>Choisir des marques fiables ; vérifier les autorisations des applis.<br><span class="enx">Choose reliable brands and check the permissions of apps.</span></li>
+    <li>En entreprise, former les utilisateurs.<br><span class="enx">In a company, train the users.</span></li>
   </ol>
 
   <h3>Villes intelligentes (<i>smart cities</i>)</h3>
-  <p>Une ville est <i>smart</i> quand elle utilise l'IoT pour améliorer son efficacité et la qualité de vie : services administratifs numériques, feux de circulation intelligents (moins d'embouteillages et de pollution), éclairage public, réseau d'eau (détection des fuites), réseau électrique intelligent (<i>smart grid</i>), surveillance et analyse prédictive pour la sécurité, gestion des déchets.</p>
+  <p>Une ville est <i>smart</i> quand elle utilise l'IoT pour améliorer son efficacité et la qualité de vie : services administratifs numériques, feux de circulation intelligents (moins d'embouteillages et de pollution), éclairage public, réseau d'eau (détection des fuites), réseau électrique intelligent (<i>smart grid</i>), surveillance et analyse prédictive pour la sécurité, gestion des déchets.<br><span class="enx">A city is smart when it uses the IoT to improve its efficiency and quality of life: digital administrative services, smart traffic lights (less congestion and pollution), street lighting, the water network (leak detection), the smart grid, surveillance and predictive analysis for security, and waste management.</span></p>
 
   <h3>Vocabulaire</h3>
   <div class="tw"><table class="vocab">
@@ -827,24 +833,24 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
     <div>
       <h3>Avantages</h3>
       <ul>
-        <li><b>Économique</b> : pas d'achat de serveurs, on loue seulement ce dont on a besoin (<i>cost-efficient</i>).</li>
-        <li><b>Souple</b> : en période de forte charge (<i>peak workload period</i>), on loue temporairement plus de capacité de stockage.</li>
-        <li><b>Accessible partout</b> : bureau, domicile, transports, étranger ; pratique pour partager des documents (<i>handy</i>).</li>
-        <li>Le <b>fournisseur</b> gère sauvegardes (<i>back-up</i>) et restauration (<i>recovery</i>) en cas de panne (<i>break-down / outage</i>).</li>
-        <li>L'entreprise sous-traite (<i>subcontracts</i>) la sécurité à des experts et se concentre sur son <b>cœur de métier</b> (<i>core activity</i>).</li>
+        <li><b>Économique</b> : pas d'achat de serveurs, on loue seulement ce dont on a besoin (<i>cost-efficient</i>).<br><span class="enx">Cost-efficient: no need to buy servers, you only rent what you need.</span></li>
+        <li><b>Souple</b> : en période de forte charge (<i>peak workload period</i>), on loue temporairement plus de capacité de stockage.<br><span class="enx">Flexible: during a peak workload period, you temporarily rent more storage capacity.</span></li>
+        <li><b>Accessible partout</b> : bureau, domicile, transports, étranger ; pratique pour partager des documents (<i>handy</i>).<br><span class="enx">Accessible anywhere: office, home, on the move, abroad; handy for sharing documents.</span></li>
+        <li>Le <b>fournisseur</b> gère sauvegardes (<i>back-up</i>) et restauration (<i>recovery</i>) en cas de panne (<i>break-down / outage</i>).<br><span class="enx">The provider takes care of back-ups and recovery in case of a break-down.</span></li>
+        <li>L'entreprise sous-traite (<i>subcontracts</i>) la sécurité à des experts et se concentre sur son <b>cœur de métier</b> (<i>core activity</i>).<br><span class="enx">The company subcontracts security to experts and focuses on its core activity.</span></li>
       </ul>
     </div>
     <div>
       <h3>Inconvénients (<i>drawbacks</i>)</h3>
       <ul>
-        <li>Confidentialité des données sensibles <b>non garantie</b>.</li>
-        <li>Si les serveurs du prestataire tombent, on peut perdre l'accès temporairement.</li>
-        <li>Certains serveurs ont déjà été piratés, ce qui a provoqué des fuites de données (<i>data leaks</i>).</li>
-        <li>Certaines organisations, comme des banques, préfèrent leurs propres centres de données.</li>
+        <li>Confidentialité des données sensibles <b>non garantie</b>.<br><span class="enx">The confidentiality of sensitive data is not guaranteed.</span></li>
+        <li>Si les serveurs du prestataire tombent, on peut perdre l'accès temporairement.<br><span class="enx">If the provider's servers go down, access may be lost temporarily.</span></li>
+        <li>Certains serveurs ont déjà été piratés, ce qui a provoqué des fuites de données (<i>data leaks</i>).<br><span class="enx">Some servers have already been hacked, which has caused data leaks.</span></li>
+        <li>Certaines organisations, comme des banques, préfèrent leurs propres centres de données.<br><span class="enx">Some organizations, such as banks, prefer their own data centres.</span></li>
       </ul>
     </div>
   </div>
-  <p class="small">Nuance : tes notes disent que les banques « ne stockent jamais » leurs données dans le cloud ; c'est trop absolu. Dis plutôt « certaines organisations, comme les banques, préfèrent ».</p>
+  <p class="small">Nuance : tes notes disent que les banques « ne stockent jamais » leurs données dans le cloud ; c'est trop absolu. Dis plutôt « certaines organisations, comme les banques, préfèrent ».<br><span class="enx">Nuance: your notes say banks “never” store data in the cloud; that is too absolute. Say “some organizations, such as banks, prefer…”.</span></p>
 
   <details class="model" open><summary>Paragraphe modèle</summary>
     <p><i>Thanks to cloud computing, companies do not have to buy servers: they rent storage capacity depending on their needs, which is cost-efficient. During a peak workload period, they simply rent extra capacity temporarily. Employees can access their data anywhere, and the service provider is in charge of back-ups and recovery procedures in case of a break-down. However, cloud computing raises confidentiality and safety issues, since some servers have already been hacked and data leaks can occur.</i></p></details>
@@ -867,24 +873,24 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
 
   <h3>Définitions (cours d'IA)</h3>
   <ul>
-    <li><b>AI</b> : capacité des machines à réaliser des tâches qui exigent normalement l'intelligence humaine (reconnaître des images, comprendre le langage, écrire du code).</li>
-    <li><b>Machine learning</b> : les ordinateurs apprennent à partir des données au lieu d'être programmés ; les algorithmes repèrent des motifs (<i>patterns</i>) et font des prédictions.</li>
-    <li><b>Deep learning</b> : réseaux de neurones inspirés du cerveau (reconnaissance vocale, langage naturel).</li>
-    <li><b>LLM</b> (<i>Large Language Model</i>) : entraîné sur d'énormes jeux de textes ; apprend la structure statistique du langage. Limite : les <b>hallucinations</b> (informations fausses), car il génère des réponses probables sans « comprendre ».</li>
+    <li><b>AI</b> : capacité des machines à réaliser des tâches qui exigent normalement l'intelligence humaine (reconnaître des images, comprendre le langage, écrire du code).<br><span class="enx">AI is the ability of machines to perform tasks that normally require human intelligence (recognising images, understanding language, writing code).</span></li>
+    <li><b>Machine learning</b> : les ordinateurs apprennent à partir des données au lieu d'être programmés ; les algorithmes repèrent des motifs (<i>patterns</i>) et font des prédictions.<br><span class="enx">Machine learning: computers learn from data instead of being programmed; algorithms spot patterns and make predictions.</span></li>
+    <li><b>Deep learning</b> : réseaux de neurones inspirés du cerveau (reconnaissance vocale, langage naturel).<br><span class="enx">Deep learning: neural networks inspired by the brain (speech recognition, natural language).</span></li>
+    <li><b>LLM</b> (<i>Large Language Model</i>) : entraîné sur d'énormes jeux de textes ; apprend la structure statistique du langage. Limite : les <b>hallucinations</b> (informations fausses), car il génère des réponses probables sans « comprendre ».<br><span class="enx">An LLM is trained on huge sets of texts and learns the statistical structure of language. Its limit is hallucinations (false information): it generates probable answers without “understanding”.</span></li>
   </ul>
 
   <h3>Impact sur l'emploi</h3>
   <div class="tw"><table>
     <tr><th>Effet</th><th>Contenu</th></tr>
-    <tr><td><b>Automatisation</b></td><td>Tâches répétitives, simples, prévisibles : saisie de données (<i>data entry</i>), support de base. Puis tâches plus complexes : écrire du code, analyser des radios, fournir du contenu juridique.</td></tr>
-    <tr><td><b>Transformation</b></td><td>L'IA assiste plus qu'elle ne remplace : médecins (imagerie), développeurs (code), journalistes, designers.</td></tr>
-    <tr><td><b>Créations d'emplois</b></td><td>Ingénieurs en machine learning, data scientists, spécialistes de l'éthique de l'IA, prompt engineers.</td></tr>
-    <tr><td><b>Compétences</b></td><td>Résolution de problèmes, créativité, esprit critique, collaboration avec l'IA, formation continue ; savoir ajouter une <i>human touch</i>.</td></tr>
+    <tr><td><b>Automatisation</b></td><td>Tâches répétitives, simples, prévisibles : saisie de données (<i>data entry</i>), support de base. Puis tâches plus complexes : écrire du code, analyser des radios, fournir du contenu juridique.<br><span class="enx">Repetitive, simple, predictable tasks: data entry, basic support. Then more complex tasks: writing code, analysing X-rays, providing legal content.</span></td></tr>
+    <tr><td><b>Transformation</b></td><td>L'IA assiste plus qu'elle ne remplace : médecins (imagerie), développeurs (code), journalistes, designers.<br><span class="enx">AI assists more than it replaces: doctors (imaging), developers (code), journalists, designers.</span></td></tr>
+    <tr><td><b>Créations d'emplois</b></td><td>Ingénieurs en machine learning, data scientists, spécialistes de l'éthique de l'IA, prompt engineers.<br><span class="enx">Machine-learning engineers, data scientists, AI-ethics specialists, prompt engineers.</span></td></tr>
+    <tr><td><b>Compétences</b></td><td>Résolution de problèmes, créativité, esprit critique, collaboration avec l'IA, formation continue ; savoir ajouter une <i>human touch</i>.<br><span class="enx">Problem-solving, creativity, critical thinking, working with AI, lifelong learning; knowing how to add a human touch.</span></td></tr>
   </table></div>
-  <p>Les métiers qui demandent interaction humaine, empathie ou travail manuel ne seront pas remplacés ; ceux qui perdent leur emploi devront se former (<i>upskill</i>) ou se reconvertir (<i>reskill</i>).</p>
+  <p>Les métiers qui demandent interaction humaine, empathie ou travail manuel ne seront pas remplacés ; ceux qui perdent leur emploi devront se former (<i>upskill</i>) ou se reconvertir (<i>reskill</i>).<br><span class="enx">Jobs that require human interaction, empathy or manual work will not be replaced; people who lose their job will have to upskill or reskill.</span></p>
 
   <h3>Enjeux éthiques</h3>
-  <p>Suppression de postes (<i>job displacement</i>), <b>biais</b> reproduits par les données d'entraînement, vie privée, désinformation, <b>deepfakes</b>, besoin de réglementation. Dans le domaine informatique : l'IA aide à coder, à détecter les failles et les malwares, mais aussi à surveiller les employés (voir fiche 3).</p>
+  <p>Suppression de postes (<i>job displacement</i>), <b>biais</b> reproduits par les données d'entraînement, vie privée, désinformation, <b>deepfakes</b>, besoin de réglementation. Dans le domaine informatique : l'IA aide à coder, à détecter les failles et les malwares, mais aussi à surveiller les employés (voir fiche 3).<br><span class="enx">Job displacement, bias reproduced by the training data, privacy, disinformation, deepfakes and the need for regulation. In IT, AI helps write code and detect vulnerabilities and malware, but it can also be used to monitor employees (see sheet 3).</span></p>
 
   <details class="model"><summary>Paragraphe modèle</summary>
     <p><i>AI is likely to automate repetitive and predictable tasks such as data entry, but it does not only destroy jobs: it also transforms them and creates new ones. Doctors use AI to interpret medical images and developers use it to write code. Professionals will have to learn how to use these tools, upskill or reskill, and prove that they can add a human touch to AI results. However, AI also raises ethical issues such as bias, privacy and job displacement.</i></p></details>
@@ -926,19 +932,19 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
   <div class="cols">
     <div class="retenir"><b>L'entretien : les « dos »</b>
       <ul>
-        <li>Adapter CV et lettre au poste ; mettre en avant les <i>transferable skills</i>.</li>
-        <li>Se renseigner sur l'entreprise (activités, histoire, siège, taille) et s'entraîner.</li>
-        <li>Présenter un résumé concis de son parcours, de ses compétences et de ses objectifs.</li>
-        <li>Pour ses faiblesses, parler de points à améliorer plutôt que de traits de caractère.</li>
-        <li>Poser des questions sur le poste et la culture d'entreprise.</li>
+        <li>Adapter CV et lettre au poste ; mettre en avant les <i>transferable skills</i>.<br><span class="enx">Tailor your resume and cover letter to the job; highlight your transferable skills.</span></li>
+        <li>Se renseigner sur l'entreprise (activités, histoire, siège, taille) et s'entraîner.<br><span class="enx">Find out about the company (activities, history, head office, size) and practise.</span></li>
+        <li>Présenter un résumé concis de son parcours, de ses compétences et de ses objectifs.<br><span class="enx">Give a concise summary of your background, skills and goals.</span></li>
+        <li>Pour ses faiblesses, parler de points à améliorer plutôt que de traits de caractère.<br><span class="enx">For your weaknesses, talk about points to improve rather than character traits.</span></li>
+        <li>Poser des questions sur le poste et la culture d'entreprise.<br><span class="enx">Ask questions about the job and the company culture.</span></li>
       </ul></div>
     <div class="piege"><b>Les « don'ts »</b>
       <ul>
-        <li>Ne jamais critiquer ses anciens employeurs.</li>
-        <li>Ne pas mentir sur ses compétences (la période d'essai le révèlera).</li>
-        <li>Ne pas être trop sincère sur ses défauts.</li>
-        <li>Ne pas aborder le salaire trop tôt ; attendre que l'employeur en parle.</li>
-        <li>Ne pas répondre « non » quand on demande si on a des questions.</li>
+        <li>Ne jamais critiquer ses anciens employeurs.<br><span class="enx">Never criticise your former employers.</span></li>
+        <li>Ne pas mentir sur ses compétences (la période d'essai le révèlera).<br><span class="enx">Do not lie about your skills (the trial period will reveal it).</span></li>
+        <li>Ne pas être trop sincère sur ses défauts.<br><span class="enx">Do not be too honest about your flaws.</span></li>
+        <li>Ne pas aborder le salaire trop tôt ; attendre que l'employeur en parle.<br><span class="enx">Do not bring up the salary too early; wait for the employer to mention it.</span></li>
+        <li>Ne pas répondre « non » quand on demande si on a des questions.<br><span class="enx">Do not answer “no” when you are asked if you have any questions.</span></li>
       </ul></div>
   </div>
 
@@ -967,46 +973,46 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
 
   <h3>Le stage : conditions idéales (corrigé du cours)</h3>
   <ul>
-    <li>Objectifs fixés clairement dès le départ, <b>en accord avec les études</b> (<i>in keeping with the trainee's studies</i>).</li>
-    <li>Tâches ni trop faciles ni trop difficiles, négociées avant le début.</li>
-    <li>Un tuteur disponible ; travail d'équipe ; autonomie progressive.</li>
-    <li>Résultat : compétences (<i>soft skills</i> et <i>hard skills</i>), confiance en soi, découverte d'un métier pour choisir son secteur.</li>
+    <li>Objectifs fixés clairement dès le départ, <b>en accord avec les études</b> (<i>in keeping with the trainee's studies</i>).<br><span class="enx">Objectives clearly set from the start, in keeping with the trainee's studies.</span></li>
+    <li>Tâches ni trop faciles ni trop difficiles, négociées avant le début.<br><span class="enx">Tasks that are neither too easy nor too difficult, negotiated before the start.</span></li>
+    <li>Un tuteur disponible ; travail d'équipe ; autonomie progressive.<br><span class="enx">An available tutor; teamwork; gradually increasing autonomy.</span></li>
+    <li>Résultat : compétences (<i>soft skills</i> et <i>hard skills</i>), confiance en soi, découverte d'un métier pour choisir son secteur.<br><span class="enx">Result: skills (soft skills and hard skills), self-confidence, and a discovery of a job which helps choose a sector.</span></li>
   </ul>
 
   <h3>Sujets de société liés au travail</h3>
   <div class="tw"><table>
     <tr><th>Sujet</th><th>À dire (anglais) et vocabulaire</th></tr>
-    <tr><td><b>Gap year</b></td><td>Les employeurs la voient positivement si elle est présentée comme <i>purposeful and enriching</i> (voyage, travail, bénévolat) et met en avant des <i>transferable skills</i> ; si elle reste floue, ils se méfient (<i>they frown upon it</i>).</td></tr>
-    <tr><td><b>Gig economy</b></td><td>Missions courtes, payées à la tâche (<i>piece work</i>), via des plateformes, souvent gérées par des algorithmes. Socialement, moins de droits que le salariat : pas de protection (<i>welfare state</i>, sick leave, cotisations). Vocabulaire : <i>shortfall, overlooked, onboarding, disembodied</i>.</td></tr>
-    <tr><td><b>Quiet quitting</b></td><td>Faire seulement ce qui est prévu au contrat ; refuser heures sup non payées et responsabilités en plus ; chercher un meilleur équilibre.</td></tr>
-    <tr><td><b>Gender pay gap</b></td><td>Écart injustifié entre salaires féminins et masculins. Causes : discriminations, plafond de verre (<i>glass ceiling</i>), réticence face aux congés maternité, moindre reconnaissance. Solutions : publier les résultats en interne, amendes, syndicats (<i>trade unions</i>, action en justice, grèves), label d'égalité salariale, campagnes de sensibilisation. Verbes : <i>to pass / to abide by / to enforce a law, to catch up with, to be entitled to</i>.</td></tr>
+    <tr><td><b>Gap year</b></td><td>Les employeurs la voient positivement si elle est présentée comme <i>purposeful and enriching</i> (voyage, travail, bénévolat) et met en avant des <i>transferable skills</i> ; si elle reste floue, ils se méfient (<i>they frown upon it</i>).<br><span class="enx">Employers see it positively if it is presented as purposeful and enriching (travel, work, volunteering) and highlights transferable skills; if it stays vague, they frown upon it.</span></td></tr>
+    <tr><td><b>Gig economy</b></td><td>Missions courtes, payées à la tâche (<i>piece work</i>), via des plateformes, souvent gérées par des algorithmes. Socialement, moins de droits que le salariat : pas de protection (<i>welfare state</i>, sick leave, cotisations). Vocabulaire : <i>shortfall, overlooked, onboarding, disembodied</i>.<br><span class="enx">Short assignments paid per task (piece work) through platforms, often managed by algorithms. Workers have fewer rights than employees: no welfare protection, sick leave or pension contributions.</span></td></tr>
+    <tr><td><b>Quiet quitting</b></td><td>Faire seulement ce qui est prévu au contrat ; refuser heures sup non payées et responsabilités en plus ; chercher un meilleur équilibre.<br><span class="enx">Doing only what your contract says; refusing unpaid overtime and extra responsibilities; looking for a better work-life balance.</span></td></tr>
+    <tr><td><b>Gender pay gap</b></td><td>Écart injustifié entre salaires féminins et masculins. Causes : discriminations, plafond de verre (<i>glass ceiling</i>), réticence face aux congés maternité, moindre reconnaissance. Solutions : publier les résultats en interne, amendes, syndicats (<i>trade unions</i>, action en justice, grèves), label d'égalité salariale, campagnes de sensibilisation. Verbes : <i>to pass / to abide by / to enforce a law, to catch up with, to be entitled to</i>.<br><span class="enx">An unjustified difference between women's and men's pay. Causes: discrimination, the glass ceiling, reluctance about maternity leave, less recognition. Solutions: publishing the results internally, fines, trade unions (legal action, strikes), a pay-equality label, awareness campaigns.</span></td></tr>
   </table></div>
-  <p class="small">Sur le gender pay gap, ta note cite 18 % « pour le même poste » : l'écart moyen global est souvent plus élevé que l'écart à poste égal. À l'oral, reprends le chiffre du document plutôt que le tien, et ne précise « à poste égal » que si le document le dit.</p>
+  <p class="small">Sur le gender pay gap, ta note cite 18 % « pour le même poste » : l'écart moyen global est souvent plus élevé que l'écart à poste égal. À l'oral, reprends le chiffre du document plutôt que le tien, et ne précise « à poste égal » que si le document le dit.<br><span class="enx">On the gender pay gap, your note quotes 18% “for the same job”: the overall average gap is often larger than the gap for equal jobs. In the oral, use the figure from the document, and only say “for equal jobs” if the document says so.</span></p>
 </section>
 
 <section class="fiche" id="f15" data-cat="themes" data-title="Addiction aux nouvelles technologies">
   <header><span class="num">15</span><h2>Addiction aux nouvelles technologies</h2></header>
   <div class="retenir"><b>Définition</b>
     <p><i>An addiction is a psychological drive which induces someone to use a particular app or device more than reasonably. It is a desire the victim cannot refrain from, and it has social, health and economic consequences.</i></p>
-    <p class="small">Attention : <i>to be addicted <b>to</b></i> + nom ou V-ing (<i>addicted to gaming</i>).</p></div>
+    <p class="small">Attention : <i>to be addicted <b>to</b></i> + nom ou V-ing (<i>addicted to gaming</i>).<br><span class="enx">Careful: to be addicted to + noun or V-ing (addicted to gaming).</span></p></div>
 
   <div class="cols">
     <div>
       <h3>Causes</h3>
       <ul>
-        <li>Applis conçues pour <b>rendre accro</b> (<i>hooked</i>) pour des raisons financières : revenus publicitaires.</li>
-        <li><b>Récompenses</b> (likes, followers) : la dopamine active le circuit de la récompense.</li>
-        <li><b>FOMO</b> (<i>fear of missing out</i>) : peur de rater quelque chose dans sa communauté.</li>
-        <li>Jeux vidéo : niveaux et récompenses, perte de la notion du temps, évasion de la réalité, avatar, sentiment d'utilité ; la frustration doit rester assez forte sans faire abandonner.</li>
+        <li>Applis conçues pour <b>rendre accro</b> (<i>hooked</i>) pour des raisons financières : revenus publicitaires.<br><span class="enx">Apps are designed to hook users, for financial reasons: advertising revenue.</span></li>
+        <li><b>Récompenses</b> (likes, followers) : la dopamine active le circuit de la récompense.<br><span class="enx">Rewards (likes, followers): dopamine activates the reward circuit.</span></li>
+        <li><b>FOMO</b> (<i>fear of missing out</i>) : peur de rater quelque chose dans sa communauté.<br><span class="enx">FOMO (fear of missing out): the fear of missing something that happens in your community.</span></li>
+        <li>Jeux vidéo : niveaux et récompenses, perte de la notion du temps, évasion de la réalité, avatar, sentiment d'utilité ; la frustration doit rester assez forte sans faire abandonner.<br><span class="enx">Video games: levels and rewards, loss of the sense of time, escape from reality, an avatar, a feeling of being useful; frustration must stay strong enough without making players give up.</span></li>
       </ul>
     </div>
     <div>
       <h3>Conséquences</h3>
       <ul>
-        <li>Isolement social ; cas extrême : <i>hikikomori</i> (jeunes qui ne quittent plus leur chambre).</li>
-        <li>Baisse des résultats scolaires ; capacités cognitives affectées, surtout chez les enfants.</li>
-        <li>Vie sédentaire, privation de sommeil, forme physique en baisse (obésité, diabète, problèmes cardiaques).</li>
-        <li>Anxiété, dépression, troubles de l'image de soi ; frustration pouvant mener à la violence.</li>
+        <li>Isolement social ; cas extrême : <i>hikikomori</i> (jeunes qui ne quittent plus leur chambre).<br><span class="enx">Social isolation; extreme case: hikikomori (young people who no longer leave their bedroom).</span></li>
+        <li>Baisse des résultats scolaires ; capacités cognitives affectées, surtout chez les enfants.<br><span class="enx">Lower school results; impaired cognitive abilities, especially in children.</span></li>
+        <li>Vie sédentaire, privation de sommeil, forme physique en baisse (obésité, diabète, problèmes cardiaques).<br><span class="enx">Sedentary lifestyle, sleep deprivation, declining fitness (obesity, diabetes, heart problems).</span></li>
+        <li>Anxiété, dépression, troubles de l'image de soi ; frustration pouvant mener à la violence.<br><span class="enx">Anxiety, depression, body-image problems; frustration which can lead to violence.</span></li>
       </ul>
     </div>
   </div>
@@ -1029,15 +1035,15 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
 
 <section class="fiche" id="f16" data-cat="themes" data-title="Règles d'entreprise : charte réseaux sociaux et BYOD">
   <header><span class="num">16</span><h2>Règles d'entreprise : charte réseaux sociaux et BYOD</h2></header>
-  <p class="sub">Une <i>social media policy</i> fixe des règles de conduite (<i>code of conduct</i>). Le document du cours est structuré en cinq blocs.</p>
+  <p class="sub">Une <i>social media policy</i> fixe des règles de conduite (<i>code of conduct</i>). Le document du cours est structuré en cinq blocs.<br><span class="enx">A social media policy sets rules of conduct (a code of conduct). The course document is organised in five blocks.</span></p>
 
   <div class="tw"><table>
     <tr><th>Bloc</th><th>Règles (phrases de la charte)</th></tr>
-    <tr><td><b>Data safety</b></td><td>Utiliser un antivirus à jour, un mot de passe robuste (majuscules, minuscules, chiffres) ; scanner ses appareils régulièrement ; se déconnecter en quittant son poste pour empêcher les intrusions ; <i>avoid</i> les sites douteux, les pièces jointes d'inconnus et les clés USB.</td></tr>
-    <tr><td><b>Data confidentiality</b></td><td>Interdiction de divulguer des données à des tiers ; les employés sont tenus responsables d'une fuite (<i>held responsible</i>) ; <i>disciplinary action</i> et sanctions en cas de manquement (<i>breach</i>).</td></tr>
-    <tr><td><b>The company's image</b></td><td>Se comporter de façon responsable, ne jamais ternir (<i>tarnish</i>) la réputation de l'entreprise.</td></tr>
-    <tr><td><b>Ethical use</b></td><td>Usage personnel toléré (15 minutes par jour au maximum) ; sites pornographiques, violents ou de jeux d'argent interdits ; pas de propos diffamatoires ; interdiction de critiquer l'entreprise en ligne ; si on donne un avis, préciser qu'on parle en son nom et non au nom de l'entreprise (<i>a disclaimer</i>).</td></tr>
-    <tr><td><b>BYOD</b></td><td>Utiliser son appareil personnel est permis à condition d'accepter que les données stockées appartiennent à l'entreprise, de respecter les outils de sécurité du service informatique, et de <b>restituer et supprimer</b> les données en quittant l'entreprise.</td></tr>
+    <tr><td><b>Data safety</b></td><td>Utiliser un antivirus à jour, un mot de passe robuste (majuscules, minuscules, chiffres) ; scanner ses appareils régulièrement ; se déconnecter en quittant son poste pour empêcher les intrusions ; <i>avoid</i> les sites douteux, les pièces jointes d'inconnus et les clés USB.<br><span class="enx">Use an up-to-date antivirus and a strong password (capital and small letters, numbers); scan your devices regularly; log out when you leave your desk to prevent intrusions; avoid dubious websites, attachments from unknown senders and USB sticks.</span></td></tr>
+    <tr><td><b>Data confidentiality</b></td><td>Interdiction de divulguer des données à des tiers ; les employés sont tenus responsables d'une fuite (<i>held responsible</i>) ; <i>disciplinary action</i> et sanctions en cas de manquement (<i>breach</i>).<br><span class="enx">It is forbidden to disclose data to third parties; employees are held responsible for a leak; any breach leads to disciplinary action and sanctions.</span></td></tr>
+    <tr><td><b>The company's image</b></td><td>Se comporter de façon responsable, ne jamais ternir (<i>tarnish</i>) la réputation de l'entreprise.<br><span class="enx">Behave responsibly and never tarnish the company's reputation.</span></td></tr>
+    <tr><td><b>Ethical use</b></td><td>Usage personnel toléré (15 minutes par jour au maximum) ; sites pornographiques, violents ou de jeux d'argent interdits ; pas de propos diffamatoires ; interdiction de critiquer l'entreprise en ligne ; si on donne un avis, préciser qu'on parle en son nom et non au nom de l'entreprise (<i>a disclaimer</i>).<br><span class="enx">Personal use is tolerated (15 minutes a day at most); pornographic, violent and gambling websites are banned; no defamatory comments; criticising the company online is forbidden; when giving an opinion, state that you speak for yourself and not on behalf of the company (a disclaimer).</span></td></tr>
+    <tr><td><b>BYOD</b></td><td>Utiliser son appareil personnel est permis à condition d'accepter que les données stockées appartiennent à l'entreprise, de respecter les outils de sécurité du service informatique, et de <b>restituer et supprimer</b> les données en quittant l'entreprise.<br><span class="enx">Using your own device is allowed provided you accept that the data stored on it belongs to the company, comply with the IT department's security tools, and return and delete the data when you leave the company.</span></td></tr>
   </table></div>
 
   <h3>Exprimer l'obligation et l'interdiction</h3>
@@ -1045,9 +1051,9 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
 
   <h3>BYOD (<i>Bring Your Own Device</i>) : 3 façons de protéger les données (document C)</h3>
   <ol>
-    <li>Tout appareil connecté au réseau qui accède aux données clients est une <b>menace</b> : savoir quelles applications et quels appareils sont gérés.</li>
-    <li>Connaître ce qui se trouve sur les appareils de l'entreprise.</li>
-    <li>Au moment du départ d'un salarié (<i>offboarding</i>), <b>effacer</b> ses données sur ses appareils, et gérer la sécurité.</li>
+    <li>Tout appareil connecté au réseau qui accède aux données clients est une <b>menace</b> : savoir quelles applications et quels appareils sont gérés.<br><span class="enx">Any device connected to the network which accesses customer data is a threat: know which apps and devices are managed.</span></li>
+    <li>Connaître ce qui se trouve sur les appareils de l'entreprise.<br><span class="enx">Know what is on the company's devices.</span></li>
+    <li>Au moment du départ d'un salarié (<i>offboarding</i>), <b>effacer</b> ses données sur ses appareils, et gérer la sécurité.<br><span class="enx">When an employee leaves (offboarding), wipe their data from their devices and manage security.</span></li>
   </ol>
   <div class="tw"><table class="vocab">
     <tr><th>English</th><th>Français</th></tr>
@@ -1071,25 +1077,25 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
     <div>
       <h3>Causes</h3>
       <ul>
-        <li>Surconsommation : on veut le dernier modèle, par effet de mode (<i>trendy, cutting-edge</i>).</li>
-        <li>Technologies qui évoluent vite : appareils vite <i>outdated</i> (manque de mémoire, de puissance), difficiles à mettre à niveau (<i>upgrade</i>).</li>
-        <li>On ne répare pas les appareils défectueux.</li>
-        <li><b>Obsolescence programmée</b> (<i>planned obsolescence</i>) : des fabricants les font tomber en panne avant la fin de leur durée de vie.</li>
+        <li>Surconsommation : on veut le dernier modèle, par effet de mode (<i>trendy, cutting-edge</i>).<br><span class="enx">Overconsumption: people want the latest model, following trends.</span></li>
+        <li>Technologies qui évoluent vite : appareils vite <i>outdated</i> (manque de mémoire, de puissance), difficiles à mettre à niveau (<i>upgrade</i>).<br><span class="enx">Fast-changing technology: devices quickly become outdated (not enough memory or power) and are hard to upgrade.</span></li>
+        <li>On ne répare pas les appareils défectueux.<br><span class="enx">Faulty devices are not repaired.</span></li>
+        <li><b>Obsolescence programmée</b> (<i>planned obsolescence</i>) : des fabricants les font tomber en panne avant la fin de leur durée de vie.<br><span class="enx">Planned obsolescence: some manufacturers make devices break down before the end of their lifespan.</span></li>
       </ul>
     </div>
     <div>
       <h3>Conséquences</h3>
       <ul>
-        <li>Une grande partie est expédiée vers des pays émergents et déversée en décharge (<i>landfill, dumped</i>).</li>
-        <li>On y démonte et brûle les déchets pour en extraire cuivre, argent, or : fumées toxiques, pollution de l'air.</li>
-        <li>Plomb, mercure et liquides toxiques s'infiltrent (<i>leach</i>) dans le sol et les nappes phréatiques (<i>water tables</i>).</li>
-        <li>Fumées cancérigènes (<i>carcinogenic</i>), espérance de vie réduite (<i>shorter life expectancy</i>).</li>
-        <li>Pour ces travailleurs informels, c'est un revenu immédiat : ils voudraient le faire de façon moins dangereuse.</li>
+        <li>Une grande partie est expédiée vers des pays émergents et déversée en décharge (<i>landfill, dumped</i>).<br><span class="enx">A large part is shipped to emerging countries and dumped in landfills.</span></li>
+        <li>On y démonte et brûle les déchets pour en extraire cuivre, argent, or : fumées toxiques, pollution de l'air.<br><span class="enx">Waste is dismantled and burnt there to extract copper, silver and gold: toxic fumes and air pollution.</span></li>
+        <li>Plomb, mercure et liquides toxiques s'infiltrent (<i>leach</i>) dans le sol et les nappes phréatiques (<i>water tables</i>).<br><span class="enx">Lead, mercury and toxic liquids leach into the soil and the water tables.</span></li>
+        <li>Fumées cancérigènes (<i>carcinogenic</i>), espérance de vie réduite (<i>shorter life expectancy</i>).<br><span class="enx">Carcinogenic fumes and a shorter life expectancy.</span></li>
+        <li>Pour ces travailleurs informels, c'est un revenu immédiat : ils voudraient le faire de façon moins dangereuse.<br><span class="enx">For these informal workers, it is an immediate income: they would like to do it in a less dangerous way.</span></li>
       </ul>
     </div>
   </div>
   <h3>Solutions</h3>
-  <p>Recycler (moins d'un cinquième est recyclé, selon le document A de ton cours), concevoir des appareils plus durables (<i>sustainable</i>), réparer et donner une seconde vie (un téléphone dont il suffit de changer l'écran), réglementation nationale, sensibiliser les consommateurs.</p>
+  <p>Recycler (moins d'un cinquième est recyclé, selon le document A de ton cours), concevoir des appareils plus durables (<i>sustainable</i>), réparer et donner une seconde vie (un téléphone dont il suffit de changer l'écran), réglementation nationale, sensibiliser les consommateurs.<br><span class="enx">Recycle (less than a fifth is recycled, according to document A of your course), design more sustainable devices, repair them and give them a second life (a phone which only needs a new screen), national regulation, and consumer awareness.</span></p>
 
   <details class="model"><summary>Introduction modèle pour l'oral</summary>
     <p><i>This folder is composed of three documents. It deals with global electronic waste: its causes, the hazards it creates and the solutions to reduce it.</i></p></details>
@@ -1233,20 +1239,19 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
     <tr><td class="en">on behalf of</td><td class="fr">au nom de</td></tr>
     <tr><td class="en">a drawback</td><td class="fr">un inconvénient</td></tr>
   </table></div>
-  <p class="sub"><b>efficient</b> (efficace, qui donne un bon rendement) ≠ <b>effective</b> : dans ton cours, on écrit <i>an efficient and reliable antivirus</i>. Un <b>drive</b> est un périphérique ou un disque (<i>hard drive</i>). Éviter <i>go in</i>.</p>
+  <p class="sub"><b>efficient</b> (efficace, qui donne un bon rendement) ≠ <b>effective</b> : dans ton cours, on écrit <i>an efficient and reliable antivirus</i>. Un <b>drive</b> est un périphérique ou un disque (<i>hard drive</i>). Éviter <i>go in</i>.<br><span class="enx">efficient (does the job well with few resources) is not the same as effective (gets the result): in your course, write an efficient and reliable antivirus. A drive is a device or a disk (hard drive). Avoid “go in”.</span></p>
 
-  <h3>Faux amis fréquents</h3>
-  <div class="tw"><table class="vocab">
-    <tr><th>English</th><th>Ne veut pas dire…</th></tr>
-    <tr><td class="en">eventually</td><td class="fr">finalement, à la fin (≠ éventuellement = possibly)</td></tr>
-    <tr><td class="en">actually</td><td class="fr">en fait (≠ actuellement = currently)</td></tr>
-    <tr><td class="en">to attend</td><td class="fr">assister à (≠ attendre = to wait for)</td></tr>
-    <tr><td class="en">to assist</td><td class="fr">aider (≠ assister à)</td></tr>
-    <tr><td class="en">to stock</td><td class="fr">approvisionner ; « stocker » = to store</td></tr>
+  <h3>Faux amis fréquents (<i>false friends</i>)</h3>
+  <div class="tw"><table class="vocab three"><tr><th>English</th><th>In English</th><th>En français</th></tr>
+    <tr><td><b>eventually</b></td><td class="en">In the end, finally (it does not mean “possibly”).</td><td class="fr">finalement, à la fin (≠ éventuellement = possibly)</td></tr>
+    <tr><td><b>actually</b></td><td class="en">In fact, in reality (it does not mean “currently”).</td><td class="fr">en fait (≠ actuellement = currently)</td></tr>
+    <tr><td><b>to attend</b></td><td class="en">To be present at an event (it does not mean “to wait for”).</td><td class="fr">assister à (≠ attendre = to wait for)</td></tr>
+    <tr><td><b>to assist</b></td><td class="en">To help (it does not mean “to attend”).</td><td class="fr">aider (≠ assister à)</td></tr>
+    <tr><td><b>to stock</b></td><td class="en">To keep goods available for sale; to put data or files somewhere is “to store”.</td><td class="fr">approvisionner ; « stocker » = to store</td></tr>
   </table></div>
 
   <div class="piege"><b>Termes de ton tableau à vérifier</b>
-    <p>« lead floor », « netting », « strenght in », « sandwish corses degre » : je n'ai pas pu les interpréter avec certitude. « sandwich course » signifie bien formation en alternance ; pour les autres, retrouve le contexte dans le cours avant de les apprendre.</p></div>
+    <p>« lead floor », « netting », « strenght in », « sandwish corses degre » : je n'ai pas pu les interpréter avec certitude. « sandwich course » signifie bien formation en alternance ; pour les autres, retrouve le contexte dans le cours avant de les apprendre.<br><span class="enx">“lead floor”, “netting”, “strenght in”, “sandwish corses degre”: I could not interpret them with certainty. “Sandwich course” does mean a work-linked degree (alternance); for the others, find the context in your course before learning them.</span></p></div>
 </section>
 
 <section class="fiche" id="f20" data-cat="langue" data-title="Mes erreurs récurrentes (analyse de tes notes)">
@@ -1325,7 +1330,7 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
 
   // Auto-test vocabulaire
   var bEn = document.getElementById('hide-en'), bFr = document.getElementById('hide-fr');
-  function reset() { Array.prototype.forEach.call(document.querySelectorAll('.vocab td.shown'), function (t) { t.classList.remove('shown'); }); }
+  function reset() { Array.prototype.forEach.call(document.querySelectorAll('.vocab td.shown, .enx.shown'), function (t) { t.classList.remove('shown'); }); }
   bEn.addEventListener('click', function () {
     var on = document.body.classList.toggle('hide-en'); bEn.setAttribute('aria-pressed', on); reset();
   });
@@ -1333,7 +1338,7 @@ body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none;
     var on = document.body.classList.toggle('hide-fr'); bFr.setAttribute('aria-pressed', on); reset();
   });
   document.addEventListener('click', function (e) {
-    var td = e.target.closest ? e.target.closest('.vocab td.en, .vocab td.fr') : null;
+    var td = e.target.closest ? e.target.closest('.vocab td.en, .vocab td.fr, .enx') : null;
     if (td) td.classList.toggle('shown');
   });
 })();
