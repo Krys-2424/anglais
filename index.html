@@ -1,808 +1,1342 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BTS English – Revision</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fiches de révision d'anglais · BTS SIO · BTS blanc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0c0e14;--bg2:#12151f;--card:#161a27;--card2:#1c2133;
-  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
-  --text:#dde2f0;--text2:#8891b0;--text3:#454d6a;
-  --accent:#4f7dff;--accent-glow:rgba(79,125,255,0.18);
-  --green:#2dd4a0;--green-bg:rgba(45,212,160,0.1);
-  --red:#f06a6a;--red-bg:rgba(240,106,106,0.1);
-  --amber:#f5b942;--amber-bg:rgba(245,185,66,0.1);
-  --purple:#a78bfa;--purple-bg:rgba(167,139,250,0.1);
-  --blue-bg:rgba(79,125,255,0.1);
-  --r:14px;--r-sm:9px;
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --paper: #fafbff;
+  --sheet: #ffffff;
+  --ink: #17233f;
+  --ink-soft: #4a5680;
+  --line: #d5def2;
+  --margin: #c93a44;
+  --margin-bg: #fdeeef;
+  --hl: #ffe58a;
+  --hl-bg: #fff8d9;
+  --blue: #2b56d9;
+  --blue-bg: #eaf0ff;
+  --ok: #1d7a55;
+  --ok-bg: #e6f5ee;
+  --font-body: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Bricolage Grotesque", "Atkinson Hyperlegible", system-ui, sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;font-size:15px;line-height:1.65;}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1322; --sheet: #151b2f; --ink: #e7ecfb; --ink-soft: #a5b0d3; --line: #2a3454;
+    --margin: #ff8087; --margin-bg: #2c1a20; --hl: #e9c63c; --hl-bg: #2a2611;
+    --blue: #9ab1ff; --blue-bg: #1b2545; --ok: #63d0a2; --ok-bg: #143026;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1322; --sheet: #151b2f; --ink: #e7ecfb; --ink-soft: #a5b0d3; --line: #2a3454;
+  --margin: #ff8087; --margin-bg: #2c1a20; --hl: #e9c63c; --hl-bg: #2a2611;
+  --blue: #9ab1ff; --blue-bg: #1b2545; --ok: #63d0a2; --ok-bg: #143026;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+a { color: var(--blue); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 3px; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.15; margin: 0; }
+h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; }
+h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 .5rem; color: var(--ink); }
+p { margin: .6rem 0; }
+ul, ol { margin: .5rem 0; padding-left: 1.3rem; }
+li { margin: .25rem 0; }
+em.en, i.en, .q { font-style: italic; }
+mark { background: var(--hl); color: #17233f; padding: 0 .2em; border-radius: 2px; }
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .9em; background: var(--blue-bg); padding: .05em .35em; border-radius: 3px; }
 
-nav{position:sticky;top:0;z-index:100;background:rgba(12,14,20,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;padding:0 20px;height:58px;}
-.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:16px;color:#fff;white-space:nowrap;flex-shrink:0;}
-.logo span{color:var(--accent);}
-.nav-tabs{display:flex;gap:3px;overflow-x:auto;flex:1;scrollbar-width:none;}
-.nav-tabs::-webkit-scrollbar{display:none}
-.nav-tab{font-size:11.5px;font-weight:500;padding:5px 11px;border-radius:20px;border:1px solid transparent;cursor:pointer;white-space:nowrap;color:var(--text2);transition:all .18s;background:none;}
-.nav-tab:hover{color:var(--text);border-color:var(--border2);}
-.nav-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-.lang-btn{display:flex;align-items:center;gap:7px;background:var(--card2);border:1px solid var(--border2);border-radius:24px;padding:5px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;transition:all .18s;flex-shrink:0;}
-.lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+/* ---------- top bar ---------- */
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--paper); border-bottom: 1px solid var(--line);
+  display: flex; gap: .5rem; align-items: center; flex-wrap: wrap;
+  padding: .55rem clamp(.8rem, 3vw, 2rem);
+}
+.topbar strong { font-family: var(--font-head); font-size: 1rem; margin-right: auto; }
+.chip, .tool {
+  font: inherit; font-size: .88rem; cursor: pointer; color: var(--ink);
+  background: var(--sheet); border: 1.5px solid var(--line); border-radius: 999px; padding: .25rem .8rem;
+}
+.chip[aria-pressed="true"], .tool[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tool { border-radius: 6px; }
 
-.hero{padding:56px 28px 36px;max-width:900px;margin:0 auto;text-align:center;}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-bg);border:1px solid rgba(79,125,255,0.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--accent);font-weight:600;margin-bottom:20px;}
-h1{font-family:'Syne',sans-serif;font-size:clamp(26px,5vw,48px);font-weight:800;line-height:1.12;letter-spacing:-1px;margin-bottom:14px;}
-h1 .hl{background:linear-gradient(90deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero p{color:var(--text2);font-size:15px;max-width:560px;margin:0 auto 28px;}
-.hero-stats{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--r-sm);padding:11px 20px;text-align:center;}
-.stat-n{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--accent);}
-.stat-l{font-size:11px;color:var(--text3);margin-top:2px;}
+/* ---------- layout ---------- */
+.wrap { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 1.5rem clamp(.8rem, 3vw, 2rem) 4rem; }
+.index { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 64px); align-self: start; max-height: calc(100vh - 90px); overflow: auto; font-size: .92rem; padding-right: .5rem; }
+.index h2 { font-size: .95rem; margin: 1rem 0 .3rem; color: var(--ink-soft); font-weight: 600; }
+.index a { display: block; overflow-wrap: anywhere; padding: .18rem 0; color: var(--ink); text-decoration: none; }
+.index a:hover { color: var(--blue); text-decoration: underline; }
+.index-toggle { display: none; }
+@media (max-width: 900px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: .5rem; }
+  .index { position: static; max-height: none; }
+  .index-desktop { display: none; }
+  .index-toggle { display: block; border: 1.5px solid var(--line); border-radius: 8px; padding: .5rem .8rem; background: var(--sheet); }
+  .index-toggle summary { cursor: pointer; font-weight: 700; }
+}
 
-.container{max-width:940px;margin:0 auto;padding:0 24px 80px;}
+/* ---------- intro ---------- */
+.intro { padding: .5rem 0 1.5rem; }
+.intro h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; letter-spacing: -0.02em; }
+.intro .lead { max-width: 60ch; color: var(--ink-soft); margin-top: .8rem; }
+.trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.4rem; }
+.trio > div { background: var(--sheet); border: 1.5px solid var(--line); border-radius: 10px; padding: .9rem 1.1rem 1rem; }
+.trio h3 { margin-top: 0; font-size: 1.05rem; }
+.trio ul { padding-left: 1.1rem; margin-bottom: 0; font-size: .96rem; }
 
-.section-title{display:flex;align-items:center;gap:14px;margin:44px 0 22px;}
-.section-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
-.section-title h2{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;}
-.section-title p{font-size:13px;color:var(--text2);}
+/* ---------- fiches ---------- */
+.group-title { font-family: var(--font-head); font-size: .95rem; color: var(--ink-soft); font-weight: 600; margin: 2.6rem 0 .8rem; padding-bottom: .3rem; border-bottom: 2px solid var(--ink); }
+.fiche {
+  position: relative; background: var(--sheet); border: 1.5px solid var(--line); border-radius: 10px;
+  padding: 1.3rem clamp(1rem, 3vw, 1.9rem) 1.5rem clamp(1.6rem, 4vw, 2.6rem); margin: 0 0 1.4rem;
+}
+.fiche::before { /* marge de copie */
+  content: ""; position: absolute; left: clamp(.7rem, 2vw, 1.2rem); top: 0; bottom: 0; width: 2px; background: var(--margin); opacity: .55;
+}
+.fiche > header { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; margin-bottom: .6rem; }
+.num { font-family: var(--font-head); font-weight: 800; font-size: .95rem; color: var(--paper); background: var(--ink); border-radius: 6px; padding: .1rem .55rem; }
+.fiche.hidden { display: none; }
+.sub { color: var(--ink-soft); margin: 0 0 .6rem; font-size: .96rem; }
 
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:13px;}
-@media(max-width:620px){.cards{grid-template-columns:1fr;}}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;transition:border-color .18s,transform .18s;}
-.card:hover{border-color:var(--border2);transform:translateY(-2px);}
-.card.full{grid-column:1/-1;}
+.retenir, .piege, .astuce {
+  border-radius: 6px; padding: .6rem .9rem; margin: .9rem 0; font-size: .98rem;
+}
+.retenir { background: var(--hl-bg); border-left: 5px solid var(--hl); }
+.piege { background: var(--margin-bg); border-left: 5px solid var(--margin); }
+.astuce { background: var(--blue-bg); border-left: 5px solid var(--blue); }
+.retenir > b:first-child, .piege > b:first-child, .astuce > b:first-child { display: block; margin-bottom: .1rem; font-family: var(--font-head); }
+.retenir p:last-child, .piege p:last-child, .astuce p:last-child, .retenir ul:last-child, .piege ul:last-child { margin-bottom: 0; }
 
-.card-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:11px;}
-.label-def{background:var(--blue-bg);color:var(--accent);}
-.label-avantages{background:var(--green-bg);color:var(--green);}
-.label-risques{background:var(--red-bg);color:var(--red);}
-.label-solutions{background:var(--amber-bg);color:var(--amber);}
-.label-extra{background:var(--purple-bg);color:var(--purple);}
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+.cols > div { min-width: 0; }
 
-.card h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:9px;}
-.card p,.card li{font-size:13.5px;color:var(--text2);line-height:1.72;}
-.card ul,.card ol{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.card ul li{display:flex;align-items:baseline;gap:8px;}
-.card ul li::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:7px;}
-.avantages-card ul li::before{background:var(--green);}
-.risques-card ul li::before{background:var(--red);}
-.solutions-card ul li::before{background:var(--amber);}
-.extra-card ul li::before{background:var(--purple);}
-.def-card ul li::before{background:var(--accent);}
-.card ol{counter-reset:c;}
-.card ol li{counter-increment:c;display:flex;gap:9px;}
-.card ol li::before{content:counter(c);min-width:20px;height:20px;background:var(--amber-bg);color:var(--amber);border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px;}
-.card strong{color:var(--text);font-weight:500;}
+/* tables */
+.tw { overflow-x: auto; margin: .7rem 0; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: .95rem; min-width: 460px; }
+th, td { text-align: left; vertical-align: top; padding: .45rem .7rem; border-bottom: 1px solid var(--line); }
+th { background: var(--blue-bg); font-family: var(--font-head); font-weight: 600; font-size: .9rem; position: sticky; left: 0; }
+tr:last-child td { border-bottom: 0; }
+td.en { color: var(--ink); }
+td.fr { color: var(--ink-soft); }
+.vocab td:first-child { width: 46%; }
 
-/* sub-section label */
-.sub-label{font-family:'Syne',sans-serif;font-weight:700;color:var(--text2);font-size:11px;text-transform:uppercase;letter-spacing:1px;margin:28px 0 12px;display:flex;align-items:center;gap:8px;}
-.sub-label::after{content:'';flex:1;height:1px;background:var(--border);}
+/* auto-test */
+body.hide-en .vocab td.en, body.hide-fr .vocab td.fr { filter: blur(7px); cursor: pointer; user-select: none; transition: filter .15s; }
+body.hide-en .vocab td.en.shown, body.hide-fr .vocab td.fr.shown { filter: none; user-select: auto; }
 
-/* vocab table */
-.vocab-table{width:100%;border-collapse:collapse;font-size:13px;}
-.vocab-table th{text-align:left;padding:7px 11px;background:var(--card2);color:var(--text2);font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border2);}
-.vocab-table td{padding:7px 11px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text2);}
-.vocab-table tr:last-child td{border-bottom:none;}
-.vocab-table td:first-child{color:var(--text);font-weight:500;}
+/* exemples et modèles */
+.model { border: 1.5px dashed var(--line); border-radius: 8px; padding: .3rem .9rem; margin: .8rem 0; background: var(--paper); }
+.model summary { cursor: pointer; font-weight: 700; padding: .4rem 0; font-family: var(--font-head); }
+.letter { font-family: Georgia, "Times New Roman", serif; font-size: .98rem; line-height: 1.55; white-space: normal; }
+.letter .r { text-align: right; }
+.letter p { margin: .5rem 0; }
+.corr { text-decoration: line-through; color: var(--margin); }
+.ok { color: var(--ok); font-weight: 700; }
+.bad { color: var(--margin); font-weight: 700; }
+.small { font-size: .88rem; color: var(--ink-soft); }
+.timeline { display: flex; width: 100%; border-radius: 8px; overflow: hidden; margin: .8rem 0; border: 1.5px solid var(--ink); font-size: .9rem; }
+.timeline div { padding: .5rem .6rem; text-align: center; }
+.timeline .t1 { flex: 20; background: var(--blue-bg); }
+.timeline .t2 { flex: 5; background: var(--hl); color: #17233f; font-weight: 700; }
+.timeline .t3 { flex: 15; background: var(--ok-bg); }
+.doc { display: inline-block; font-weight: 700; padding: 0 .4em; border-radius: 4px; background: var(--blue-bg); color: var(--blue); }
 
-/* tag chip */
-.tag{display:inline-block;font-size:11px;padding:3px 9px;border-radius:20px;background:var(--card2);color:var(--text3);border:1px solid var(--border);margin:2px;}
+.foot { color: var(--ink-soft); font-size: .9rem; border-top: 1px solid var(--line); margin-top: 2rem; padding-top: 1rem; }
 
-.divider{border:none;border-top:1px solid var(--border);margin:32px 0;}
-
-/* email block */
-.email-block{background:var(--bg);border:1px solid var(--border2);border-radius:var(--r-sm);padding:16px 20px;font-family:'Courier New',monospace;font-size:12.5px;line-height:1.8;color:var(--text2);}
-.email-block .e-label{color:var(--text3);font-size:11px;}
-.email-block .e-val{color:var(--text);}
-
-/* accent box */
-.accent-box{background:var(--blue-bg);border:1px solid rgba(79,125,255,.25);border-radius:var(--r-sm);padding:14px 16px;margin-top:10px;font-size:13.5px;color:var(--text2);line-height:1.7;}
-.accent-box strong{color:var(--accent);}
-
-.theme-section{display:none;}
-.theme-section.active{display:block;animation:fadeIn .28s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-
-body.show-en .fr{display:none;}
-body.show-fr .en{display:none;}
-
-.back-top{position:fixed;bottom:22px;right:22px;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;box-shadow:0 4px 18px rgba(79,125,255,.35);text-decoration:none;opacity:0;pointer-events:none;transition:opacity .2s;}
-.back-top.show{opacity:1;pointer-events:auto;}
+@media print {
+  :root { --paper: #fff; --sheet: #fff; }
+  .topbar, .index, .index-toggle { display: none !important; }
+  .wrap { display: block; padding: 0; max-width: none; }
+  body { font-size: 11pt; }
+  .fiche { break-inside: auto; border-color: #999; margin-bottom: 10mm; }
+  .fiche > header, h3 { break-after: avoid; }
+  .retenir, .piege, .astuce, .model, tr, .timeline { break-inside: avoid; }
+  .model:not([open]) > *:not(summary) { display: block; }
+  body.hide-en .vocab td.en, body.hide-fr .vocab td.fr { filter: none; }
+  .tw { overflow: visible; }
+  table { min-width: 0; }
+}
+@media (max-width: 700px) {
+  .topbar { flex-wrap: nowrap; overflow-x: auto; gap: .4rem; }
+  .topbar strong { display: none; }
+  .chip, .tool { flex: none; white-space: nowrap; }
+  table { min-width: 0; font-size: .92rem; }
+  th, td { padding: .4rem .5rem; }
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 56px); }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 </style>
 </head>
-<body class="show-en">
+<body>
 
-<nav>
-  <div class="logo">BTS <span>Anglais</span></div>
-  <div class="nav-tabs">
-    <button class="nav-tab active"  onclick="showTheme('accueil',this)">🏠 Home</button>
-    <button class="nav-tab" onclick="showTheme('travail',this)">💼 Labour Market</button>
-    <button class="nav-tab" onclick="showTheme('genz',this)">👾 Generation Z</button>
-    <button class="nav-tab" onclick="showTheme('smartcities',this)">🏙️ Smart Cities</button>
-    <button class="nav-tab" onclick="showTheme('ia',this)">🤖 AI & Tech</button>
-    <button class="nav-tab" onclick="showTheme('cloud',this)">☁️ Cloud & IoT</button>
-    <button class="nav-tab" onclick="showTheme('cyber',this)">🔐 Cyberattacks</button>
-    <button class="nav-tab" onclick="showTheme('addiction',this)">📵 Addiction</button>
-    <button class="nav-tab" onclick="showTheme('ewaste',this)">♻️ E-waste</button>
-    <button class="nav-tab" onclick="showTheme('grammaire',this)">📝 Grammar</button>
-    <button class="nav-tab" onclick="showTheme('courriel',this)">✉️ Email</button>
-  </div>
-  <button class="lang-btn" id="langBtn" onclick="toggleLang()">
-    <span id="flagIcon">🇫🇷</span>
-    <span id="langLabel">Passer en FR</span>
-  </button>
+<div class="topbar" role="toolbar" aria-label="Outils de révision">
+  <strong>Anglais · BTS SIO</strong>
+  <button class="chip" data-filter="all" aria-pressed="true">Tout</button>
+  <button class="chip" data-filter="cadre" aria-pressed="false">Méthode</button>
+  <button class="chip" data-filter="ecrit" aria-pressed="false">Courrier</button>
+  <button class="chip" data-filter="oral" aria-pressed="false">Oral</button>
+  <button class="chip" data-filter="themes" aria-pressed="false">Thèmes</button>
+  <button class="chip" data-filter="langue" aria-pressed="false">Langue</button>
+  <button class="tool" id="hide-en" aria-pressed="false" title="Floute la colonne anglaise dans les tableaux de vocabulaire ; clique sur une case pour la révéler">Cacher l'anglais</button>
+  <button class="tool" id="hide-fr" aria-pressed="false" title="Floute la colonne française dans les tableaux de vocabulaire">Cacher le français</button>
+  <button class="tool" onclick="window.print()">Imprimer</button>
+</div>
+
+<div class="wrap">
+<nav class="index" aria-label="Sommaire">
+  <details class="index-toggle"><summary>Sommaire des fiches</summary><div id="index-mobile"></div></details>
+  <div class="index-desktop" id="index-desktop"></div>
 </nav>
 
-<!-- ══════════════ ACCUEIL ══════════════ -->
-<div id="accueil" class="theme-section active">
-  <div class="hero">
-    <div class="hero-badge">📚 BTS SIO / Tertiaires · Sessions 2017–2025</div>
-    <h1>Master your themes<br>in <span class="hl">English</span></h1>
-    <p>Definitions · Advantages · Risks · Solutions — all in one click.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="stat-n">10</div><div class="stat-l">Themes</div></div>
-      <div class="stat"><div class="stat-n">4</div><div class="stat-l">Sections/theme</div></div>
-      <div class="stat"><div class="stat-n">2</div><div class="stat-l">Languages</div></div>
-      <div class="stat"><div class="stat-n">30+</div><div class="stat-l">Grammar examples</div></div>
-    </div>
+<main>
+<div class="intro">
+  <h1>Fiches de révision d'anglais<br>BTS SIO · BTS blanc</h1>
+  <p class="lead">Construites à partir de tes notes Notion, des corrigés du cours (courriers, thèmes, textes sur la cybersécurité, l'IoT, l'IA) et du sujet zéro n°4. Quand j'ai corrigé ou complété une de tes notes, c'est signalé.</p>
+  <div class="trio">
+    <div><h3>Courrier / e-mail</h3>
+      <ul><li>Respecter les consignes (destinataire, ton, infos demandées), ne pas les traduire.</li>
+      <li><i>Dear Mr X</i> → <i>Yours sincerely</i> ; <i>Dear Sir or Madam</i> → <i>Yours faithfully</i>.</li>
+      <li>Nom inventé, jamais le tien.</li></ul></div>
+    <div><h3>Synthèse en français</h3>
+      <ul><li>4-5 paragraphes, 180-200 mots, alinéas.</li>
+      <li>Intro : nature, source, date, thème (souligné).</li>
+      <li>Ni exemples, ni chiffres, ni noms propres, ni « l'auteur dit que », ni conclusion.</li></ul></div>
+    <div><h3>Oral (20 + 5 + 15 min)</h3>
+      <ul><li>Doc A / B / C, jamais « the document A ».</li>
+      <li>Plan annoncé en 3 temps, exemples mis de côté, rien de lu au jury.</li>
+      <li>Réponses aux questions : définir, décrire, conseiller (<i>you should…</i>).</li></ul></div>
   </div>
-  <div class="container">
-    <div class="cards">
-      <div class="card" style="cursor:pointer" onclick="showTheme('travail',null)"><div style="font-size:22px;margin-bottom:9px;">💼</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Labour Market</h3><p style="font-size:12.5px;color:var(--text2);">First attractive job · Shortage · Professional email</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('genz',null)"><div style="font-size:22px;margin-bottom:9px;">👾</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Generation Z</h3><p style="font-size:12.5px;color:var(--text2);">Gen Z at work · 4-day week · Gap Year</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('smartcities',null)"><div style="font-size:22px;margin-bottom:9px;">🏙️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Smart Cities</h3><p style="font-size:12.5px;color:var(--text2);">Smart cities · 5 advantages · Challenges</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('ia',null)"><div style="font-size:22px;margin-bottom:9px;">🤖</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">IA, LLMs & Surveillance</h3><p style="font-size:12.5px;color:var(--text2);">AI · Malware · BYOD · Smarthomes</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('cloud',null)"><div style="font-size:22px;margin-bottom:9px;">☁️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Cloud Computing & IoT</h3><p style="font-size:12.5px;color:var(--text2);">Storage · Advantages · Risks · Global IoT</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('cyber',null)"><div style="font-size:22px;margin-bottom:9px;">🔐</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Cyberattaques</h3><p style="font-size:12.5px;color:var(--text2);">Phishing · Ransomware · MITM · Botnet…</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('addiction',null)"><div style="font-size:22px;margin-bottom:9px;">📵</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Digital Addiction</h3><p style="font-size:12.5px;color:var(--text2);">Causes · Mechanisms · Consequences · Solutions</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('ewaste',null)"><div style="font-size:22px;margin-bottom:9px;">♻️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">E-waste</h3><p style="font-size:12.5px;color:var(--text2);">Electronic waste · 41M tonnes/year · Recycling</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('grammaire',null)"><div style="font-size:22px;margin-bottom:9px;">📝</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">BTS SIO Grammar</h3><p style="font-size:12.5px;color:var(--text2);">Prevent · Risk · Warn · Avoid · Provide</p></div>
-      <div class="card" style="cursor:pointer" onclick="showTheme('courriel',null)"><div style="font-size:22px;margin-bottom:9px;">✉️</div><h3 style="font-family:'Syne',sans-serif;font-size:14px;margin-bottom:5px;">Professional Email</h3><p style="font-size:12.5px;color:var(--text2);">Format · Phrases · Full templates</p></div>
-    </div>
-  </div>
+  <p class="small" style="margin-top:1rem">Astuce : les boutons « Cacher l'anglais / le français » de la barre du haut floutent une colonne des tableaux de vocabulaire pour t'auto-tester (clique sur une case pour la révéler).</p>
 </div>
+<div class="group-title" data-group="cadre">Cadre et méthode</div>
 
-<!-- ══════════════ MARCHÉ DU TRAVAIL ══════════════ -->
-<div id="travail" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--blue-bg);">💼</div>
-    <div><h2 class="fr">Labour Market</h2><h2 class="en">The Labour Market</h2>
-    <p class="fr">Premier emploi · Pénurie de main-d'œuvre · Conditions de travail</p>
-    <p class="en">First job · Labour shortage · Working conditions</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full">
-      <div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Le <strong>marché du travail</strong> met en relation les employeurs (qui offrent des postes) et les chercheurs d'emploi (qui offrent leur force de travail). Depuis la pandémie, une <strong>hausse record des démissions</strong> frappe de nombreux secteurs (hôtellerie, services, transport…). Les travailleurs exigent de meilleures conditions, un meilleur salaire et plus de sens au travail.</p></div>
-      <div class="en"><p>The <strong>labour market</strong> connects employers (offering jobs) and job seekers (offering their labour). Since the pandemic, a <strong>record surge in resignations</strong> has hit many sectors (hospitality, services, transport…). Workers are demanding better pay, better conditions and more meaning in their work.</p></div>
-    </div>
-    <div class="card avantages-card">
-      <div class="card-label label-avantages">✅ What makes a job attractive</div>
+<section class="fiche" id="f1" data-cat="cadre" data-title="Les épreuves en un coup d'œil">
+  <header><span class="num">1</span><h2>Les épreuves en un coup d'œil</h2></header>
+  <div class="cols">
+    <div>
+      <h3>Écrit (coef. 1)</h3>
       <ul>
-        <li class="fr"><strong>Adéquation avec les diplômes</strong> : les tâches doivent correspondre aux études effectuées</li><li class="en"><strong>Match with qualifications</strong>: tasks must match the studies completed</li>
-        <li class="fr"><strong>Compétences transférables</strong> qui augmentent la valeur sur le marché</li><li class="en"><strong>Transferable skills</strong> that increase market value</li>
-        <li class="fr">Entreprise qui apporte de la <strong>valeur au CV</strong> et des responsabilités</li><li class="en">Company that adds <strong>value to the CV</strong> and gives responsibilities</li>
-        <li class="fr"><strong>Perspectives d'évolution</strong> vers un poste d'encadrement</li><li class="en"><strong>Career prospects</strong> towards a management position</li>
-        <li class="fr"><strong>Qualité de vie au travail</strong> : relations interpersonnelles, bien-être</li><li class="en"><strong>Quality of work life</strong>: interpersonal relationships, wellbeing</li>
-        <li class="fr"><strong>Horaires flexibles / télétravail hybride</strong> pour éviter les embouteillages</li><li class="en"><strong>Flexible hours / hybrid work</strong> to avoid traffic jams</li>
-        <li class="fr"><strong>Avantages en nature</strong> (voiture de société, formations, espaces de coworking)</li><li class="en"><strong>Perks</strong> (company car, training sessions, coworking spaces)</li>
-        <li class="fr"><strong>Égalité salariale homme-femme</strong></li><li class="en"><strong>Gender pay equality</strong></li>
-        <li class="fr">Bon <strong>esprit d'équipe</strong> et intégration facilitée</li><li class="en">Good <strong>team spirit</strong> and smooth onboarding</li>
-        <li class="fr"><strong>Salaire adapté</strong> au poste et renégociable</li><li class="en"><strong>Salary matching</strong> the position, renegotiable</li>
+        <li><b>Expression écrite, en anglais</b> : un courrier ou un e-mail, souvent dans le domaine RH (recrutement, candidature, consigne interne, réponse à un employeur).</li>
+        <li><b>Synthèse, en français</b> : à partir d'un article anglophone, environ 200 mots.</li>
       </ul>
     </div>
-    <div class="card risques-card">
-      <div class="card-label label-risques">⚠️ Problèmes / Risks</div>
+    <div>
+      <h3>Oral (coef. 1)</h3>
       <ul>
-        <li class="fr"><strong>Pénurie de main-d'œuvre</strong> dans l'hôtellerie, les services, le transport</li><li class="en"><strong>Labour shortage</strong> in hospitality, services, transport</li>
-        <li class="fr"><strong>Salaires trop bas</strong>, emplois ingrats et peu valorisants</li><li class="en"><strong>Wages too low</strong>, thankless and unrewarding jobs</li>
-        <li class="fr">Absence de <strong>perspectives d'avancement</strong> et de reconnaissance</li><li class="en">No <strong>career prospects</strong> or recognition</li>
-        <li class="fr"><strong>Mauvaises conditions</strong> de travail : stress, horaires, manque de respect</li><li class="en"><strong>Poor working conditions</strong>: stress, hours, lack of respect</li>
-        <li class="fr">Hausse des <strong>démissions</strong> ("Great Resignation")</li><li class="en">Surge in <strong>resignations</strong> ("Great Resignation")</li>
-        <li class="fr">Multiplication des <strong>emplois précaires</strong> (CDD, intérim)</li><li class="en">Proliferation of <strong>precarious jobs</strong> (fixed-term, temp work)</li>
+        <li>Convocation dans un autre centre.</li>
+        <li>Dossier : 1 ou 2 documents écrits/visuels + <b>1 vidéo</b>, plus une mise en situation et 3 ou 4 questions.</li>
+        <li>Brouillon personnel autorisé (utilisable devant le jury). <b>Pas de dictionnaire.</b></li>
       </ul>
     </div>
-    <div class="card solutions-card full">
-      <div class="card-label label-solutions">💡 Solutions</div>
-      <ol>
-        <li><div class="fr"><strong>Augmenter les salaires</strong> et proposer des primes (ex : Amazon, Hilton)</div><div class="en"><strong>Raise wages</strong> and offer bonuses (e.g. Amazon, Hilton)</div></li>
-        <li><div class="fr"><strong>Flexibilité</strong> : horaires adaptables, télétravail, semaine de 4 jours</div><div class="en"><strong>Flexibility</strong>: adaptable hours, remote work, 4-day week</div></li>
-        <li><div class="fr"><strong>Proposer des formations</strong> et des plans de carrière clairs</div><div class="en"><strong>Offer training</strong> and clear career development plans</div></li>
-        <li><div class="fr"><strong>Améliorer les conditions de travail</strong> et le respect des employés</div><div class="en"><strong>Improve working conditions</strong> and employee respect</div></li>
-        <li><div class="fr">Privilégier les <strong>CDI</strong> plutôt que de multiplier les CDD</div><div class="en">Favour <strong>permanent contracts</strong> over fixed-term ones</div></li>
-        <li><div class="fr">Mettre en place des <strong>espaces de coworking modernes</strong> et favoriser l'égalité</div><div class="en">Set up <strong>modern coworking spaces</strong> and promote equality</div></li>
-      </ol>
-    </div>
   </div>
-</div>
-</div>
+  <div class="timeline" role="img" aria-label="20 minutes de préparation, 5 minutes de présentation, 15 minutes d'échange">
+    <div class="t1">Préparation · 20 min</div><div class="t2">Présentation · 5 min</div><div class="t3">Échange avec le jury · 15 min</div>
+  </div>
+  <div class="retenir"><b>Ce que le jury évalue</b>
+    <p>Analyser plusieurs supports, organiser une synthèse claire, répondre spontanément, maîtriser le vocabulaire professionnel et informatique.</p></div>
+  <h3>Répartition du temps de préparation (suggestion)</h3>
+  <p class="sub">Ce découpage est une proposition de ma part, pas une règle officielle. Ta consigne à toi : <b>ne pas passer 20 minutes sur la vidéo</b>.</p>
+  <div class="tw"><table>
+    <tr><th>Durée</th><th>Tâche</th></tr>
+    <tr><td>2 min</td><td>Lire la mise en situation et les questions (ton rôle : technicien, manager, etc.).</td></tr>
+    <tr><td>6 à 7 min</td><td>Vidéo : titre, source, date, idées principales (2 visionnages maximum).</td></tr>
+    <tr><td>5 min</td><td>Documents écrits/visuels : nature, thème, 2 idées chacun.</td></tr>
+    <tr><td>5 min</td><td>Répondre aux questions sur le brouillon (mots-clés + 1 phrase modèle par réponse).</td></tr>
+    <tr><td>1 à 2 min</td><td>Écrire l'intro complète et les 3 annonces de plan.</td></tr>
+  </table></div>
+</section>
 
-<!-- ══════════════ GÉNÉRATION Z ══════════════ -->
-<div id="genz" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:rgba(45,212,160,.12);">👾</div>
-    <div><h2 class="fr">Génération Z & Nouvelles Formes de Travail</h2><h2 class="en">Gen Z & New Forms of Work</h2>
-    <p>The Guardian (2025) · 4-day week · Gap Year</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>La <strong>Generation Z</strong> (nés entre 1997–2012) est la première génération entièrement numérique. Au travail, elle est souvent décrite comme indisciplinée ou "unemployable" — critiques récurrentes à chaque nouvelle génération. Elle valorise le <strong>smart-work</strong>, l'équilibre vie pro/perso et le sens au travail. La <strong>semaine de 4 jours</strong> consiste à compresser les heures contractuelles sur 4 jours. L'<strong>année de césure (gap year)</strong> est une année dédiée au voyage, bénévolat ou travail entre le lycée et l'université.</p></div>
-      <div class="en"><p><strong>Generation Z</strong> (born 1997–2012) is the first fully digital generation. At work, they are often labelled undisciplined or "unemployable" — recurring criticism for every new generation. They value <strong>smart-work</strong>, work-life balance and purpose. The <strong>4-day week</strong> compresses contracted hours into 4 days. A <strong>gap year</strong> is a year for travel, volunteering or work between school and university.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
-      <li class="fr"><strong>Smart-work</strong> : utilise l'IA pour accomplir en 5h ce qui prenait 10h</li><li class="en"><strong>Smart-work</strong>: uses AI to complete in 5h what used to take 10h</li>
-      <li class="fr">Forte <strong>conscience éthique et sociale</strong> (valeurs, sens, impact)</li><li class="en">Strong <strong>ethical and social awareness</strong> (values, purpose, impact)</li>
-      <li class="fr"><strong>4-day week</strong> : moins de stress, moins d'arrêts maladie, productivité/h élevée</li><li class="en"><strong>4-day week</strong>: less stress, fewer sick days, higher hourly productivity</li>
-      <li class="fr"><strong>Gap year</strong> : autonomie, compétences culturelles, communication</li><li class="en"><strong>Gap year</strong>: independence, cultural skills, communication</li>
-      <li class="fr">89 % de Gen Z exige un <strong>sens du but</strong> au travail (Deloitte)</li><li class="en">89% of Gen Z require a <strong>sense of purpose</strong> at work (Deloitte)</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr">Perçue comme <strong>manquant de loyauté</strong> et de résistance</li><li class="en">Perceived as <strong>lacking loyalty</strong> and resilience</li>
-      <li class="fr">Recherche d'emploi <strong>très longue</strong> (quasi 1 000 candidatures)</li><li class="en"><strong>Very long job search</strong> (nearly 1,000 applications)</li>
-      <li class="fr"><strong>Désillusion</strong> envers les institutions (licenciements, promesses brisées)</li><li class="en"><strong>Disillusionment</strong> with institutions (layoffs, broken promises)</li>
-      <li class="fr">Semaine 4 jours : pas adaptée à tous les secteurs (restauration, distribution)</li><li class="en">4-day week: not suitable for all sectors (catering, distribution)</li>
-      <li class="fr"><strong>Gap year</strong> coûteuse, risque de retard académique</li><li class="en"><strong>Gap year</strong>: expensive, risk of academic delay</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions</div><ol>
-      <li><div class="fr"><strong>Reconnaître les forces de Gen Z</strong> : créativité numérique, maîtrise de l'IA</div><div class="en"><strong>Recognise Gen Z's strengths</strong>: digital creativity, AI mastery</div></li>
-      <li><div class="fr"><strong>Offrir du sens</strong> et aligner les valeurs entreprise / employé</div><div class="en"><strong>Offer purpose</strong> and align company and employee values</div></li>
-      <li><div class="fr"><strong>Adapter la 4-day week</strong> aux secteurs compatibles, maintenir les salaires</div><div class="en"><strong>Adapt the 4-day week</strong> to compatible sectors, maintain wages</div></li>
-      <li><div class="fr"><strong>Gap year</strong> : planifier à l'avance, fixer des objectifs clairs</div><div class="en"><strong>Gap year</strong>: plan ahead, set clear goals</div></li>
-      <li><div class="fr"><strong>Reconstruire la confiance</strong> : transparence, dialogue, respect des promesses</div><div class="en"><strong>Rebuild trust</strong>: transparency, dialogue, keeping promises</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
+<section class="fiche" id="f2" data-cat="cadre" data-title="Synthèse en français : la méthode">
+  <header><span class="num">2</span><h2>Synthèse en français : la méthode</h2></header>
+  <p class="sub">La synthèse est une restitution organisée logiquement des idées principales d'un article de presse, rédigée uniquement en français.</p>
 
-<!-- ══════════════ SMART CITIES ══════════════ -->
-<div id="smartcities" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--blue-bg);">🏙️</div>
-    <div><h2>Smart Cities</h2>
-    <p class="fr">Villes intelligentes · Technologies · Durabilité</p>
-    <p class="en">Smart cities · Technologies · Sustainability</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Une <strong>Smart City</strong> utilise les <strong>technologies numériques, la data et les systèmes intelligents</strong> pour améliorer la qualité de vie, optimiser les services et renforcer la durabilité. Elle intègre les <strong>TIC</strong> (Technologies de l'Information et de la Communication) aux infrastructures urbaines pour faire face à l'urbanisation rapide et aux ressources limitées.</p></div>
-      <div class="en"><p>A <strong>smart city</strong> uses <strong>digital technologies, data, and intelligent systems</strong> to improve quality of life, optimise services and enhance sustainability. It integrates <strong>ICT</strong> (Information and Communication Technologies) with urban infrastructure to tackle rapid urbanisation and limited resources.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ 5 Advantages</div><ul>
-      <li class="fr"><strong>Qualité de vie</strong> : transports intelligents, parking optimisé, moins de bouchons</li><li class="en"><strong>Quality of life</strong>: smart transport, optimised parking, less traffic</li>
-      <li class="fr"><strong>Durabilité</strong> : smart grids, gestion de l'eau et des déchets</li><li class="en"><strong>Sustainability</strong>: smart grids, water and waste management</li>
-      <li class="fr"><strong>Croissance économique</strong> : attire entreprises, startups, investisseurs</li><li class="en"><strong>Economic growth</strong>: attracts businesses, startups, investors</li>
-      <li class="fr"><strong>Gouvernance</strong> : e-services, open data, transparence, participation citoyenne</li><li class="en"><strong>Governance</strong>: e-services, open data, transparency, citizen participation</li>
-      <li class="fr"><strong>Résilience</strong> : alertes précoces pour catastrophes et crises sanitaires</li><li class="en"><strong>Resilience</strong>: early warning systems for disasters and health crises</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr"><strong>Vie privée</strong> : surveillance massive, collecte de données personnelles</li><li class="en"><strong>Privacy</strong>: mass surveillance, personal data collection</li>
-      <li class="fr"><strong>Cybersécurité</strong> : infrastructure connectée = cible pour hackers</li><li class="en"><strong>Cybersecurity</strong>: connected infrastructure = hacker target</li>
-      <li class="fr"><strong>Fracture numérique</strong> : toutes les populations n'en bénéficient pas</li><li class="en"><strong>Digital divide</strong>: not all residents benefit equally</li>
-      <li class="fr"><strong>Coût élevé</strong> d'implémentation et de maintenance</li><li class="en"><strong>High cost</strong> of implementation and maintenance</li>
-      <li class="fr"><strong>Dépendance technologique</strong> : panne = paralysie des services essentiels</li><li class="en"><strong>Tech dependency</strong>: outage = paralysis of essential services</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions</div><ol>
-      <li><div class="fr"><strong>RGPD et réglementation stricte</strong> sur la collecte des données personnelles</div><div class="en"><strong>GDPR and strict regulation</strong> on personal data collection</div></li>
-      <li><div class="fr"><strong>Cybersécurité renforcée</strong> : audits, chiffrement, systèmes redondants</div><div class="en"><strong>Enhanced cybersecurity</strong>: audits, encryption, redundant systems</div></li>
-      <li><div class="fr"><strong>Inclusion numérique</strong> : former les populations moins à l'aise avec le digital</div><div class="en"><strong>Digital inclusion</strong>: train less digitally confident populations</div></li>
-      <li><div class="fr"><strong>Open data</strong> pour plus de transparence citoyenne</div><div class="en"><strong>Open data</strong> for greater citizen transparency</div></li>
-      <li><div class="fr"><strong>Plans de continuité</strong> en cas de panne ou cyberattaque</div><div class="en"><strong>Business continuity plans</strong> in case of outage or cyberattack</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
+  <h3>Forme</h3>
+  <ul>
+    <li><b>4 à 5 paragraphes</b>, environ <b>180 à 200 mots</b>.</li>
+    <li>Un <b>alinéa</b> au début de chaque paragraphe et <b>deux lignes blanches</b> entre les paragraphes (d'après tes notes).</li>
+    <li>Ordre du texte d'origine en général ; si une réorganisation s'impose, ne pas hésiter.</li>
+  </ul>
 
-<!-- ══════════════ IA & TECH ══════════════ -->
-<div id="ia" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--amber-bg);">🤖</div>
-    <div><h2 class="fr">IA, Malware, BYOD & Smarthomes</h2><h2 class="en">AI, Malware, BYOD & Smarthomes</h2></div>
-  </div>
+  <h3>Introduction (le premier paragraphe)</h3>
+  <p>Trois informations : <b>nature</b> du document, <b>source + date</b>, <b>thème</b> (souligné, ou en italique sur ordinateur). Le thème n'est ni le titre de l'article, ni sa traduction.</p>
+  <div class="retenir"><b>Modèle (corrigé de ton cours)</b>
+    <p>Ce document est un article de presse. Il est tiré de <i>The Guardian</i>, publié en juin 2010. Il traite de <u>la jalousie au travail</u>.</p></div>
 
-  <div class="sub-label">🤖 Intelligence Artificielle & LLMs</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>L'<strong>IA</strong> permet aux machines d'accomplir des tâches nécessitant l'intelligence humaine. Les <strong>LLMs</strong> (Large Language Models) sont entraînés sur d'immenses corpus pour comprendre et générer du langage (architecture Transformer, 2017). Ex : ChatGPT, Claude.</p></div>
-      <div class="en"><p><strong>AI</strong> enables machines to perform tasks normally requiring human intelligence. <strong>LLMs</strong> (Large Language Models) are trained on massive datasets to understand and generate language (Transformer architecture, 2017). E.g.: ChatGPT, Claude.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
-      <li class="fr">Automatise les tâches répétitives → <strong>gain de productivité</strong></li><li class="en">Automates repetitive tasks → <strong>productivity gains</strong></li>
-      <li class="fr">Crée de <strong>nouveaux emplois</strong> : data scientists, prompt engineers</li><li class="en">Creates <strong>new jobs</strong>: data scientists, prompt engineers</li>
-      <li class="fr">Assiste médecins, programmeurs, journalistes</li><li class="en">Assists doctors, programmers, journalists</li>
-      <li class="fr">Détecte anomalies et malwares en <strong>cybersécurité</strong></li><li class="en">Detects anomalies and malware in <strong>cybersecurity</strong></li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr"><strong>Destruction d'emplois</strong> dans les secteurs répétitifs</li><li class="en"><strong>Job displacement</strong> in repetitive sectors</li>
-      <li class="fr"><strong>Hallucinations</strong> : informations fausses générées</li><li class="en"><strong>AI hallucinations</strong>: incorrect information generated</li>
-      <li class="fr"><strong>Biais</strong> dans les données → discriminations reproduites</li><li class="en"><strong>Bias</strong> in data → discrimination reproduced</li>
-      <li class="fr"><strong>Deepfakes</strong>, désinformation, atteintes à la vie privée</li><li class="en"><strong>Deepfakes</strong>, misinformation, privacy violations</li>
-      <li class="fr"><strong>Surveillance IA au travail</strong> (notation des appels, espionnage email)</li><li class="en"><strong>AI workplace surveillance</strong> (call grading, email monitoring)</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions</div><ol>
-      <li><div class="fr"><strong>Réglementation éthique</strong> (EU AI Act) et transparence algorithmique</div><div class="en"><strong>Ethical regulation</strong> (EU AI Act) and algorithmic transparency</div></li>
-      <li><div class="fr"><strong>Programmes de reconversion</strong> pour les travailleurs automatisés</div><div class="en"><strong>Retraining programmes</strong> for automated workers</div></li>
-      <li><div class="fr"><strong>Droits syndicaux</strong> pour négocier des protections contre la surveillance IA</div><div class="en"><strong>Union rights</strong> to negotiate protections against AI surveillance</div></li>
-    </ol></div>
-  </div>
+  <h3>Rédaction</h3>
+  <ul>
+    <li>Idées <b>hiérarchisées</b>, avec des <b>liens logiques explicites</b> (cause, conséquence, opposition).</li>
+    <li>Connecteurs utiles : <i>car, si bien que, néanmoins, bien que, malgré, cependant, en effet, ainsi, c'est pourquoi</i>.</li>
+    <li><b>« De plus » est à éviter</b> : il transforme la synthèse en énumération.</li>
+  </ul>
 
-  <div class="sub-label">🦠 Malware & Cybersécurité</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Un <strong>malware</strong> est tout logiciel malveillant conçu pour endommager ou accéder illégalement à un système. Types : <strong>virus</strong> (corrompent fichiers), <strong>worms</strong> (se propagent via réseau sans hôte), <strong>trojans</strong> (semblent légitimes, ouvrent des backdoors), <strong>spyware</strong> (vole données personnelles).</p></div>
-      <div class="en"><p>A <strong>malware</strong> is any malicious software designed to damage or illegally access a system. Types: <strong>viruses</strong> (corrupt files), <strong>worms</strong> (self-replicate via network without host), <strong>trojans</strong> (appear legitimate, open backdoors), <strong>spyware</strong> (steals personal data).</p></div>
-    </div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Dommages / Damages</div><ul>
-      <li class="fr">Suppression ou <strong>corruption de fichiers</strong></li><li class="en">Deletion or <strong>corruption of files</strong></li>
-      <li class="fr"><strong>Vol de données</strong> (mots de passe, CB)</li><li class="en"><strong>Theft of data</strong> (passwords, credit cards)</li>
-      <li class="fr"><strong>Ralentissement</strong> ou plantage du système</li><li class="en"><strong>Slowdown</strong> or system crash</li>
-      <li class="fr">Prise de contrôle à distance via <strong>backdoor</strong></li><li class="en">Remote control via <strong>backdoor</strong></li>
-    </ul></div>
-    <div class="card solutions-card"><div class="card-label label-solutions">💡 Protection</div><ul>
-      <li class="fr">Installer et <strong>mettre à jour</strong> un antivirus régulièrement</li><li class="en">Install and <strong>keep updated</strong> antivirus</li>
-      <li class="fr">Utiliser un <strong>pare-feu</strong> (firewall)</li><li class="en">Use a <strong>firewall</strong></li>
-      <li class="fr">Télécharger uniquement depuis des <strong>sources officielles</strong></li><li class="en">Download only from <strong>official sources</strong></li>
-      <li class="fr">Ne jamais ouvrir une <strong>pièce jointe inconnue</strong></li><li class="en">Never open an <strong>unknown attachment</strong></li>
-      <li class="fr">Utiliser des <strong>mots de passe forts</strong> + 2FA</li><li class="en">Use <strong>strong passwords</strong> + 2FA</li>
-    </ul></div>
-  </div>
-
-  <div class="sub-label">📱 BYOD – Bring Your Own Device</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Le <strong>BYOD</strong> autorise les employés à utiliser leurs appareils personnels (PC, smartphone, tablette) à des fins professionnelles.</p></div>
-      <div class="en"><p><strong>BYOD</strong> allows employees to use their personal devices (PC, smartphone, tablet) for work purposes.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
-      <li class="fr">Employé <strong>maîtrise son outil</strong> → meilleure productivité</li><li class="en">Employee <strong>masters their device</strong> → better productivity</li>
-      <li class="fr"><strong>Personnalisation</strong> complète, favorise le télétravail</li><li class="en">Full <strong>customisation</strong>, supports remote work</li>
-      <li class="fr"><strong>Réduction des coûts IT</strong> pour l'entreprise</li><li class="en"><strong>Reduces IT costs</strong> for the company</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr"><strong>Sécurité</strong> : malware mobile, fuites de données</li><li class="en"><strong>Security</strong>: mobile malware, data leaks</li>
-      <li class="fr">Données pro mélangées aux données <strong>personnelles</strong></li><li class="en">Work data mixed with <strong>personal</strong> data</li>
-      <li class="fr"><strong>Support technique</strong> complexe sur appareils variés</li><li class="en">Complex <strong>technical support</strong> for varied devices</li>
-      <li class="fr"><strong>Départ</strong> : effacement des données pro sur l'appareil perso</li><li class="en"><strong>Offboarding</strong>: wiping work data from personal device</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions</div><ol>
-      <li><div class="fr"><strong>MDM</strong> (Mobile Device Management) : gestion et sécurisation à distance</div><div class="en"><strong>MDM</strong> (Mobile Device Management): remote management and security</div></li>
-      <li><div class="fr"><strong>Politique BYOD claire</strong> : séparation données pro/perso, règles d'usage</div><div class="en"><strong>Clear BYOD policy</strong>: separate work/personal data, usage rules</div></li>
-      <li><div class="fr"><strong>Antivirus obligatoire</strong> + <strong>formation</strong> des employés</div><div class="en"><strong>Mandatory antivirus</strong> + employee <strong>training</strong></div></li>
-    </ol></div>
-  </div>
-
-  <div class="sub-label">🏠 Smarthomes / IoT</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Une <strong>maison connectée</strong> est équipée d'appareils interconnectés contrôlables à distance via smartphone. Un <strong>hub</strong> assure l'interopérabilité. L'<strong>IoT</strong> (Internet of Things) désigne tous les objets physiques connectés à Internet.</p></div>
-      <div class="en"><p>A <strong>smart home</strong> is equipped with interconnected devices controllable remotely via smartphone. A <strong>hub</strong> ensures interoperability. The <strong>IoT</strong> (Internet of Things) refers to all physical objects connected to the internet.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
-      <li class="fr"><strong>Commodité</strong> : automatisation (lumières, chauffage, serrures)</li><li class="en"><strong>Convenience</strong>: automation (lights, heating, locks)</li>
-      <li class="fr"><strong>Économies d'énergie</strong> : thermostat intelligent, lumières auto</li><li class="en"><strong>Energy savings</strong>: smart thermostat, auto lights</li>
-      <li class="fr"><strong>Sécurité</strong> : détection d'intrusion, CCTV à distance</li><li class="en"><strong>Security</strong>: intrusion detection, remote CCTV</li>
-      <li class="fr"><strong>Accessibilité</strong> pour personnes âgées ou à mobilité réduite</li><li class="en"><strong>Accessibility</strong> for elderly or disabled people</li>
-      <li class="fr"><strong>Big data</strong> : permet l'analytics en médecine, météo, finance, urbanisme</li><li class="en"><strong>Big data</strong>: enables analytics in medicine, weather, finance, urban planning</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr"><strong>Hacking</strong> : contrôle total du réseau si le hub est piraté</li><li class="en"><strong>Hacking</strong>: full network control if hub is hacked</li>
-      <li class="fr"><strong>Manque de standardisation</strong> : protocoles incompatibles (WiFi, Zigbee, ZWave)</li><li class="en"><strong>Lack of standardisation</strong>: incompatible protocols</li>
-      <li class="fr"><strong>Vie privée</strong> : données d'usage collectées et exploitées</li><li class="en"><strong>Privacy</strong>: usage data collected and exploited</li>
-      <li class="fr">Une <strong>seule faille</strong> dans un objet = accès à tout le réseau</li><li class="en">A <strong>single vulnerability</strong> in one device = access to the whole network</li>
-      <li class="fr">Risque physique accru à <strong>l'échelle d'une ville</strong> (trafic, eau, énergie)</li><li class="en">Greater physical risk at <strong>city scale</strong> (traffic, water, energy)</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 8 conseils de sécurité / 8 Security Tips</div><ol>
-      <li><div class="fr">Donner un <strong>nom unique au routeur</strong> (pas lié à votre identité)</div><div class="en">Give your <strong>router a unique name</strong> (not linked to your identity)</div></li>
-      <li><div class="fr">Chiffrement <strong>WPA2</strong> pour le Wi-Fi</div><div class="en"><strong>WPA2 encryption</strong> for Wi-Fi</div></li>
-      <li><div class="fr"><strong>Réseau invité séparé</strong> pour les visiteurs</div><div class="en"><strong>Separate guest network</strong> for visitors</div></li>
-      <li><div class="fr"><strong>Changer les mots de passe par défaut</strong> de tous les appareils IoT</div><div class="en"><strong>Change default passwords</strong> on all IoT devices</div></li>
-      <li><div class="fr"><strong>Mots de passe forts et uniques</strong> (lettres + chiffres + symboles)</div><div class="en"><strong>Strong, unique passwords</strong> (letters + numbers + symbols)</div></li>
-      <li><div class="fr"><strong>Vérifier les paramètres de confidentialité</strong> de chaque appareil</div><div class="en"><strong>Check privacy settings</strong> of each device</div></li>
-      <li><div class="fr"><strong>Désactiver les fonctionnalités inutiles</strong> (accès à distance par défaut)</div><div class="en"><strong>Disable unnecessary features</strong> (default remote access)</div></li>
-      <li><div class="fr"><strong>Mettre à jour régulièrement</strong> les logiciels et firmwares</div><div class="en"><strong>Regularly update</strong> software and firmware</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ CLOUD & IoT GLOBAL ══════════════ -->
-<div id="cloud" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:rgba(167,139,250,.12);">☁️</div>
-    <div><h2 class="fr">Cloud Computing & IoT Mondial</h2><h2 class="en">Cloud Computing & Global IoT</h2>
-    <p class="en">Remote storage · Advantages · Risks · Large-scale IoT</p>
-    <p class="en">Remote storage · Advantages · Risks · Large-scale IoT</p></div>
-  </div>
-
-  <div class="sub-label">☁️ Cloud Computing</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Le <strong>cloud computing</strong> est un service de stockage et de traitement des données à distance via Internet. Il permet aux entreprises d'accéder à leurs données <strong>n'importe où</strong> (bureau, domicile, déplacements) sans avoir à gérer leurs propres serveurs. Le prestataire se charge de la <strong>sauvegarde, de la maintenance et de la sécurité</strong>.</p></div>
-      <div class="en"><p><strong>Cloud computing</strong> is a remote data storage and processing service via the internet. It allows companies to access their data <strong>from anywhere</strong> (office, home, while travelling) without managing their own servers. The provider handles <strong>backup, maintenance and security</strong>.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages</div><ul>
-      <li class="fr"><strong>Accès universel</strong> aux données depuis n'importe quel endroit (idéal pour les commerciaux)</li><li class="en"><strong>Universal access</strong> to data from anywhere (ideal for salespeople)</li>
-      <li class="fr"><strong>Partage facilité</strong> des fichiers entre collègues sans emails volumineux</li><li class="en"><strong>Easy file sharing</strong> with colleagues without heavy emails</li>
-      <li class="fr"><strong>Solution économique</strong> pour PME : stockage sans achat de serveurs coûteux</li><li class="en"><strong>Cost-effective solution</strong> for SMEs: storage without expensive servers</li>
-      <li class="fr"><strong>Évolutivité</strong> : louer de la capacité supplémentaire lors des pics de charge</li><li class="en"><strong>Scalability</strong>: rent extra capacity during peak workload periods</li>
-      <li class="fr">Le prestataire gère la <strong>sauvegarde et la reprise</strong> après sinistre</li><li class="en">The provider manages <strong>backup and disaster recovery</strong></li>
-      <li class="fr">L'entreprise se concentre sur son <strong>activité principale</strong> (core activity)</li><li class="en">The company focuses on its <strong>core activity</strong></li>
-      <li class="fr">Pas de maintenance d'équipement ni de logiciel à gérer</li><li class="en">No equipment or software maintenance to manage</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr">Les données restent <strong>accessibles aux hackers</strong> via Internet malgré la sécurité</li><li class="en">Data remains <strong>accessible to hackers</strong> via the internet despite security</li>
-      <li class="fr">Si les serveurs cloud sont <strong>en panne</strong>, l'entreprise n'a plus accès à ses données</li><li class="en">If cloud servers are <strong>down</strong>, the company cannot access its data</li>
-      <li class="fr">Risque de <strong>perte de contrôle</strong> sur les données en cas de fin de contrat ou litige</li><li class="en">Risk of <strong>loss of control</strong> over data when contract ends or in case of dispute</li>
-      <li class="fr">Le client ne sait pas <strong>où sont stockées ses données</strong> (cascade de sous-traitance)</li><li class="en">The customer doesn't know <strong>where their data is stored</strong> (outsourcing cascade)</li>
-      <li class="fr"><strong>Vie privée</strong> : le prestataire peut avoir accès à des données confidentielles</li><li class="en"><strong>Privacy</strong>: the provider may have access to confidential data</li>
-      <li class="fr">En cas de <strong>fuite de données</strong>, le client peut ne pas en être informé</li><li class="en">In case of a <strong>data leak</strong>, the customer may not be notified</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions / Solutions</div><ol>
-      <li><div class="fr">Choisir un prestataire <strong>techniquement fiable et éthiquement digne de confiance</strong></div><div class="en">Choose a provider that is <strong>technically reliable and ethically trustworthy</strong></div></li>
-      <li><div class="fr">Exiger des <strong>clauses contractuelles claires</strong> sur la restitution des données en fin de contrat</div><div class="en">Require <strong>clear contractual clauses</strong> on data restitution at contract end</div></li>
-      <li><div class="fr"><strong>Chiffrer les données</strong> avant de les envoyer dans le cloud</div><div class="en"><strong>Encrypt data</strong> before sending it to the cloud</div></li>
-      <li><div class="fr">Conserver une <strong>sauvegarde locale</strong> des données critiques</div><div class="en">Keep a <strong>local backup</strong> of critical data</div></li>
-      <li><div class="fr">Vérifier la <strong>localisation géographique</strong> des serveurs (législation applicable)</div><div class="en">Check the <strong>geographic location</strong> of servers (applicable legislation)</div></li>
-      <li><div class="fr">Exiger une <strong>notification immédiate</strong> en cas de fuite ou incident</div><div class="en">Require <strong>immediate notification</strong> in case of leak or incident</div></li>
-    </ol></div>
-  </div>
-
-  <div class="sub-label">🌐 IoT à grande échelle / Large-scale IoT</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition élargie</div>
-      <div class="fr"><p>L'<strong>IoT</strong> (Internet of Things) peut être appréhendé à plusieurs niveaux : la <strong>maison</strong> (smarthome), la <strong>ville</strong> (smart city), le <strong>pays</strong> et la <strong>planète</strong>. L'interconnexion des objets génère de la <strong>big data</strong> qui alimente l'analytics et la prédiction dans des domaines variés : finance, médecine, météorologie, gestion urbaine, marketing.</p></div>
-      <div class="en"><p>The <strong>IoT</strong> (Internet of Things) can be understood at several levels: the <strong>home</strong> (smart home), the <strong>city</strong> (smart city), the <strong>country</strong> and the <strong>planet</strong>. The interconnection of devices generates <strong>big data</strong> that fuels analytics and prediction in many fields: finance, medicine, meteorology, urban management, marketing.</p></div>
-    </div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Advantages à grande échelle</div><ul>
-      <li class="fr"><strong>Commodité, économies, contrôle à distance</strong> et facilité d'usage</li><li class="en"><strong>Convenience, cost-efficiency, remote control</strong> and ease of use</li>
-      <li class="fr">Génération de <strong>big data</strong> : analytics et prédictions en médecine, météo, finance</li><li class="en">Generation of <strong>big data</strong>: analytics and predictions in medicine, weather, finance</li>
-      <li class="fr">À l'échelle d'une ville : <strong>économies d'énergie</strong>, régulation du trafic, gestion de l'eau</li><li class="en">At city scale: <strong>energy savings</strong>, traffic regulation, water management</li>
-    </ul></div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks à grande échelle</div><ul>
-      <li class="fr"><strong>Compatibilité</strong> : protocoles différents = impossibilité d'interopérer</li><li class="en"><strong>Compatibility</strong>: different protocols = inability to interoperate</li>
-      <li class="fr"><strong>Accès aux données</strong> : qui y accède, dans quel but, pour combien de temps ?</li><li class="en"><strong>Data access</strong>: who accesses it, for what purpose, for how long?</li>
-      <li class="fr">Risque d'<strong>atteinte aux libertés civiles</strong> par des gouvernements ou entreprises</li><li class="en">Risk of <strong>civil liberties infringement</strong> by governments or corporations</li>
-      <li class="fr">Cyberattaque sur réseau urbain = <strong>perturbation physique</strong> de toute une ville</li><li class="en">Cyberattack on urban network = <strong>physical disruption</strong> of an entire city</li>
-      <li class="fr">Risque encore plus grave pour <strong>centrales nucléaires, aéroports, systèmes de communication</strong></li><li class="en">Even greater risk for <strong>nuclear plants, airports, communication systems</strong></li>
-      <li class="fr">Une seule faille dans un objet = accès à tout un réseau (<strong>security loophole</strong>)</li><li class="en">One vulnerability in one device = access to the whole network (<strong>security loophole</strong>)</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions pour l'IoT mondial</div><ol>
-      <li><div class="fr">Adopter un <strong>protocole de communication universel</strong> (standardisation IoT)</div><div class="en">Adopt a <strong>universal communication protocol</strong> (IoT standardisation)</div></li>
-      <li><div class="fr"><strong>Anonymisation</strong> et chiffrement des données agrégées</div><div class="en"><strong>Anonymisation</strong> and encryption of aggregated data</div></li>
-      <li><div class="fr">Cadre juridique sur l'<strong>accès et la durée de conservation</strong> des données</div><div class="en">Legal framework on <strong>data access and retention period</strong></div></li>
-      <li><div class="fr"><strong>Protection renforcée</strong> des infrastructures critiques (énergie, transport, communications)</div><div class="en"><strong>Enhanced protection</strong> of critical infrastructure (energy, transport, communications)</div></li>
-      <li><div class="fr">Mises à jour de sécurité automatiques sur tous les objets connectés</div><div class="en">Automatic security updates on all connected objects</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ CYBERATTAQUES ══════════════ -->
-<div id="cyber" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--red-bg);">🔐</div>
-    <div><h2 class="fr">Les Types de Cyberattaques</h2><h2 class="en">Types of Cyberattacks</h2>
-    <p>Phishing · Ransomware · MITM · Botnet · DNS Spoofing…</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Contexte général / General context</div>
-      <div class="fr"><p>Les <strong>cyberattaques</strong> sont des actes malveillants visant des systèmes informatiques, des réseaux ou des données. Elles peuvent affecter des particuliers, des entreprises ou des États. Avec le développement de l'IoT et du cloud, les surfaces d'attaque s'élargissent considérablement.</p></div>
-      <div class="en"><p><strong>Cyberattacks</strong> are malicious acts targeting computer systems, networks or data. They can affect individuals, companies or governments. With the growth of IoT and cloud computing, the attack surface is significantly expanding.</p></div>
-    </div>
-
-    <!-- phishing -->
-    <div class="card risques-card"><div class="card-label label-risques">🎣 Phishing</div>
-      <div class="fr"><p><strong>Définition :</strong> Envoi de faux emails imitant des sources officielles pour pousser l'utilisateur à communiquer ses informations bancaires ou personnelles.</p><p style="margin-top:8px;"><strong>Spear phishing :</strong> idem mais ciblant une personne en particulier.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Sending fake emails mimicking official sources to trick users into sharing banking or personal credentials.</p><p style="margin-top:8px;"><strong>Spear phishing:</strong> same but targeting one specific person.</p></div>
-    </div>
-    <!-- pharming -->
-    <div class="card risques-card"><div class="card-label label-risques">🌐 Pharming</div>
-      <div class="fr"><p><strong>Définition :</strong> Redirection de la connexion d'un utilisateur vers un faux site web géré par un escroc pour voler ses informations financières ou identifiants de connexion.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Redirecting a user's connection to a fake website run by a scammer to steal financial information or login credentials.</p></div>
-    </div>
-    <!-- MITM -->
-    <div class="card risques-card"><div class="card-label label-risques">🕵️ Man in the Middle (MITM)</div>
-      <div class="fr"><p><strong>Définition :</strong> Interception des communications entre deux utilisateurs à leur insu. But : espionnage, vol d'identité, transferts non autorisés, changement de mot de passe.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Intercepting communications between two users without their knowledge. Goal: spying, identity theft, unauthorised fund transfers, password change.</p></div>
-    </div>
-    <!-- DoS -->
-    <div class="card risques-card"><div class="card-label label-risques">💥 Denial of Service (DoS)</div>
-      <div class="fr"><p><strong>Définition :</strong> Surcharge d'un serveur web par un très grand nombre de requêtes pour le faire planter et rendre le service indisponible. Le site ralentit puis se bloque.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Overloading a web server with a huge number of requests to crash it and make the service unavailable. The website slows down then shuts down.</p></div>
-    </div>
-    <!-- Zero day -->
-    <div class="card risques-card"><div class="card-label label-risques">🆕 Zero Day Attack</div>
-      <div class="fr"><p><strong>Définition :</strong> Attaque lors du lancement d'un nouveau logiciel. Les vulnérabilités sont inconnues des fabricants : les hackers exploitent les failles <strong>non encore corrigées</strong> par les concepteurs.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Attack targeting a newly launched software. Vulnerabilities are unknown to manufacturers: hackers exploit security loopholes <strong>not yet fixed</strong> by designers.</p></div>
-    </div>
-    <!-- Botnet -->
-    <div class="card risques-card"><div class="card-label label-risques">🤖 Botnet / Zombie Network</div>
-      <div class="fr"><p><strong>Définition :</strong> Un ordinateur infecté propage son code malveillant à travers un réseau pour infecter d'autres machines. Les infections peuvent venir de vers, chevaux de Troie ou fausses pièces jointes email.</p></div>
-      <div class="en"><p><strong>Definition:</strong> An infected computer spreads its malicious code through a network to infect other machines. Infections can be caused by worms, trojan horses or fake email attachments.</p></div>
-    </div>
-    <!-- Ransomware -->
-    <div class="card risques-card"><div class="card-label label-risques">💰 Ransomware</div>
-      <div class="fr"><p><strong>Définition :</strong> Malware qui bloque l'accès à vos données jusqu'au paiement d'une rançon. Le hacker chiffre les données et propose de les restituer contre de l'argent. <strong>Payer est risqué</strong> : aucune certitude de récupérer les données.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Malware that blocks access to your data until you pay a ransom. The hacker encrypts data and offers to restore it in exchange for money. <strong>Paying is risky</strong>: no certainty of recovering the data.</p></div>
-    </div>
-    <!-- DNS Spoofing -->
-    <div class="card risques-card"><div class="card-label label-risques">🔀 DNS Spoofing</div>
-      <div class="fr"><p><strong>Définition :</strong> Modification du DNS d'un serveur pour rediriger les utilisateurs vers un faux site web géré par le hacker, à la place du site légitime.</p></div>
-      <div class="en"><p><strong>Definition:</strong> Changing the DNS of a server to redirect users to a fake website run by the hacker, instead of the legitimate site.</p></div>
-    </div>
-
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Se protéger contre les cyberattaques / How to protect yourself</div><ol>
-      <li><div class="fr"><strong>Ne jamais cliquer</strong> sur des liens suspects dans les emails (anti-phishing)</div><div class="en"><strong>Never click</strong> on suspicious links in emails (anti-phishing)</div></li>
-      <li><div class="fr">Vérifier l'<strong>URL des sites</strong> visités (HTTPS, nom de domaine exact)</div><div class="en">Check the <strong>URL of websites</strong> visited (HTTPS, exact domain name)</div></li>
-      <li><div class="fr">Utiliser un <strong>VPN</strong> sur les réseaux Wi-Fi publics (protection contre MITM)</div><div class="en">Use a <strong>VPN</strong> on public Wi-Fi networks (protection against MITM)</div></li>
-      <li><div class="fr">Garder ses logiciels à jour pour <strong>corriger les failles zero-day</strong></div><div class="en">Keep software updated to <strong>fix zero-day vulnerabilities</strong></div></li>
-      <li><div class="fr"><strong>Sauvegardes régulières</strong> hors ligne (protection contre ransomware)</div><div class="en">Regular <strong>offline backups</strong> (protection against ransomware)</div></li>
-      <li><div class="fr">Utiliser un <strong>filtre anti-spam</strong> et un antivirus à jour</div><div class="en">Use an <strong>anti-spam filter</strong> and up-to-date antivirus</div></li>
-      <li><div class="fr">Authentification à <strong>deux facteurs (2FA)</strong> sur tous les comptes sensibles</div><div class="en"><strong>Two-factor authentication (2FA)</strong> on all sensitive accounts</div></li>
-      <li><div class="fr"><strong>Former les employés</strong> à reconnaître les tentatives de phishing et d'ingénierie sociale</div><div class="en"><strong>Train employees</strong> to recognise phishing and social engineering attempts</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
-
-<!-- ══════════════ ADDICTION ══════════════ -->
-<div id="addiction" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--purple-bg);">📵</div>
-    <div><h2 class="fr">Addiction Numérique</h2><h2 class="en">Digital Addiction</h2>
-    <p class="fr">Applications · Réseaux sociaux · Jeux vidéo · Conséquences</p>
-    <p class="en">Apps · Social media · Video games · Consequences</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>Une <strong>addiction numérique</strong> est une pulsion psychologique qui pousse quelqu'un à utiliser une application ou un appareil <strong>plus que raisonnablement</strong>. C'est un désir auquel la victime ne peut résister, qui finit par avoir des <strong>conséquences sociales, sanitaires et économiques</strong> sur sa vie.</p></div>
-      <div class="en"><p><strong>Digital addiction</strong> is a psychological drive that compels someone to use an app or device <strong>more than is reasonable</strong>. It is a desire the victim cannot resist, which ends up having <strong>social, health and economic consequences</strong> on their life.</p></div>
-    </div>
-
-    <div class="card extra-card"><div class="card-label label-extra">🧠 Causes & Mechanisms</div><ul>
-      <li class="fr">Applications conçues pour <strong>garder les utilisateurs accrochés</strong> (revenus publicitaires)</li><li class="en">Apps designed to keep users <strong>hooked</strong> (advertising revenues)</li>
-      <li class="fr">Système de <strong>récompenses</strong> (likes, followers) → libération de <strong>dopamine</strong> dans le cerveau</li><li class="en"><strong>Reward systems</strong> (likes, followers) → release of <strong>dopamine</strong> in the brain</li>
-      <li class="fr"><strong>FOMO</strong> (Fear Of Missing Out) : peur de rater quelque chose d'important</li><li class="en"><strong>FOMO</strong> (Fear Of Missing Out): fear of missing something important</li>
-      <li class="fr">Jeux vidéo : système de <strong>niveaux et récompenses</strong>, flou entre temps réel et jeu</li><li class="en">Video games: <strong>level and reward system</strong>, blurring of real time and game</li>
-      <li class="fr">Jeux vidéo : design de son <strong>avatar</strong>, sentiment d'utilité, frustration si arrêt</li><li class="en">Video games: designing one's <strong>avatar</strong>, sense of purpose, frustration if stopped</li>
-      <li class="fr">Sentiment d'<strong>appartenir à une communauté</strong> (réseaux sociaux)</li><li class="en">Feeling of <strong>belonging to a community</strong> (social media)</li>
-      <li class="fr"><strong>Évasion de la réalité</strong> : les jeux vidéo brouillent la notion de temps et d'espace</li><li class="en"><strong>Escaping reality</strong>: video games blur the notion of time and space</li>
+  <div class="piege"><b>À exclure absolument</b>
+    <ul>
+      <li>Traduction du texte, anglicismes.</li>
+      <li>Exemples (« par exemple »), conclusion, contradictions.</li>
+      <li>Métalangage : « l'auteur explique que… », « estime que… », « d'après un psychologue… ».</li>
+      <li>Noms propres, noms de fonctions (« le PDG »), valeurs chiffrées.</li>
+      <li>Explications personnelles : on restitue, on n'explique rien de plus.</li>
     </ul></div>
 
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Conséquences / Consequences</div><ul>
-      <li class="fr"><strong>Isolement social</strong> : les amis en ligne ne sont pas des amis dans la vraie vie</li><li class="en"><strong>Social isolation</strong>: online friends are not real-life friends</li>
-      <li class="fr"><strong>Hikikomori</strong> : phénomène asiatique de personnes qui ne quittent plus leur chambre</li><li class="en"><strong>Hikikomori</strong>: Asian phenomenon of people who never leave their room</li>
-      <li class="fr"><strong>Baisse des performances</strong> scolaires et professionnelles</li><li class="en"><strong>Drop in academic and professional performance</strong></li>
-      <li class="fr"><strong>Capacités cognitives altérées</strong> surtout si exposition dès le jeune âge</li><li class="en"><strong>Impaired cognitive abilities</strong>, especially if exposed from a young age</li>
-      <li class="fr"><strong>Sédentarité et manque de sommeil</strong> → forme physique dégradée</li><li class="en"><strong>Sedentary lifestyle and sleep deprivation</strong> → poorer physical fitness</li>
-      <li class="fr">Sentiment de <strong>solitude et isolement</strong> malgré une "communauté" virtuelle</li><li class="en">Feeling of <strong>loneliness and isolation</strong> despite a virtual "community"</li>
-      <li class="fr">Réduction des <strong>interactions familiales</strong></li><li class="en">Reduction of <strong>family interactions</strong></li>
+  <h3>Chiffres → quantificateurs</h3>
+  <p class="sub">Tes quantificateurs : <i>quelques, un petit nombre, certains, la majorité, une grande partie, tous</i>. J'ajoute <i>une minorité, la plupart, la quasi-totalité</i>.</p>
+  <div class="tw"><table>
+    <tr><th>Dans le texte</th><th>Dans ta synthèse</th></tr>
+    <tr><td>« 18 % d'écart » / « 600 % de hausse »</td><td>un écart important / une forte hausse</td></tr>
+    <tr><td>« one in five workers »</td><td>une minorité de salariés</td></tr>
+    <tr><td>« 70 % of respondents »</td><td>la majorité des personnes interrogées</td></tr>
+    <tr><td>« 98 % »</td><td>la quasi-totalité</td></tr>
+    <tr><td>« the CEO of Acme Corp »</td><td>un dirigeant</td></tr>
+  </table></div>
+
+  <h3>Avant / après : les réflexes à corriger</h3>
+  <div class="tw"><table>
+    <tr><th>À éviter</th><th>Attendu</th></tr>
+    <tr><td>« L'auteur explique que les femmes se sous-estiment. »</td><td>Les femmes se sous-estiment lors de leurs premiers entretiens.</td></tr>
+    <tr><td>« Par exemple, les salariés les mieux payés de la BBC… »</td><td>Ces écarts touchent même de grandes entreprises, ce qui a suscité la polémique.</td></tr>
+    <tr><td>« De plus, … De plus, … »</td><td>Les femmes visent trop bas, <b>si bien que</b> l'écart ne se comble jamais.</td></tr>
+    <tr><td>« D'après les recherches d'un psychologue… »</td><td>Il convient de gérer la jalousie et de ne pas laisser le problème empirer.</td></tr>
+  </table></div>
+
+  <div class="astuce"><b>Checklist avant de rendre</b>
+    <ul>
+      <li>Intro : nature, source, date, thème souligné ?</li>
+      <li>Aucun nom propre, aucun chiffre, aucun « par exemple », aucun « l'auteur » ?</li>
+      <li>Chaque paragraphe commence par un alinéa ; 4 ou 5 paragraphes ?</li>
+      <li>Connecteurs de cause / opposition présents, pas de « de plus » ?</li>
+      <li>Nombre de mots compté (180-200) ; orthographe relue (voir fiche 20) ?</li>
     </ul></div>
+</section>
 
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions / Solutions</div><ol>
-      <li><div class="fr"><strong>Réglementation des applications</strong> : limiter les mécanismes de récompense addictifs (loot boxes, likes illimités)</div><div class="en"><strong>App regulation</strong>: limit addictive reward mechanisms (loot boxes, unlimited likes)</div></li>
-      <li><div class="fr"><strong>Temps d'écran limité</strong> : outils parentaux, applications de suivi du temps d'écran</div><div class="en"><strong>Screen time limits</strong>: parental controls, screen time tracking apps</div></li>
-      <li><div class="fr"><strong>Éducation numérique</strong> à l'école : sensibiliser aux mécanismes de l'addiction</div><div class="en"><strong>Digital education</strong> at school: raise awareness of addiction mechanisms</div></li>
-      <li><div class="fr">Encourager les <strong>activités hors écran</strong> : sport, sorties, interactions sociales réelles</div><div class="en">Encourage <strong>off-screen activities</strong>: sport, outings, real social interactions</div></li>
-      <li><div class="fr"><strong>Accompagnement psychologique</strong> pour les cas d'addiction sévère</div><div class="en"><strong>Psychological support</strong> for severe addiction cases</div></li>
-      <li><div class="fr">Responsabilité des <strong>concepteurs d'applications</strong> : design éthique, sans mécanismes addictifs</div><div class="en">Responsibility of <strong>app designers</strong>: ethical design, without addictive mechanisms</div></li>
-      <li><div class="fr">Ne pas exposer les <strong>jeunes enfants</strong> aux écrans avant 3 ans, et limiter après</div><div class="en">Do not expose <strong>young children</strong> to screens before age 3, and limit afterwards</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
+<section class="fiche" id="f3" data-cat="cadre" data-title="Synthèse : banque de thèmes vus en cours">
+  <header><span class="num">3</span><h2>Synthèse : banque de thèmes vus en cours</h2></header>
+  <p class="sub">Idées clés reformulées à partir de <b>tes notes</b> (je n'ai pas relu les articles originaux). Elles servent à retrouver les arguments ; les chiffres et noms propres sont volontairement absents, comme dans une vraie synthèse. À compléter si ton texte de départ diffère.</p>
 
-<!-- ══════════════ E-WASTE ══════════════ -->
-<div id="ewaste" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--green-bg);">♻️</div>
-    <div><h2 class="fr">Déchets Électroniques (E-waste)</h2><h2 class="en">Electronic Waste (E-waste)</h2>
-    <p class="fr">Pollution · 41M tonnes/an · Recyclage · Solutions</p>
-    <p class="en">Pollution · 41M tonnes/year · Recycling · Solutions</p></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Definition</div>
-      <div class="fr"><p>L'<strong>e-waste</strong> désigne tous les appareils électriques et numériques arrivés en fin de vie : téléphones, ordinateurs, TV, télécommandes… Leur quantité explose à cause du <strong>renouvellement rapide des technologies</strong> et de l'<strong>obsolescence programmée</strong>. <strong>41 millions de tonnes</strong> de déchets électroniques sont générées chaque année dans le monde.</p></div>
-      <div class="en"><p><strong>E-waste</strong> refers to all end-of-life electrical and digital devices: phones, computers, TVs, remote controls… Their quantity is exploding due to the <strong>fast pace of technological renewal</strong> and <strong>planned obsolescence</strong>. <strong>41 million tonnes</strong> of e-waste are generated every year worldwide.</p></div>
-    </div>
-    <div class="card risques-card"><div class="card-label label-risques">⚠️ Risks</div><ul>
-      <li class="fr">Matériaux <strong>toxiques</strong> : plomb, mercure, métaux lourds dans les décharges</li><li class="en"><strong>Toxic materials</strong>: lead, mercury, heavy metals in landfills</li>
-      <li class="fr">Exportés vers les <strong>pays en développement</strong> : traitement dans des conditions dangereuses</li><li class="en">Exported to <strong>developing countries</strong>: processed in dangerous conditions</li>
-      <li class="fr">Brûlage → <strong>fumées cancérigènes</strong>, pollution air, sol, nappes phréatiques</li><li class="en">Burning → <strong>carcinogenic fumes</strong>, air, soil and water table pollution</li>
-      <li class="fr"><strong>Enfants et femmes enceintes</strong> très vulnérables (système nerveux, reproducteur)</li><li class="en"><strong>Children and pregnant women</strong> highly vulnerable (nervous and reproductive systems)</li>
-      <li class="fr">Épuisement des <strong>terres rares</strong> et ressources naturelles</li><li class="en">Depletion of <strong>rare earths</strong> and natural resources</li>
-    </ul></div>
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Pourquoi agir ? / Why act?</div><ul>
-      <li class="fr">Recycler : <strong>récupérer des métaux précieux</strong> (or, argent, cuivre)</li><li class="en">Recycling: <strong>recover precious metals</strong> (gold, silver, copper)</li>
-      <li class="fr">Crée des <strong>emplois verts</strong> dans le recyclage</li><li class="en">Creates <strong>green jobs</strong> in recycling</li>
-      <li class="fr">Réduit la pression sur les <strong>ressources naturelles</strong></li><li class="en">Reduces pressure on <strong>natural resources</strong></li>
-      <li class="fr">Reconditionnement : <strong>prolonge la durée de vie</strong> des appareils</li><li class="en">Refurbishment: <strong>extends the lifespan</strong> of devices</li>
-    </ul></div>
-    <div class="card solutions-card full"><div class="card-label label-solutions">💡 Solutions</div><ol>
-      <li><div class="fr"><strong>Recycler</strong> dans des filières agréées</div><div class="en"><strong>Recycle</strong> through authorised channels</div></li>
-      <li><div class="fr"><strong>Reconditionner / réparer</strong> (ex : Back Market)</div><div class="en"><strong>Refurbish / repair</strong> (e.g. Back Market)</div></li>
-      <li><div class="fr"><strong>Sensibiliser les consommateurs</strong> : ne pas racheter le dernier modèle chaque année</div><div class="en"><strong>Raise consumer awareness</strong>: don't buy the latest model every year</div></li>
-      <li><div class="fr"><strong>Interdire l'obsolescence programmée</strong> par la législation internationale</div><div class="en"><strong>Ban planned obsolescence</strong> through international legislation</div></li>
-      <li><div class="fr"><strong>Right to repair</strong> : droit de réparer soi-même ses appareils</div><div class="en"><strong>Right to repair</strong>: right to repair one's own devices</div></li>
-    </ol></div>
-  </div>
-</div>
-</div>
+  <details class="model" open><summary>Jalousie au travail · <i>The Guardian</i>, juin 2010</summary>
+    <ul>
+      <li>Une entreprise en rachète une autre : un cadre voit un collègue issu de la société rachetée s'approprier ses subordonnés en leur donnant des ordres directement.</li>
+      <li>Conséquence : discorde, distance dans l'équipe, puis démission du cadre.</li>
+      <li>Les chercheurs constatent que la jalousie nuit à la cohésion et coûte de l'argent, car les envieux refusent de reconnaître les bonnes idées des autres.</li>
+      <li>Comme elle fait partie de la nature humaine, il convient de la gérer : en parler avec ceux qui en souffrent, ne pas laisser le problème empirer, voire écarter les envieux.</li>
+    </ul></details>
 
-<!-- ══════════════ GRAMMAIRE ══════════════ -->
-<div id="grammaire" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--red-bg);">📝</div>
-    <div><h2 class="fr">Grammaire & Expressions Clés – BTS SIO</h2><h2 class="en">Grammar & Key Structures – BTS SIO</h2></div>
-  </div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">🔒 Prevent somebody from doing something</div>
-      <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
-        <tr><td>Complex passwords prevent hackers from accessing bank accounts.</td><td>Les mots de passe complexes empêchent les pirates d'accéder aux comptes bancaires.</td></tr>
-        <tr><td>The security system prevents unauthorised users from modifying data.</td><td>Le système de sécurité empêche les utilisateurs non autorisés de modifier les données.</td></tr>
-        <tr><td>Firewalls prevent hackers from entering the network.</td><td>Les pare-feu empêchent les hackers d'entrer dans le réseau.</td></tr>
-        <tr><td>Two-factor authentication prevents criminals from using stolen credentials.</td><td>L'authentification à deux facteurs empêche les criminels d'utiliser des identifiants volés.</td></tr>
-        <tr><td>Regular updates prevent cybercriminals from exploiting vulnerabilities.</td><td>Les mises à jour régulières empêchent les cybercriminels d'exploiter les failles.</td></tr>
-        <tr><td>The software blocks certain actions to prevent users from downloading dangerous files.</td><td>Le logiciel bloque certaines actions pour empêcher les utilisateurs de télécharger des fichiers dangereux.</td></tr>
-      </table>
-    </div>
-    <div class="card full"><div class="card-label label-avantages">⚡ Risk + V-ING</div>
-      <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
-        <tr><td>Companies risk losing important data after a cyberattack.</td><td>Les entreprises risquent de perdre des informations importantes après une cyberattaque.</td></tr>
-        <tr><td>Users risk getting hacked if they use weak passwords.</td><td>Les utilisateurs risquent de se faire pirater s'ils utilisent des mots de passe faibles.</td></tr>
-        <tr><td>Clicking on suspicious links risks damaging the computer.</td><td>Cliquer sur des liens suspects risque d'endommager l'ordinateur.</td></tr>
-        <tr><td>Internet users risk revealing their personal data unknowingly.</td><td>Les internautes risquent de révéler leurs données personnelles sans le vouloir.</td></tr>
-        <tr><td>Not protecting your Wi-Fi network risks attracting hackers.</td><td>Ne pas protéger son réseau Wi-Fi risque d'attirer des pirates.</td></tr>
-        <tr><td>Victims risk losing money because of online scams.</td><td>Les victimes risquent de perdre de l'argent à cause des arnaques en ligne.</td></tr>
-      </table>
-    </div>
-    <div class="card full"><div class="card-label label-risques">🔔 Warn somebody against something</div>
-      <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
-        <tr><td>Experts warn users against the dangers of phishing.</td><td>Les experts avertissent les utilisateurs des dangers du phishing.</td></tr>
-        <tr><td>The system warns the user when a login attempt is suspicious.</td><td>Le système avertit l'utilisateur lorsqu'une tentative de connexion est suspecte.</td></tr>
-        <tr><td>The bank warns its customers in case of unusual activity.</td><td>La banque avertit ses clients en cas d'activité inhabituelle.</td></tr>
-        <tr><td>Teachers warn students against the risks linked to social media.</td><td>Les enseignants avertissent les élèves des risques liés aux réseaux sociaux.</td></tr>
-        <tr><td>The software warns the user before opening a dangerous file.</td><td>Le logiciel avertit l'utilisateur avant d'ouvrir un fichier dangereux.</td></tr>
-        <tr><td>Authorities warn the public against new cyber threats.</td><td>Les autorités avertissent le public contre les nouvelles cybermenaces.</td></tr>
-      </table>
-    </div>
-    <div class="card full"><div class="card-label label-solutions">🚫 Avoid + V-ING</div>
-      <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
-        <tr><td>You should avoid sharing your personal information online.</td><td>Il faut éviter de partager ses informations personnelles en ligne.</td></tr>
-        <tr><td>Users must avoid opening unknown attachments.</td><td>Les utilisateurs doivent éviter d'ouvrir des pièces jointes inconnues.</td></tr>
-        <tr><td>Companies try to avoid security breaches.</td><td>Les entreprises essaient d'éviter les failles de sécurité.</td></tr>
-        <tr><td>It is advisable to avoid using the same password everywhere.</td><td>Il est conseillé d'éviter d'utiliser le même mot de passe partout.</td></tr>
-        <tr><td>To stay safe, avoid unsecured websites.</td><td>Pour rester en sécurité, il faut éviter les sites non sécurisés.</td></tr>
-        <tr><td>Internet users must avoid downloading illegal programmes.</td><td>Les internautes doivent éviter de télécharger des programmes illégaux.</td></tr>
-      </table>
-    </div>
-    <div class="card full"><div class="card-label label-def">🎁 Provide somebody with something</div>
-      <table class="vocab-table"><tr><th>EN</th><th>FR</th></tr>
-        <tr><td>Companies must provide employees with cybersecurity training.</td><td>Les entreprises doivent fournir aux employés une formation en cybersécurité.</td></tr>
-        <tr><td>The software provides users with protection against viruses.</td><td>Le logiciel fournit aux utilisateurs une protection contre les virus.</td></tr>
-        <tr><td>Banks provide their customers with tools to secure their accounts.</td><td>Les banques fournissent à leurs clients des outils pour sécuriser leurs comptes.</td></tr>
-        <tr><td>Experts provide companies with advice to improve their security.</td><td>Les experts fournissent aux entreprises des conseils pour améliorer leur sécurité.</td></tr>
-        <tr><td>Online platforms provide users with privacy options.</td><td>Les plateformes en ligne fournissent aux utilisateurs des options de confidentialité.</td></tr>
-        <tr><td>Schools provide students with information on digital security.</td><td>Les écoles fournissent aux élèves des informations sur la sécurité numérique.</td></tr>
-      </table>
-    </div>
-  </div>
-</div>
-</div>
+  <details class="model"><summary>Pénurie de main-d'œuvre et démissions · BBC, 12 septembre 2022</summary>
+    <ul>
+      <li>Les démissions ont atteint des niveaux records depuis la pandémie : reconversions, changements d'emploi, sortie du marché du travail.</li>
+      <li>Secteurs touchés : services à la personne, commerce, transports.</li>
+      <li>Causes : salaires trop bas, peu de perspectives d'évolution, manque de respect. Ce n'est pas un refus de travailler.</li>
+      <li>Les primes d'embauche et les hausses de salaire ne suffisent pas : il faut aussi plus de flexibilité et de prévisibilité des horaires.</li>
+    </ul></details>
 
-<!-- ══════════════ COURRIEL ══════════════ -->
-<div id="courriel" class="theme-section">
-<div class="container">
-  <div class="section-title">
-    <div class="section-icon" style="background:var(--green-bg);">✉️</div>
-    <div><h2 class="fr">Professional Email – Format & Templates</h2><h2 class="en">Professional Email – Format & Templates</h2></div>
-  </div>
+  <details class="model"><summary>« Quiet quitting » (démission silencieuse) · BBC, 2022</summary>
+    <ul>
+      <li>Il ne s'agit pas de quitter son poste mais de <b>refuser d'en faire plus</b> que ce qui est demandé : plus d'heures supplémentaires non payées ni de responsabilités en plus.</li>
+      <li>Le phénomène, né en Asie et popularisé par une vidéo en ligne, s'est amplifié après la pandémie.</li>
+      <li>Une salariée déçue par des promesses non tenues, humiliée, a fini par démissionner.</li>
+      <li>Deux lectures : pour certains employeurs, un manque d'engagement ; pour de nombreux salariés, une façon saine de poser des limites.</li>
+      <li>Il révèle un décalage entre les attentes des entreprises et celles des salariés (reconnaissance, sens, équilibre).</li>
+    </ul></details>
 
-  <div class="sub-label">📋 General structure</div>
-  <div class="cards">
-    <div class="card full"><div class="card-label label-def">📖 Required elements</div>
-      <div class="email-block">
-        <div><span class="e-label">From : </span><span class="e-val">james.brian@gmail.com</span></div>
-        <div><span class="e-label">To : </span><span class="e-val">john.berry@gmail.com</span></div>
-        <div><span class="e-label">Subject : </span><span class="e-val">Cybercriminality [clear and precise subject]</span></div>
-        <div style="margin-top:8px;"><span class="e-label">Date : </span><span class="e-val">London, November the 3rd 2020</span></div>
-        <div style="margin-top:12px;"><span class="e-val">Dear Mr Berry,  /  Dear Sir,  /  Dear Madam,</span></div>
-        <div style="margin-top:12px;color:var(--text3);">[Email body — structured paragraphs]</div>
-        <div style="margin-top:12px;"><span class="e-val">Yours Sincerely  /  Yours faithfully</span></div>
-        <div><span class="e-val">James Brian</span></div>
+  <details class="model"><summary>La génération Z au travail · presse britannique, 17 novembre 2025</summary>
+    <ul>
+      <li>Cette génération est jugée sévèrement (peu rigoureuse, trop sûre d'elle), mais les générations précédentes ont subi les mêmes reproches : chaque génération critique la suivante.</li>
+      <li>Ces jeunes se méfient des institutions et des employeurs, privilégient le bien-être et cherchent un travail qui a du sens, sans renoncer à l'engagement.</li>
+      <li>Une grande partie de la génération précédente partage ce point de vue : le rapport au travail évolue pour tous.</li>
+    </ul></details>
+
+  <details class="model"><summary>Économie des plateformes et algorithmes · <i>The Guardian</i>, janvier 2025</summary>
+    <ul>
+      <li>Dans les applications de livraison, des algorithmes attribuent les courses, fixent les distances et influencent les revenus.</li>
+      <li>Leurs critères sont opaques, et des évaluations (performance, fiabilité, notes clients) peuvent limiter l'accès aux courses rentables ou entraîner la désactivation du compte.</li>
+      <li>Décisions automatisées : difficile de les contester ou de joindre un responsable humain (reconnaissance faciale défaillante, perte de connexion).</li>
+      <li>Conséquences : stress, sentiment d'injustice, revenus et horaires incertains. Des syndicats réclament de la transparence.</li>
+    </ul></details>
+
+  <details class="model"><summary>Surveillance des employés par l'IA · <i>The Guardian</i>, 7 janvier 2024</summary>
+    <ul>
+      <li>Des technologies, dont l'intelligence artificielle, surveillent et évaluent les employés, jusqu'à les sanctionner ou les licencier sans intervention humaine.</li>
+      <li class="small">Tes notes s'arrêtent ici : complète avec la suite de l'article (croissance de ces outils, réactions, limites).</li>
+    </ul></details>
+
+  <details class="model"><summary>Écart salarial femmes-hommes · <i>The Independent</i>, 20 juillet 2017</summary>
+    <ul>
+      <li>Les femmes se sous-estiment dès leurs premiers entretiens : elles annoncent des prétentions salariales trop basses.</li>
+      <li>À long terme, l'écart ne se rattrape jamais, car les attentes divergent dès le départ.</li>
+      <li>Malgré les efforts de la société, les progrès sont lents ; un scandale a éclaté dans un grand groupe médiatique.</li>
+      <li>Solution évoquée : obliger les entreprises à publier leurs statistiques salariales.</li>
+    </ul></details>
+
+  <details class="model"><summary>Alimentation en entreprise (cafétérias) · article vu en correction</summary>
+    <ul>
+      <li>Dans la plupart des entreprises, les cafétérias sont délaissées ; elles sont remplacées par des espaces plus petits et plus confortables qui favorisent les relations entre collègues.</li>
+      <li>Ces aménagements visent surtout les jeunes, attachés à une alimentation plus saine, écologique et respectueuse de l'environnement.</li>
+      <li>Les entreprises qui négligent ce service risquent de perdre en attractivité : la nourriture est un facteur de recrutement, si bien que certaines offrent des repas ou des bons de réduction.</li>
+    </ul></details>
+</section>
+<div class="group-title" data-group="ecrit">Expression écrite en anglais</div>
+
+<section class="fiche" id="f4" data-cat="ecrit" data-title="Courrier et e-mail : le format">
+  <header><span class="num">4</span><h2>Courrier et e-mail : le format</h2></header>
+  <p class="sub">On ne traduit pas les consignes : on les <b>respecte</b> (destinataire, ton, informations demandées). Coche chaque consigne avant de rendre.</p>
+
+  <div class="cols">
+    <div>
+      <h3>Lettre</h3>
+      <div class="letter">
+        <p class="r">Expéditeur (en haut à droite)<br>Ville, date<br><span class="small">London, November the 3rd, 2025</span></p>
+        <p>Destinataire : nom, fonction, adresse (en haut à gauche)</p>
+        <p><b>Dear Mr Feder,</b> / <b>Dear Ms Smith,</b> / <b>Dear Sir or Madam,</b></p>
+        <p>§1 objet · §2 développement · §3 demande / attente</p>
+        <p><i>Should you need more information on this topic, please do not hesitate to get back to me.</i></p>
+        <p><b>Yours sincerely,</b> / <b>Yours faithfully,</b><br>Nom inventé</p>
       </div>
     </div>
-
-    <div class="card full"><div class="card-label label-def">📌 When to use what</div>
-      <table class="vocab-table">
-        <tr><th>Phrase</th><th>When?</th><th>Usage</th></tr>
-        <tr><td>Dear Mr / Mrs [Nom]</td><td>You know the name</td><td>You know the name</td></tr>
-        <tr><td>Dear Sir / Dear Madam</td><td>You don't know the name</td><td>You don't know the name</td></tr>
-        <tr><td>Yours Sincerely</td><td>You know the name (Dear Mr X)</td><td>You know the name</td></tr>
-        <tr><td>Yours faithfully</td><td>You don't know the name (Dear Sir)</td><td>You don't know the name</td></tr>
-        <tr><td>Best regards / Kind regards</td><td>Semi-formal, friendly</td><td>Semi-formal, friendly</td></tr>
-      </table>
-    </div>
-
-    <div class="card avantages-card"><div class="card-label label-avantages">✅ Opening phrases</div><ul>
-      <li><span class="fr">With reference to your email dated…, I would like to…</span><span class="en">With reference to your email dated…, I would like to…</span></li>
-      <li><span class="fr">In reply to your mail, I would like to thank you for…</span><span class="en">In reply to your mail, I would like to thank you for…</span></li>
-      <li><span class="fr">I am writing to you regarding…</span><span class="en">I am writing to you regarding…</span></li>
-      <li><span class="fr">I would like to comment on / discuss / present…</span><span class="en">I would like to comment on / discuss / present…</span></li>
-      <li><span class="fr">Following our last meeting / conversation…</span><span class="en">Following our last meeting / conversation…</span></li>
-    </ul></div>
-
-    <div class="card extra-card"><div class="card-label label-extra">💬 Closing phrases</div><ul>
-      <li><span class="fr">Should you need more information, please do not hesitate to contact me.</span><span class="en">Should you need more information, please do not hesitate to contact me.</span></li>
-      <li><span class="fr">I remain at your disposal for any further questions.</span><span class="en">I remain at your disposal for any further questions.</span></li>
-      <li><span class="fr">Do not hesitate to get back to me.</span><span class="en">Do not hesitate to get back to me.</span></li>
-      <li><span class="fr">I look forward to hearing from you.</span><span class="en">I look forward to hearing from you.</span></li>
-    </ul></div>
-
-    <div class="card full"><div class="card-label label-solutions">📧 Template 1 – Cybercrime email</div>
-      <div class="email-block">
-        <div>From : james.brian@gmail.com</div>
-        <div>To : john.berry@gmail.com</div>
-        <div>Subject : Cybercriminality</div>
-        <div style="margin-top:8px;">London, November the 3rd 2020</div>
-        <div style="margin-top:12px;">Dear Mr Berry,</div>
-        <div style="margin-top:10px;">With reference to your email dated September the 20th, I would like to comment on / discuss / present the different malware and precautions that should be taken against them.</div>
-        <div style="margin-top:10px;">[Develop: phishing, ransomware, BYOD risks, solutions…]</div>
-        <div style="margin-top:10px;">Should you need more information on this topic, please do not hesitate to get back to me.</div>
-        <div style="margin-top:12px;">Yours Sincerely</div>
-        <div>James Brian</div>
-      </div>
-    </div>
-
-    <div class="card full"><div class="card-label label-solutions">📧 Template 2 – Fixed-term to permanent contract (Sam Burton)</div>
-      <div class="email-block">
-        <div>From : sam.burton@....com</div>
-        <div>To : m.blanchett@spinbrands.co.uk</div>
-        <div>Subject : Three-month fixed-term contract</div>
-        <div style="margin-top:8px;">[City], [Date]</div>
-        <div style="margin-top:12px;">Dear Mrs./Mr. Blanchett,</div>
-        <div style="margin-top:10px;">With this e-mail, I would like to thank you for your offer and to inform you how grateful I am.</div>
-        <div style="margin-top:8px;">Needless to say that I am very interested in the position but I would like to get more information concerning the different tasks related to it, the timetable and the wage. I would also like to know if it is reasonable to hope to turn this contract into a permanent one later.</div>
-        <div style="margin-top:8px;">I would be very happy to be granted this position because I know the work environment from my internship. Yet, I should admit I have applied for other positions and I am waiting for some answers.</div>
-        <div style="margin-top:10px;">I remain at your disposal for any further questions.</div>
-        <div style="margin-top:12px;">Best regards,</div>
-        <div>Sam Burton</div>
+    <div>
+      <h3>E-mail</h3>
+      <div class="letter">
+        <p><b>From :</b> adresse de l'expéditeur<br><b>To :</b> adresse du destinataire<br><b>Subject :</b> objet clair et court</p>
+        <p><b>Dear Mr/Ms Blanchett,</b></p>
+        <p>§1 objet · §2 développement · §3 demande / attente</p>
+        <p><i>Kind regards,</i> / <i>Best regards,</i><br>Prénom Nom inventé</p>
       </div>
     </div>
   </div>
-</div>
-</div>
 
-<a href="#" class="back-top" id="backTop">↑</a>
+  <div class="retenir"><b>Yours sincerely ou Yours faithfully ?</b>
+    <p><b>Yours sincerely</b> si tu écris <i>Dear Mr Feder</i> (tu connais le nom). <b>Yours faithfully</b> si tu écris <i>Dear Sir or Madam</i>.</p>
+    <p class="small">Correction de ta note : elle disait « sincerely si je sais qui parle, faithfully si je ne connais pas la personne » ; le critère est bien le nom du destinataire dans la formule d'appel.</p></div>
+
+  <h3>Règles à retenir</h3>
+  <ul>
+    <li><b>Ne jamais signer de ton vrai nom</b> : invente-en un (ex. Jessica Brian).</li>
+    <li>Répondre à un courrier : <i>With reference to your email dated September the 20th, I would like to comment on…</i></li>
+    <li>Écrire au nom de quelqu'un : <i>on behalf of</i> (<i>I am writing on behalf of the CEO</i>).</li>
+    <li>Ta note de cours : la conclusion n'est <b>pas seulement une phrase de politesse</b>. Termine par ce que tu attends du destinataire (une décision, une intervention, un vote), puis la formule finale.</li>
+    <li>Ton professionnel : pas de contractions familières, pas d'abréviations, phrases simples et correctes.</li>
+  </ul>
+
+  <div class="piege"><b>Fautes vues dans tes brouillons</b>
+    <ul>
+      <li><span class="bad">I am just received</span> → <span class="ok">I have just received</span></li>
+      <li><span class="bad">very interessing on your proposal</span> → <span class="ok">very interested in your proposal</span></li>
+      <li><span class="bad">a issue</span> → <span class="ok">an issue</span></li>
+      <li><span class="bad">more informations</span> → <span class="ok">more information</span> (indénombrable)</li>
+      <li><span class="bad">3 mouths contract</span> → <span class="ok">a three-month contract</span></li>
+      <li><span class="bad">my responds</span> → <span class="ok">my response</span></li>
+    </ul></div>
+</section>
+
+<section class="fiche" id="f5" data-cat="ecrit" data-title="Courrier : phrases utiles par situation">
+  <header><span class="num">5</span><h2>Courrier : phrases utiles par situation</h2></header>
+  <p class="sub">Toutes tirées de tes corrigés (plainte, demande, réponse à une offre, mesures RH, rappel d'engagements).</p>
+
+  <h3>Ouvrir le courrier</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">I am writing to inform you / to suggest / to draw your attention to…</td><td class="fr">Je vous écris pour vous informer / suggérer / attirer votre attention sur…</td></tr>
+    <tr><td class="en">I am writing on behalf of the CEO.</td><td class="fr">J'écris au nom du PDG.</td></tr>
+    <tr><td class="en">Following the acquisition (the purchase) of X by our company, …</td><td class="fr">Suite au rachat de X par notre entreprise, …</td></tr>
+    <tr><td class="en">With reference to your email dated…, I would like to comment on…</td><td class="fr">En référence à votre e-mail du…, je souhaite réagir à…</td></tr>
+    <tr><td class="en">I have just received your proposal and I am very grateful for your offer.</td><td class="fr">Je viens de recevoir votre proposition et vous en remercie.</td></tr>
+    <tr><td class="en">As a happiness manager, I have been assigned the task to improve wellbeing.</td><td class="fr">En tant que responsable du bonheur, j'ai été chargé d'améliorer le bien-être.</td></tr>
+  </table></div>
+
+  <h3>Signaler un problème</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">I would like to discuss an issue with Mr Hendricks.</td><td class="fr">Je souhaite évoquer un problème avec M. Hendricks.</td></tr>
+    <tr><td class="en">He undermines my authority in front of my staff.</td><td class="fr">Il sape mon autorité devant mon équipe.</td></tr>
+    <tr><td class="en">He gives instructions to my staff without my permission.</td><td class="fr">Il donne des instructions à mon équipe sans mon accord.</td></tr>
+    <tr><td class="en">This situation is detrimental to the way the company works.</td><td class="fr">Cette situation nuit au fonctionnement de l'entreprise.</td></tr>
+    <tr><td class="en">This issue has to be sorted out as soon as possible.</td><td class="fr">Ce problème doit être réglé au plus vite.</td></tr>
+    <tr><td class="en">I have tried to talk to him, but to no avail.</td><td class="fr">J'ai essayé de lui parler, sans résultat.</td></tr>
+    <tr><td class="en">That is why I would like you to intervene.</td><td class="fr">C'est pourquoi j'aimerais que vous interveniez.</td></tr>
+    <tr><td class="en">The company has received a lot of complaints about wage inequalities between female and male employees.</td><td class="fr">L'entreprise a reçu de nombreuses plaintes sur les inégalités salariales entre femmes et hommes.</td></tr>
+    <tr><td class="en">Bonuses are granted mostly to men, and men are promoted more often than women.</td><td class="fr">Les primes sont surtout accordées aux hommes, qui sont promus plus souvent.</td></tr>
+    <tr><td class="en">We would like to remind you that the company got committed to a gender equality policy.</td><td class="fr">Nous vous rappelons que l'entreprise s'est engagée dans une politique d'égalité.</td></tr>
+    <tr><td class="en">These inequalities are detrimental to the atmosphere in the company and have a negative impact on its results.</td><td class="fr">Ces inégalités nuisent à l'ambiance et pèsent sur les résultats.</td></tr>
+  </table></div>
+
+  <h3>Faire une demande, répondre à une offre</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">I would now like to switch to a part-time job because I need to look after a sick relative.</td><td class="fr">Je souhaite passer à temps partiel pour m'occuper d'un proche malade.</td></tr>
+    <tr><td class="en">I am sure my productivity will remain the same.</td><td class="fr">Je suis sûr que ma productivité restera la même.</td></tr>
+    <tr><td class="en">I thank you for taking my request into consideration and I hope it will get a positive answer.</td><td class="fr">Merci d'étudier ma demande ; j'espère une réponse favorable.</td></tr>
+    <tr><td class="en">I am very interested in your proposal.</td><td class="fr">Votre proposition m'intéresse beaucoup.</td></tr>
+    <tr><td class="en">However, I would like more information about the job, in particular my wages, my time schedule and the tasks I will have to perform.</td><td class="fr">J'aimerais toutefois en savoir plus, notamment sur le salaire, les horaires et les missions.</td></tr>
+    <tr><td class="en">I am wondering whether this temporary job could turn into a permanent one.</td><td class="fr">Je me demande si ce poste temporaire pourrait devenir permanent.</td></tr>
+    <tr><td class="en">I am still waiting for answers to some of my other applications.</td><td class="fr">J'attends encore des réponses à d'autres candidatures.</td></tr>
+  </table></div>
+
+  <h3>Proposer des mesures</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">Your company faces financial constraints and cannot implement all these measures.</td><td class="fr">Votre entreprise a des contraintes financières et ne peut pas tout mettre en place.</td></tr>
+    <tr><td class="en">You will be kindly requested to vote for the measures you consider the most relevant.</td><td class="fr">Nous vous prions de voter pour les mesures qui vous semblent les plus pertinentes.</td></tr>
+    <tr><td class="en">You may also have the possibility to sign up for cooking lessons.</td><td class="fr">Vous pourrez aussi vous inscrire à des cours de cuisine.</td></tr>
+    <tr><td class="en">We are also considering creating a rest area equipped with sofas and armchairs.</td><td class="fr">Nous envisageons aussi de créer un espace de repos avec canapés et fauteuils.</td></tr>
+    <tr><td class="en">Whenever the traffic is heavy, you may leave before the rush hour.</td><td class="fr">Quand la circulation est dense, vous pourrez partir avant l'heure de pointe.</td></tr>
+  </table></div>
+  <div class="piege"><b>Attention</b>
+    <p>Le corrigé de ton cours écrit « we contemplate <u>to create</u> ». La construction standard est <b>contemplate + V-ing</b> (<i>contemplate creating</i>). Ici j'ai mis <i>considering creating</i>, que tu peux réutiliser sans risque.</p></div>
+
+  <h3>Conclure</h3>
+  <ul>
+    <li><i>Should you need more information on this topic, please do not hesitate to get back to me.</i></li>
+    <li><i>I look forward to hearing from you.</i></li>
+    <li><i>Please do not forget to vote for the measures.</i> (rappel de l'action attendue)</li>
+  </ul>
+
+  <h3>Connecteurs</h3>
+  <p><i>however, therefore, indeed, furthermore, moreover, additionally, in particular, that is why, so that, as soon as possible, despite, whereas</i></p>
+</section>
+
+<section class="fiche" id="f6" data-cat="ecrit" data-title="Courriers modèles corrigés">
+  <header><span class="num">6</span><h2>Courriers modèles corrigés</h2></header>
+  <p class="sub">Lis-les, puis refais-en un de mémoire en respectant une consigne fictive.</p>
+
+  <details class="model" open><summary>Demande de passage à temps partiel (corrigé du cours)</summary>
+    <div class="letter">
+      <p class="r">London, April the 5th 2024<br>Sam Mortimer<br>manager assistant at Fab5</p>
+      <p>Mary Smith<br>CEO of Fab5</p>
+      <p>Dear Mrs Smith,</p>
+      <p>I have been working in our company for ten years. I have to say that I am very satisfied with my full-time position. I have really appreciated all the tasks I had to perform and the work atmosphere over all those years.</p>
+      <p>However, I would now like to switch to a part-time occupation because I need to focus on some family members who are sick. Indeed, looking after them takes me a lot of time, which makes it difficult for me to have an appropriate work-life balance.</p>
+      <p>That is why I would like to have free afternoons. I am sure my productivity will remain the same while the company's image could benefit from me working part-time. The company will pay less taxes as well.</p>
+      <p>I thank you for taking into consideration my request and I hope it will get a positive answer.</p>
+      <p class="r">Yours sincerely,<br>Sam Mortimer</p>
+    </div>
+    <p class="small">Structure : ancienneté et satisfaction → demande + raison → solution + bénéfice pour l'entreprise → remerciement.</p></details>
+
+  <details class="model"><summary>E-mail : des mesures pour le bien-être (corrigé du cours)</summary>
+    <div class="letter">
+      <p><b>From :</b> dylan.rsbn@corporatehappiness.com<br><b>To :</b> Look!glasses.co.uk<br><b>Subject :</b> Wellness / Wellbeing in your company</p>
+      <p>Dear collaborators,</p>
+      <p>As a happiness manager, I have been assigned the task to improve wellbeing at your workplace and that is why I would like to suggest measures to make your work days more pleasant.</p>
+      <p>However, your company faces financial constraints and cannot implement all these measures. Therefore you will be kindly requested to vote for the measures that you consider the most relevant.</p>
+      <p>Your company can give you access to laptops and flexible work spaces. You may also have the possibility to sign up for a class of cooking lessons or sophrology. We are also considering creating a space dedicated to rest, equipped with sofas and armchairs.</p>
+      <p>In case you are hungry or thirsty, you may have access to cold or hot snacks and drinks all day long. And whenever the traffic is dense, you may be given the opportunity to leave the company before the 5 pm traffic jams.</p>
+      <p>Please do not forget to vote for the measures you consider the most relevant.</p>
+      <p>Best regards,<br>Dylan Robinson</p>
+    </div>
+    <p class="small">Deux retouches de ma part : « at your workplace » (au lieu de « on ») et « considering creating ». Le reste est le corrigé.</p></details>
+
+  <details class="model"><summary>Réponse à une offre de CDD (ton brouillon, corrigé)</summary>
+    <div class="letter">
+      <p><b>From :</b> sam.burton@outlook.com<br><b>To :</b> m.blanchett@outlook.com<br><b>Subject :</b> Response to your three-month fixed-term contract offer</p>
+      <p>Dear Mr/Ms Blanchett,</p>
+      <p>I have just received your proposal and I am very grateful for your offer. I would like you to know that I am very interested in it.</p>
+      <p>However, I would like to have more information about the job. In particular, I would like to know what my wages will be and what my time schedule will be, and I would like to know which tasks I will have to perform. I am also wondering whether this temporary job could turn into a permanent one.</p>
+      <p>Please note that I am still waiting for answers to some of my applications for fixed-term contracts.</p>
+      <p>Should you need more information on this topic, please do not hesitate to get back to me.</p>
+      <p>Kind regards,<br>Sam Burton</p>
+    </div></details>
+
+  <details class="model"><summary>Conflit avec un collègue après un rachat (ton « ee1 », corrigé)</summary>
+    <div class="letter">
+      <p class="r">London, November the 3rd, 2025<br>Charlie Soandso<br>MTO</p>
+      <p>Roger Feder<br>MTO</p>
+      <p>Dear Mr Feder,</p>
+      <p>I am writing to you following the acquisition of London Messengers by our company. I now work with Mr Hendricks, the former assistant of the CEO of London Messengers. As he is older than me, he resents my position. For instance, he gives instructions to my staff without my permission, which contributes to eroding my authority.</p>
+      <p>This issue has to be sorted out as soon as possible because this situation is detrimental to the way the company works. I have tried to talk to Mr Hendricks, but to no avail. That is why I would like you to intervene and speak to him directly.</p>
+      <p>Should you need more information on this topic, please do not hesitate to get back to me.</p>
+      <p class="r">Yours sincerely,<br>Charlie Soandso</p>
+    </div></details>
+</section>
+<div class="group-title" data-group="oral">Oral</div>
+
+<section class="fiche" id="f7" data-cat="oral" data-title="Oral : règles et pièges">
+  <header><span class="num">7</span><h2>Oral : règles et pièges</h2></header>
+  <p class="sub">Tout vient de tes notes de cours et du sujet zéro n°4 (session 2021, sous-épreuve U12).</p>
+
+  <div class="cols">
+    <div>
+      <h3>À faire</h3>
+      <ul>
+        <li>Annoncer le <b>nombre de documents</b>, le <b>thème</b>, puis un <b>plan en 3 temps</b>.</li>
+        <li>Dire <b>document A / document B / document C</b> (sans « the » devant).</li>
+        <li>Regrouper les documents qui traitent du même point : le nombre de parties dépend de la nature du dossier.</li>
+        <li>Répondre <b>en situation</b> (« you are an IT technician… ») : conseils avec <i>you should…</i></li>
+        <li>Montrer que tu maîtrises le vocabulaire (informatique, RH) : va droit au sujet, sans détour.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>À éviter</h3>
+      <ul>
+        <li>Dire « the first document » : le jury ne sait pas lequel c'est.</li>
+        <li><b>Lire des extraits</b> des documents au jury : interdit.</li>
+        <li>Passer 20 minutes sur la vidéo.</li>
+        <li>Raconter des exemples pendant les 5 minutes : mets-les de côté pour l'échange.</li>
+        <li>Réciter un texte appris par cœur : le jury pose ensuite des questions ouvertes.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="astuce"><b>Ton brouillon</b>
+    <p>Il reste utilisable devant le jury. Écris-y : l'intro complète, les mots-clés de chaque partie, une phrase modèle par réponse aux questions. Pas de texte rédigé : tu le lirais.</p></div>
+
+  <h3>Comment évaluer un dossier en 20 minutes</h3>
+  <div class="tw"><table>
+    <tr><th>Type de document</th><th>Ce qu'il faut repérer</th></tr>
+    <tr><td>Vidéo</td><td>Titre, source, date, qui parle, 2 ou 3 idées (chiffre clé, problème, solution).</td></tr>
+    <tr><td>Texte / article</td><td>Nature, source, thème, cause → conséquence → solution.</td></tr>
+    <tr><td>Capture d'écran / infographie</td><td>Ce qu'on voit, qui est visé, quelle action est demandée, à quelle échéance.</td></tr>
+  </table></div>
+</section>
+
+<section class="fiche" id="f8" data-cat="oral" data-title="Oral : trame de présentation (5 min)">
+  <header><span class="num">8</span><h2>Oral : trame de présentation (5 min)</h2></header>
+
+  <div class="retenir"><b>Trame</b>
+    <p><i>This folder is composed of <mark>X</mark> documents.</i><br>
+    <i>It deals with <mark>[thème]</mark>.</i><br>
+    <i><b>First</b>, I will discuss / comment on / analyse / highlight / lay stress on <mark>…</mark></i><br>
+    <i><b>Second</b>, I will …</i><br>
+    <i><b>And finally</b>, I will …</i></p></div>
+
+  <h3>Verbes d'annonce</h3>
+  <p><i>discuss, comment on, analyse, highlight, lay stress on, focus on, deal with, explain, point out</i></p>
+
+  <h3>Présenter un document</h3>
+  <ul>
+    <li><i>Document A is a video from … dated … It shows / explains that…</i></li>
+    <li><i>Document C is a screenshot of a ransomware attack which encrypts the data of the victim…</i></li>
+    <li><i>According to the video / to document B, …</i> (à l'oral, on peut citer la source)</li>
+    <li>Enchaîner : <i>So the first question is… / Now I will focus on document C…</i></li>
+  </ul>
+
+  <details class="model" open><summary>Exemple corrigé : cyberattaques contre les PME (d'après ton brouillon)</summary>
+    <div class="letter">
+      <p>This folder is composed of three documents. It deals with cyberattacks against small and medium-sized companies.</p>
+      <p><b>First</b>, I will discuss the rise in cyberattacks and explain why small businesses are targeted. Cybercrime has soared and small companies are easy targets: they do not know how to tackle the problem and they are more likely to pay a ransom.</p>
+      <p><b>Then</b>, I will analyse why it is difficult to protect them. Good cybersecurity is prohibitively expensive, there is a shortage of experts, and according to the video, cyber insurance is not a solution.</p>
+      <p><b>Finally</b>, I will focus on document C, a screenshot of a ransomware attack. A countdown warns the victim that the files will be lost forever after seven days. The victim has to pay in Bitcoin and, ironically, the hackers even explain how to do it.</p>
+    </div>
+    <p class="small">Remarque : ce brouillon regroupait les documents A et B sous une même idée (« pourquoi les petites entreprises sont visées », puis « pourquoi elles sont difficiles à protéger »), puis traitait C à part : c'est le bon réflexe.</p></details>
+
+  <details class="model"><summary>Exemple corrigé : dossier sur les objets connectés (sujet vu en cours)</summary>
+    <div class="letter">
+      <p>This folder is composed of three documents. It deals with the Internet of Things, in particular smart-home technologies and the cybersecurity challenges they raise.</p>
+      <p><b>First</b>, I will comment on document A, an infographic about a company which makes smart thermostats. It shows that connected devices learn from users' habits to save energy and improve comfort.</p>
+      <p><b>Second</b>, I will analyse document B, a video which explains how easy it is to hack a smart home. Weak or default passwords, missing updates and poorly configured networks let hackers reach the devices.</p>
+      <p><b>And finally</b>, I will highlight document C, a text about cyberattacks on smart farming. Because farms rely on many different connected devices, a simple denial-of-service attack can shut down sensors at a critical time such as harvest.</p>
+    </div>
+    <p class="small">Construit à partir de tes notes sur les trois documents (thermostat, vidéo « It's THIS easy to hack your smart home », article sur l'agriculture connectée).</p></details>
+</section>
+
+<section class="fiche" id="f9" data-cat="oral" data-title="Oral : l'échange et le sujet zéro n°4">
+  <header><span class="num">9</span><h2>Oral : l'échange et le sujet zéro n°4</h2></header>
+
+  <h3>Cinq types de réponse</h3>
+  <div class="tw"><table>
+    <tr><th>Question</th><th>Structure</th></tr>
+    <tr><td>Définir</td><td><i>X refers to… / X is a … which …</i></td></tr>
+    <tr><td>Décrire des avantages</td><td><i>It enables / allows you to… / Thanks to X, you don't have to… / It is cost-efficient.</i></td></tr>
+    <tr><td>Donner un conseil</td><td><i>You should… / To avoid…, you should… / I would advise you to…</i></td></tr>
+    <tr><td>Pour / contre</td><td><i>The main advantages are… However, the drawbacks include…</i></td></tr>
+    <tr><td>Donner son avis</td><td><i>In my opinion… / As far as I am concerned… / I think it depends on…</i></td></tr>
+  </table></div>
+
+  <div class="astuce"><b>Si tu ne comprends pas</b>
+    <p><i>Could you repeat the question, please?</i> ou <i>Could you rephrase that, please?</i> Mieux vaut demander que répondre à côté.</p></div>
+
+  <h3>Sujet zéro n°4 : Covid-19, télétravail et cybersécurité</h3>
+  <ul>
+    <li><b>Document A</b> : vidéo (1'33), <i>Hack Attacks Rise During Coronavirus Crisis, Says Crowdstrike CEO</i>, Bloomberg Technology, 26 mars 2020.</li>
+    <li><b>Document B</b> : texte, <i>Businesses believe the pandemic will change the security landscape forever</i> (ITProPortal, 19 juin 2020).</li>
+    <li><b>Document C</b> : capture d'écran, un avis de phishing (ABC News, 19 mars 2020) : une fausse appli de suivi du coronavirus qui infecte les appareils avec un rançongiciel.</li>
+    <li><b>Mise en situation</b> : technicien informatique dans un cabinet comptable de 40 salariés en télétravail ; elle craint des arnaques et cherche des solutions logicielles et matérielles.</li>
+  </ul>
+
+  <details class="model" open><summary>Présentation de 5 minutes (proposition)</summary>
+    <div class="letter">
+      <p>This folder is composed of three documents. It deals with Covid-19, teleworking and cybersecurity.</p>
+      <p><b>First</b>, I will discuss document A, a video from March 2020 which explains that hack attacks have risen during the coronavirus crisis.</p>
+      <p><b>Second</b>, I will comment on document B, a text which shows that companies are worried about remote workers. Employees may be more relaxed at home and less careful about suspicious activity. Some fear data leaks, phishing or malware, and the biggest risk is using untrusted networks.</p>
+      <p><b>And finally</b>, I will focus on document C, a warning about a fake coronavirus tracking app which infects devices with ransomware.</p>
+    </div>
+    <p class="small">Je n'ai pas vu la vidéo (A) : cette partie repose uniquement sur son titre. Complète-la avec ce que tu entends.</p></details>
+
+  <h3>Réponses modèles aux 3 questions</h3>
+  <details class="model" open><summary>1. How can a company make sure its data is safe?</summary>
+    <p><i>A company should first install a reliable antivirus and a firewall on every computer and keep them updated. It should back up its data regularly so that it can recover its files in case of a break-down or a ransomware attack. It should also limit access to sensitive data, use strong passwords and two-factor authentication, and train its employees not to open attachments from unknown senders.</i></p></details>
+  <details class="model" open><summary>2. What about data security when the staff are working from home?</summary>
+    <p><i>Employees should avoid untrusted networks such as public Wi-Fi, which document B describes as the biggest risk. They should not let other people use their company devices or share company data through personal messaging services. The company should give clear rules, make sure software is kept up to date and remind staff to report suspicious emails, because people are more likely to fall for a phishing scam when they feel relaxed at home.</i></p></details>
+  <details class="model" open><summary>3. How efficient is an antivirus?</summary>
+    <p><i>An antivirus is useful because it prevents hackers from breaking into a system and detects known malware. However, no antivirus will ever deter hackers from trying to steal data, since new malware is designed every day. It has to be updated regularly and combined with a firewall, backups and staff awareness, especially against tricks like the fake tracking app in document C.</i></p></details>
+</section>
+<div class="group-title" data-group="themes">Thèmes (oral et vocabulaire)</div>
+
+<section class="fiche" id="f10" data-cat="themes" data-title="Cybersécurité et cybercriminalité">
+  <header><span class="num">10</span><h2>Cybersécurité et cybercriminalité</h2></header>
+
+  <h3>Les attaques (fiche « cyberattacks » du cours)</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>Attack</th><th>In one sentence / en français</th></tr>
+    <tr><td class="en"><b>Phishing</b></td><td class="fr">Faux e-mails imitant une source officielle pour obtenir des informations personnelles (identifiants bancaires).</td></tr>
+    <tr><td class="en"><b>Spear phishing</b></td><td class="fr">Hameçonnage ciblé sur une personne en particulier.</td></tr>
+    <tr><td class="en"><b>Pharming</b></td><td class="fr">Redirection vers un faux site pour voler des données financières ou des identifiants.</td></tr>
+    <tr><td class="en"><b>Man-in-the-middle</b></td><td class="fr">Interception des communications entre deux utilisateurs (espionnage, usurpation d'identité, virements, changement de mot de passe).</td></tr>
+    <tr><td class="en"><b>Denial of service (DoS)</b></td><td class="fr">Surcharge d'un serveur de requêtes : il ralentit puis tombe (<i>saturated with requests</i>).</td></tr>
+    <tr><td class="en"><b>Zero-day attack</b></td><td class="fr">Exploitation d'une faille (<i>security loophole</i>) inconnue du fabricant, au lancement d'un logiciel.</td></tr>
+    <tr><td class="en"><b>Botnet / zombie network</b></td><td class="fr">Réseau d'ordinateurs infectés qui diffusent le code malveillant (vers, chevaux de Troie, pièces jointes piégées).</td></tr>
+    <tr><td class="en"><b>Ransomware</b></td><td class="fr">Logiciel qui chiffre les données ; on ne les récupère qu'en payant une rançon. Payer est risqué : aucune garantie.</td></tr>
+    <tr><td class="en"><b>DNS spoofing</b></td><td class="fr">Modification du DNS pour rediriger vers un faux site.</td></tr>
+  </table></div>
+
+  <h3>Les logiciels malveillants</h3>
+  <ul>
+    <li><b>Virus</b> : cause des dégâts aux <b>fichiers</b>. <b>Worm</b> : se réplique et cause des dégâts aux <b>réseaux</b> (de nœud en nœud).</li>
+    <li><b>Trojan horse</b> : semble inoffensif (<i>harmless</i>) mais exécute une tâche malveillante ; peut ouvrir une <i>backdoor</i>.</li>
+    <li><b>Spyware</b> : espionne. <b>Ransomware</b> : chiffre et rançonne.</li>
+  </ul>
+  <div class="retenir"><b>Règle sur -ware</b>
+    <p>Les mots en <i>-ware</i> (<i>malware, software, hardware, ransomware</i>) ne prennent <b>jamais de s</b>. On dit aussi <i>computer science</i>, <i>IT</i>, <i>computing</i> : le mot « informatique » n'existe pas en anglais.</p></div>
+
+  <h3>Se protéger</h3>
+  <p><i>antivirus · firewall · regular updates · back-ups · strong, unique passwords · two-factor authentication · VPN for remote work · no unknown attachments · no dubious websites · encryption · staff training</i></p>
+
+  <h3>Phrases modèles (thèmes corrigés du cours)</h3>
+  <p class="sub">Traduis le français, puis vérifie. Utilise « Cacher l'anglais » en haut.</p>
+  <div class="tw"><table class="vocab">
+    <tr><th>Français</th><th>English</th></tr>
+    <tr><td class="fr">Les pirates tentent d'entrer par effraction dans les systèmes informatiques de leurs victimes.</td><td class="en">Hackers try to break into the computer systems of their victims.</td></tr>
+    <tr><td class="fr">Ces logiciels malveillants visent à corrompre ou voler les données.</td><td class="en">Malware aims at corrupting or stealing data.</td></tr>
+    <tr><td class="fr">Les fournisseurs d'antivirus conçoivent des logiciels qui visent à protéger les systèmes.</td><td class="en">Antivirus providers design software which aims at protecting systems.</td></tr>
+    <tr><td class="fr">Les antivirus empêchent les pirates d'entrer par effraction dans un système.</td><td class="en">Antiviruses prevent hackers from breaking into a system.</td></tr>
+    <tr><td class="fr">Les virus causent des dégâts aux ordinateurs.</td><td class="en">Viruses cause damage to computers.</td></tr>
+    <tr><td class="fr">Ils peuvent endommager le disque dur ou corrompre les données.</td><td class="en">They can damage the hard drive or corrupt data.</td></tr>
+    <tr><td class="fr">Ils menacent la sécurité de vos données.</td><td class="en">They threaten the security of your data.</td></tr>
+    <tr><td class="fr">Ils représentent une menace que vous pouvez éviter.</td><td class="en">They represent a threat you can avoid.</td></tr>
+    <tr><td class="fr">Si vous ne protégez pas votre ordinateur, vous risquez une infection.</td><td class="en">If you do not protect your computer, you risk an infection.</td></tr>
+    <tr><td class="fr">Si vous n'avez pas d'antivirus, vous risquez de perdre vos données personnelles.</td><td class="en">If you do not have an antivirus, you risk losing your personal data.</td></tr>
+    <tr><td class="fr">Pour éviter un problème, vous devriez avoir recours à un antivirus.</td><td class="en">To avoid a problem, you should resort to an antivirus.</td></tr>
+    <tr><td class="fr">Pour éviter de répandre des logiciels malveillants, utilisez un pare-feu.</td><td class="en">To avoid spreading malware, you should use a firewall.</td></tr>
+    <tr><td class="fr">Les cybercriminels essaient de duper leurs victimes.</td><td class="en">Cybercriminals try to dupe / deceive their victims.</td></tr>
+    <tr><td class="fr">Vous devriez éviter de vous connecter à des sites douteux.</td><td class="en">You should avoid logging onto dubious websites.</td></tr>
+    <tr><td class="fr">Si vous n'avez pas de pare-feu, vous risquez de répandre des virus sur le réseau.</td><td class="en">If you do not have a firewall, you risk spreading viruses on the network.</td></tr>
+    <tr><td class="fr">Vous devriez éviter de télécharger des fichiers inconnus.</td><td class="en">You should avoid downloading unknown files.</td></tr>
+    <tr><td class="fr">Les rançongiciels visent à crypter vos données et à rendre leur accès impossible.</td><td class="en">Ransomware aims at encrypting your data and making it inaccessible.</td></tr>
+    <tr><td class="fr">De nouveaux logiciels malveillants sont conçus tous les jours.</td><td class="en">New malware is designed every day.</td></tr>
+    <tr><td class="fr">Les virus causent des dégâts aux fichiers alors que les vers causent des dégâts aux réseaux.</td><td class="en">Viruses cause damage to files whereas worms cause damage to networks.</td></tr>
+    <tr><td class="fr">Aucun antivirus ne dissuadera jamais les pirates de tenter de voler des données.</td><td class="en">No antivirus will ever deter hackers from trying to steal data.</td></tr>
+    <tr><td class="fr">Il est important de mettre les utilisateurs en garde contre ces dangers.</td><td class="en">It is important to warn users against these dangers.</td></tr>
+    <tr><td class="fr">Vous ne devriez jamais ouvrir une pièce jointe d'un expéditeur inconnu.</td><td class="en">You should never open an email attachment from an unknown sender.</td></tr>
+  </table></div>
+  <div class="piege"><b>Corrections de ma part</b>
+    <ul>
+      <li>Plusieurs corrigés écrivent « cause <u>damages</u> ». En anglais standard, <b>damage</b> est indénombrable : <i>cause damage to</i> (« damages » = dommages-intérêts, en droit).</li>
+      <li><i>Malware</i>, <i>software</i> et <i>ransomware</i> sont des noms indénombrables : j'ai mis le singulier (<i>malware is / aims at</i>, <i>software which aims at</i>). Ton corrigé écrit parfois le pluriel (<i>malware aim</i>) ; il reste admis, mais garde le même choix dans toute ta copie.</li>
+    </ul></div>
+</section>
+
+<section class="fiche" id="f11" data-cat="themes" data-title="IoT, maison connectée, villes intelligentes">
+  <header><span class="num">11</span><h2>IoT, maison connectée, villes intelligentes</h2></header>
+
+  <div class="retenir"><b>Définition (à savoir dire)</b>
+    <p><i>The Internet of Things (IoT) refers to all the physical devices which are connected to the internet, collect data, communicate with each other through a hub and sometimes act automatically, without human intervention.</i></p></div>
+
+  <h3>Comment ça marche</h3>
+  <p><b>sense → send → analyse → act</b> : capteurs (<i>sensors</i>) ; connexion (Wi-Fi, Bluetooth Low Energy, <b>Thread</b>, <b>Matter</b>) ; traitement (cloud ou local) ; interface (appli, tableau de bord). <i>Matter</i> définit un langage commun pour tous les appareils ; <i>Thread</i> est un protocole maillé adapté à la domotique.</p>
+
+  <div class="cols">
+    <div>
+      <h3>Avantages</h3>
+      <ul>
+        <li>Confort, gain de temps, automatisation des tâches.</li>
+        <li>Contrôle à distance depuis un smartphone.</li>
+        <li>Factures d'énergie réduites : lumière éteinte si la pièce est vide, thermostat programmé quand on est absent.</li>
+        <li>Consommation plus responsable, moins de gaspillage, empreinte carbone réduite.</li>
+        <li>Sécurité : alerte sur mobile en cas d'effraction, caméras consultables à distance.</li>
+        <li>Accessibilité : commandes vocales, utiles aux personnes en situation de handicap.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Risques</h3>
+      <ul>
+        <li>Mots de passe par défaut, mises à jour désactivées, réseau mal configuré.</li>
+        <li>Une seule faille peut ouvrir tout le réseau.</li>
+        <li>Vie privée : quelles données, qui y accède, combien de temps ?</li>
+        <li>Manque de standardisation : les appareils ne <i>interoperate</i> pas toujours.</li>
+        <li>Dépendance à la connexion ; une panne touche plusieurs appareils.</li>
+        <li>Villes et infrastructures : le piratage devient une perturbation physique.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Conseils de sécurité (pour particuliers et entreprises)</h3>
+  <ol>
+    <li>Changer les mots de passe par défaut (longs, uniques).</li>
+    <li>Activer les mises à jour automatiques (firmware).</li>
+    <li>Isoler les objets connectés sur un réseau Wi-Fi invité.</li>
+    <li>Désactiver les fonctions inutiles (moins de points d'entrée).</li>
+    <li>Chiffrement WPA2 ou WPA3, pare-feu, désactiver le WPS.</li>
+    <li>Choisir des marques fiables ; vérifier les autorisations des applis.</li>
+    <li>En entreprise, former les utilisateurs.</li>
+  </ol>
+
+  <h3>Villes intelligentes (<i>smart cities</i>)</h3>
+  <p>Une ville est <i>smart</i> quand elle utilise l'IoT pour améliorer son efficacité et la qualité de vie : services administratifs numériques, feux de circulation intelligents (moins d'embouteillages et de pollution), éclairage public, réseau d'eau (détection des fuites), réseau électrique intelligent (<i>smart grid</i>), surveillance et analyse prédictive pour la sécurité, gestion des déchets.</p>
+
+  <h3>Vocabulaire</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">smart home / home automation</td><td class="fr">maison connectée / domotique</td></tr>
+    <tr><td class="en">home appliances</td><td class="fr">appareils électroménagers</td></tr>
+    <tr><td class="en">a hub</td><td class="fr">une centrale, une plateforme</td></tr>
+    <tr><td class="en">motion sensor</td><td class="fr">capteur de présence / de mouvement</td></tr>
+    <tr><td class="en">interoperability</td><td class="fr">interopérabilité</td></tr>
+    <tr><td class="en">to set (a temperature)</td><td class="fr">régler, paramétrer</td></tr>
+    <tr><td class="en">to trigger / to turn on or off</td><td class="fr">déclencher / allumer ou éteindre</td></tr>
+    <tr><td class="en">energy wastage</td><td class="fr">gaspillage d'énergie</td></tr>
+    <tr><td class="en">to be cost-efficient</td><td class="fr">être économique</td></tr>
+    <tr><td class="en">remote control</td><td class="fr">contrôle à distance</td></tr>
+    <tr><td class="en">voice assistant</td><td class="fr">assistant vocal</td></tr>
+    <tr><td class="en">precision agriculture / smart farming</td><td class="fr">agriculture de précision / connectée</td></tr>
+  </table></div>
+
+  <details class="model"><summary>Réponses modèles (questions vues en cours)</summary>
+    <p><b>What advantages do connected objects offer?</b> <i>A smart thermostat adjusts the temperature by itself and can reduce energy bills. A connected camera sends real-time alerts to your phone. A smartwatch monitors your heart rate and sleep. Overall, connected devices bring convenience, comfort and efficiency.</i></p>
+    <p><b>How can she secure her home network?</b> <i>She should activate WPA2 or WPA3 encryption, change the default password and create strong, unique credentials. She should also update the router's firmware regularly, disable remote access, put the connected devices on a guest network and enable a firewall.</i></p>
+    <p><b>Pros and cons of connecting appliances?</b> <i>The main advantages are convenience, automation, remote control and energy savings. However, the drawbacks include cybersecurity risks, data collection and dependence on a stable connection: a breach can affect several devices at once.</i></p></details>
+
+  <div class="piege"><b>Chiffres de tes notes : à ne pas citer</b>
+    <p>Ton résumé de la vidéo sur l'IoT donne des statistiques (économies d'énergie « jusqu'à 20 % », marché de 350 milliards de dollars en 2027, 30 milliards d'appareils en 2025). Elles ne sont pas sourcées et ressemblent à un résumé généré : cite plutôt ce que tu as réellement entendu dans les documents du dossier.</p></div>
+</section>
+
+<section class="fiche" id="f12" data-cat="themes" data-title="Le cloud computing">
+  <header><span class="num">12</span><h2>Le cloud computing</h2></header>
+  <div class="retenir"><b>Définition</b>
+    <p><i>Cloud computing consists in storing your data on external servers which are rented from a service provider.</i></p></div>
+
+  <div class="cols">
+    <div>
+      <h3>Avantages</h3>
+      <ul>
+        <li><b>Économique</b> : pas d'achat de serveurs, on loue seulement ce dont on a besoin (<i>cost-efficient</i>).</li>
+        <li><b>Souple</b> : en période de forte charge (<i>peak workload period</i>), on loue temporairement plus de capacité de stockage.</li>
+        <li><b>Accessible partout</b> : bureau, domicile, transports, étranger ; pratique pour partager des documents (<i>handy</i>).</li>
+        <li>Le <b>fournisseur</b> gère sauvegardes (<i>back-up</i>) et restauration (<i>recovery</i>) en cas de panne (<i>break-down / outage</i>).</li>
+        <li>L'entreprise sous-traite (<i>subcontracts</i>) la sécurité à des experts et se concentre sur son <b>cœur de métier</b> (<i>core activity</i>).</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Inconvénients (<i>drawbacks</i>)</h3>
+      <ul>
+        <li>Confidentialité des données sensibles <b>non garantie</b>.</li>
+        <li>Si les serveurs du prestataire tombent, on peut perdre l'accès temporairement.</li>
+        <li>Certains serveurs ont déjà été piratés, ce qui a provoqué des fuites de données (<i>data leaks</i>).</li>
+        <li>Certaines organisations, comme des banques, préfèrent leurs propres centres de données.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small">Nuance : tes notes disent que les banques « ne stockent jamais » leurs données dans le cloud ; c'est trop absolu. Dis plutôt « certaines organisations, comme les banques, préfèrent ».</p>
+
+  <details class="model" open><summary>Paragraphe modèle</summary>
+    <p><i>Thanks to cloud computing, companies do not have to buy servers: they rent storage capacity depending on their needs, which is cost-efficient. During a peak workload period, they simply rent extra capacity temporarily. Employees can access their data anywhere, and the service provider is in charge of back-ups and recovery procedures in case of a break-down. However, cloud computing raises confidentiality and safety issues, since some servers have already been hacked and data leaks can occur.</i></p></details>
+
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">storage capacity</td><td class="fr">capacité de stockage</td></tr>
+    <tr><td class="en">a reliable / trustworthy provider</td><td class="fr">un fournisseur fiable</td></tr>
+    <tr><td class="en">to subcontract</td><td class="fr">sous-traiter</td></tr>
+    <tr><td class="en">to maintain equipment</td><td class="fr">entretenir le matériel</td></tr>
+    <tr><td class="en">to store / stored files</td><td class="fr">stocker / fichiers stockés (pas « stock »)</td></tr>
+    <tr><td class="en">to back up (v.) / a back-up (n.)</td><td class="fr">sauvegarder / une sauvegarde</td></tr>
+    <tr><td class="en">to recover · recovery</td><td class="fr">restaurer · restauration</td></tr>
+    <tr><td class="en">a drawback</td><td class="fr">un inconvénient</td></tr>
+  </table></div>
+</section>
+
+<section class="fiche" id="f13" data-cat="themes" data-title="Intelligence artificielle et emploi">
+  <header><span class="num">13</span><h2>Intelligence artificielle et emploi</h2></header>
+
+  <h3>Définitions (cours d'IA)</h3>
+  <ul>
+    <li><b>AI</b> : capacité des machines à réaliser des tâches qui exigent normalement l'intelligence humaine (reconnaître des images, comprendre le langage, écrire du code).</li>
+    <li><b>Machine learning</b> : les ordinateurs apprennent à partir des données au lieu d'être programmés ; les algorithmes repèrent des motifs (<i>patterns</i>) et font des prédictions.</li>
+    <li><b>Deep learning</b> : réseaux de neurones inspirés du cerveau (reconnaissance vocale, langage naturel).</li>
+    <li><b>LLM</b> (<i>Large Language Model</i>) : entraîné sur d'énormes jeux de textes ; apprend la structure statistique du langage. Limite : les <b>hallucinations</b> (informations fausses), car il génère des réponses probables sans « comprendre ».</li>
+  </ul>
+
+  <h3>Impact sur l'emploi</h3>
+  <div class="tw"><table>
+    <tr><th>Effet</th><th>Contenu</th></tr>
+    <tr><td><b>Automatisation</b></td><td>Tâches répétitives, simples, prévisibles : saisie de données (<i>data entry</i>), support de base. Puis tâches plus complexes : écrire du code, analyser des radios, fournir du contenu juridique.</td></tr>
+    <tr><td><b>Transformation</b></td><td>L'IA assiste plus qu'elle ne remplace : médecins (imagerie), développeurs (code), journalistes, designers.</td></tr>
+    <tr><td><b>Créations d'emplois</b></td><td>Ingénieurs en machine learning, data scientists, spécialistes de l'éthique de l'IA, prompt engineers.</td></tr>
+    <tr><td><b>Compétences</b></td><td>Résolution de problèmes, créativité, esprit critique, collaboration avec l'IA, formation continue ; savoir ajouter une <i>human touch</i>.</td></tr>
+  </table></div>
+  <p>Les métiers qui demandent interaction humaine, empathie ou travail manuel ne seront pas remplacés ; ceux qui perdent leur emploi devront se former (<i>upskill</i>) ou se reconvertir (<i>reskill</i>).</p>
+
+  <h3>Enjeux éthiques</h3>
+  <p>Suppression de postes (<i>job displacement</i>), <b>biais</b> reproduits par les données d'entraînement, vie privée, désinformation, <b>deepfakes</b>, besoin de réglementation. Dans le domaine informatique : l'IA aide à coder, à détecter les failles et les malwares, mais aussi à surveiller les employés (voir fiche 3).</p>
+
+  <details class="model"><summary>Paragraphe modèle</summary>
+    <p><i>AI is likely to automate repetitive and predictable tasks such as data entry, but it does not only destroy jobs: it also transforms them and creates new ones. Doctors use AI to interpret medical images and developers use it to write code. Professionals will have to learn how to use these tools, upskill or reskill, and prove that they can add a human touch to AI results. However, AI also raises ethical issues such as bias, privacy and job displacement.</i></p></details>
+
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">to automate · automation</td><td class="fr">automatiser · automatisation</td></tr>
+    <tr><td class="en">a breakthrough</td><td class="fr">une avancée majeure</td></tr>
+    <tr><td class="en">to replace / to assist</td><td class="fr">remplacer / assister</td></tr>
+    <tr><td class="en">to upskill / to reskill</td><td class="fr">se former / se reconvertir</td></tr>
+    <tr><td class="en">productivity</td><td class="fr">productivité</td></tr>
+    <tr><td class="en">bias</td><td class="fr">biais</td></tr>
+    <tr><td class="en">deepfake</td><td class="fr">hypertrucage</td></tr>
+  </table></div>
+</section>
+<section class="fiche" id="f14" data-cat="themes" data-title="Monde du travail et RH">
+  <header><span class="num">14</span><h2>Monde du travail et RH</h2></header>
+  <p class="sub">Le vocabulaire RH est ce qui fait la différence à l'oral comme à l'écrit. Ta consigne : ne pas tourner autour du sujet et <b>montrer ton vocabulaire</b> plutôt que répondre de façon « sincère ».</p>
+
+  <h3>Chercher un emploi</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">a resume (CV) · a cover letter</td><td class="fr">un CV · une lettre de motivation</td></tr>
+    <tr><td class="en">an applicant · a job seeker</td><td class="fr">un candidat · un demandeur d'emploi</td></tr>
+    <tr><td class="en">to apply for a job · an application</td><td class="fr">postuler · une candidature</td></tr>
+    <tr><td class="en">a job interview (to take / to attend)</td><td class="fr">un entretien d'embauche (passer)</td></tr>
+    <tr><td class="en">full-time · part-time · permanent · temporary</td><td class="fr">temps plein · temps partiel · permanent · temporaire</td></tr>
+    <tr><td class="en">a fixed-term contract</td><td class="fr">un CDD</td></tr>
+    <tr><td class="en">an internship / a work placement</td><td class="fr">un stage</td></tr>
+    <tr><td class="en">on-the-job training</td><td class="fr">formation en situation de travail</td></tr>
+    <tr><td class="en">a sandwich course</td><td class="fr">une formation en alternance</td></tr>
+    <tr><td class="en">flexitime · a promotion · a wage / a salary</td><td class="fr">horaires flexibles · une promotion · un salaire</td></tr>
+    <tr><td class="en">skilled / unskilled · a requirement</td><td class="fr">qualifié / non qualifié · une exigence</td></tr>
+    <tr><td class="en">to bring to the fore</td><td class="fr">mettre en avant</td></tr>
+    <tr><td class="en">a head office · a core activity</td><td class="fr">un siège social · une activité principale</td></tr>
+    <tr><td class="en">flaws / weaknesses</td><td class="fr">défauts / faiblesses</td></tr>
+  </table></div>
+
+  <div class="cols">
+    <div class="retenir"><b>L'entretien : les « dos »</b>
+      <ul>
+        <li>Adapter CV et lettre au poste ; mettre en avant les <i>transferable skills</i>.</li>
+        <li>Se renseigner sur l'entreprise (activités, histoire, siège, taille) et s'entraîner.</li>
+        <li>Présenter un résumé concis de son parcours, de ses compétences et de ses objectifs.</li>
+        <li>Pour ses faiblesses, parler de points à améliorer plutôt que de traits de caractère.</li>
+        <li>Poser des questions sur le poste et la culture d'entreprise.</li>
+      </ul></div>
+    <div class="piege"><b>Les « don'ts »</b>
+      <ul>
+        <li>Ne jamais critiquer ses anciens employeurs.</li>
+        <li>Ne pas mentir sur ses compétences (la période d'essai le révèlera).</li>
+        <li>Ne pas être trop sincère sur ses défauts.</li>
+        <li>Ne pas aborder le salaire trop tôt ; attendre que l'employeur en parle.</li>
+        <li>Ne pas répondre « non » quand on demande si on a des questions.</li>
+      </ul></div>
+  </div>
+
+  <h3>Qu'est-ce qu'un bon emploi pour toi ? (réponse modèle)</h3>
+  <details class="model" open><summary>Version prête à l'emploi</summary>
+    <p><i>First, I am looking for a job in which my tasks match my diploma and my skills. I want to acquire transferable skills so as to increase my value on the job market. Career prospects are also essential: I do not want to remain a technician all my life, so I would like to be assigned responsibilities in order to access an executive position quickly. My wellbeing matters too: a good work-life balance, a fulfilling job, good relationships with colleagues and flexible working hours. Finally, perks such as a company car, which I could use for private purposes from time to time, would be appreciated.</i></p></details>
+
+  <h3>Autres notions (pour l'oral)</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">work-life balance · hybrid work</td><td class="fr">équilibre vie pro / vie perso · travail hybride</td></tr>
+    <tr><td class="en">wellbeing / wellness · a fulfilling job</td><td class="fr">bien-être · un emploi épanouissant</td></tr>
+    <tr><td class="en">career prospects · to evolve</td><td class="fr">perspectives de carrière · évoluer</td></tr>
+    <tr><td class="en">employee retention · turnover rate</td><td class="fr">fidélisation · taux de rotation</td></tr>
+    <tr><td class="en">workforce · shortage</td><td class="fr">main-d'œuvre · pénurie</td></tr>
+    <tr><td class="en">to fill a vacancy · an unfilled position</td><td class="fr">pourvoir un poste · un poste non pourvu</td></tr>
+    <tr><td class="en">to resign · to rehire</td><td class="fr">démissionner · réembaucher</td></tr>
+    <tr><td class="en">to assign sb with sth / to assign sth to sb</td><td class="fr">confier une tâche à qqn</td></tr>
+    <tr><td class="en">a perk · a bonus · to grant a bonus</td><td class="fr">un avantage en nature · une prime · accorder une prime</td></tr>
+    <tr><td class="en">criteria · as long as · in order to</td><td class="fr">critères · tant que · afin de</td></tr>
+    <tr><td class="en">burnout</td><td class="fr">épuisement professionnel</td></tr>
+    <tr><td class="en">short-sighted</td><td class="fr">à courte vue, à court terme</td></tr>
+    <tr><td class="en">to be worth + V-ing · it's worth…</td><td class="fr">valoir la peine de</td></tr>
+    <tr><td class="en">a childcare service · predictable scheduling</td><td class="fr">garde d'enfants · horaires prévisibles</td></tr>
+  </table></div>
+
+  <h3>Le stage : conditions idéales (corrigé du cours)</h3>
+  <ul>
+    <li>Objectifs fixés clairement dès le départ, <b>en accord avec les études</b> (<i>in keeping with the trainee's studies</i>).</li>
+    <li>Tâches ni trop faciles ni trop difficiles, négociées avant le début.</li>
+    <li>Un tuteur disponible ; travail d'équipe ; autonomie progressive.</li>
+    <li>Résultat : compétences (<i>soft skills</i> et <i>hard skills</i>), confiance en soi, découverte d'un métier pour choisir son secteur.</li>
+  </ul>
+
+  <h3>Sujets de société liés au travail</h3>
+  <div class="tw"><table>
+    <tr><th>Sujet</th><th>À dire (anglais) et vocabulaire</th></tr>
+    <tr><td><b>Gap year</b></td><td>Les employeurs la voient positivement si elle est présentée comme <i>purposeful and enriching</i> (voyage, travail, bénévolat) et met en avant des <i>transferable skills</i> ; si elle reste floue, ils se méfient (<i>they frown upon it</i>).</td></tr>
+    <tr><td><b>Gig economy</b></td><td>Missions courtes, payées à la tâche (<i>piece work</i>), via des plateformes, souvent gérées par des algorithmes. Socialement, moins de droits que le salariat : pas de protection (<i>welfare state</i>, sick leave, cotisations). Vocabulaire : <i>shortfall, overlooked, onboarding, disembodied</i>.</td></tr>
+    <tr><td><b>Quiet quitting</b></td><td>Faire seulement ce qui est prévu au contrat ; refuser heures sup non payées et responsabilités en plus ; chercher un meilleur équilibre.</td></tr>
+    <tr><td><b>Gender pay gap</b></td><td>Écart injustifié entre salaires féminins et masculins. Causes : discriminations, plafond de verre (<i>glass ceiling</i>), réticence face aux congés maternité, moindre reconnaissance. Solutions : publier les résultats en interne, amendes, syndicats (<i>trade unions</i>, action en justice, grèves), label d'égalité salariale, campagnes de sensibilisation. Verbes : <i>to pass / to abide by / to enforce a law, to catch up with, to be entitled to</i>.</td></tr>
+  </table></div>
+  <p class="small">Sur le gender pay gap, ta note cite 18 % « pour le même poste » : l'écart moyen global est souvent plus élevé que l'écart à poste égal. À l'oral, reprends le chiffre du document plutôt que le tien, et ne précise « à poste égal » que si le document le dit.</p>
+</section>
+
+<section class="fiche" id="f15" data-cat="themes" data-title="Addiction aux nouvelles technologies">
+  <header><span class="num">15</span><h2>Addiction aux nouvelles technologies</h2></header>
+  <div class="retenir"><b>Définition</b>
+    <p><i>An addiction is a psychological drive which induces someone to use a particular app or device more than reasonably. It is a desire the victim cannot refrain from, and it has social, health and economic consequences.</i></p>
+    <p class="small">Attention : <i>to be addicted <b>to</b></i> + nom ou V-ing (<i>addicted to gaming</i>).</p></div>
+
+  <div class="cols">
+    <div>
+      <h3>Causes</h3>
+      <ul>
+        <li>Applis conçues pour <b>rendre accro</b> (<i>hooked</i>) pour des raisons financières : revenus publicitaires.</li>
+        <li><b>Récompenses</b> (likes, followers) : la dopamine active le circuit de la récompense.</li>
+        <li><b>FOMO</b> (<i>fear of missing out</i>) : peur de rater quelque chose dans sa communauté.</li>
+        <li>Jeux vidéo : niveaux et récompenses, perte de la notion du temps, évasion de la réalité, avatar, sentiment d'utilité ; la frustration doit rester assez forte sans faire abandonner.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Conséquences</h3>
+      <ul>
+        <li>Isolement social ; cas extrême : <i>hikikomori</i> (jeunes qui ne quittent plus leur chambre).</li>
+        <li>Baisse des résultats scolaires ; capacités cognitives affectées, surtout chez les enfants.</li>
+        <li>Vie sédentaire, privation de sommeil, forme physique en baisse (obésité, diabète, problèmes cardiaques).</li>
+        <li>Anxiété, dépression, troubles de l'image de soi ; frustration pouvant mener à la violence.</li>
+      </ul>
+    </div>
+  </div>
+
+  <details class="model" open><summary>Paragraphe modèle</summary>
+    <p><i>Apps and video games are designed to keep users hooked because they generate advertising revenues. Users get rewards such as likes, which trigger dopamine in the brain, and they fear missing out on what happens in their community. The consequences can be serious: isolation, lower school performance, sleep deprivation and a sedentary lifestyle.</i></p></details>
+
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">to be addicted to · an addict</td><td class="fr">être accro à · un accro</td></tr>
+    <tr><td class="en">to be hooked on</td><td class="fr">être accroché à</td></tr>
+    <tr><td class="en">to refrain from + V-ing</td><td class="fr">se retenir de</td></tr>
+    <tr><td class="en">a reward · a level</td><td class="fr">une récompense · un niveau</td></tr>
+    <tr><td class="en">sleep deprivation</td><td class="fr">privation de sommeil</td></tr>
+    <tr><td class="en">a sedentary lifestyle</td><td class="fr">un mode de vie sédentaire</td></tr>
+    <tr><td class="en">impaired (cognitive abilities)</td><td class="fr">altérées</td></tr>
+    <tr><td class="en">to suffer from</td><td class="fr">souffrir de (pas « suffer of »)</td></tr>
+  </table></div>
+</section>
+
+<section class="fiche" id="f16" data-cat="themes" data-title="Règles d'entreprise : charte réseaux sociaux et BYOD">
+  <header><span class="num">16</span><h2>Règles d'entreprise : charte réseaux sociaux et BYOD</h2></header>
+  <p class="sub">Une <i>social media policy</i> fixe des règles de conduite (<i>code of conduct</i>). Le document du cours est structuré en cinq blocs.</p>
+
+  <div class="tw"><table>
+    <tr><th>Bloc</th><th>Règles (phrases de la charte)</th></tr>
+    <tr><td><b>Data safety</b></td><td>Utiliser un antivirus à jour, un mot de passe robuste (majuscules, minuscules, chiffres) ; scanner ses appareils régulièrement ; se déconnecter en quittant son poste pour empêcher les intrusions ; <i>avoid</i> les sites douteux, les pièces jointes d'inconnus et les clés USB.</td></tr>
+    <tr><td><b>Data confidentiality</b></td><td>Interdiction de divulguer des données à des tiers ; les employés sont tenus responsables d'une fuite (<i>held responsible</i>) ; <i>disciplinary action</i> et sanctions en cas de manquement (<i>breach</i>).</td></tr>
+    <tr><td><b>The company's image</b></td><td>Se comporter de façon responsable, ne jamais ternir (<i>tarnish</i>) la réputation de l'entreprise.</td></tr>
+    <tr><td><b>Ethical use</b></td><td>Usage personnel toléré (15 minutes par jour au maximum) ; sites pornographiques, violents ou de jeux d'argent interdits ; pas de propos diffamatoires ; interdiction de critiquer l'entreprise en ligne ; si on donne un avis, préciser qu'on parle en son nom et non au nom de l'entreprise (<i>a disclaimer</i>).</td></tr>
+    <tr><td><b>BYOD</b></td><td>Utiliser son appareil personnel est permis à condition d'accepter que les données stockées appartiennent à l'entreprise, de respecter les outils de sécurité du service informatique, et de <b>restituer et supprimer</b> les données en quittant l'entreprise.</td></tr>
+  </table></div>
+
+  <h3>Exprimer l'obligation et l'interdiction</h3>
+  <p><i>Employees have to / must … · should (recommandation) · are not allowed to … · It is forbidden to … · will be held responsible for … · Any breach will result in disciplinary action · provided (that)… · abide by / comply with the rules.</i></p>
+
+  <h3>BYOD (<i>Bring Your Own Device</i>) : 3 façons de protéger les données (document C)</h3>
+  <ol>
+    <li>Tout appareil connecté au réseau qui accède aux données clients est une <b>menace</b> : savoir quelles applications et quels appareils sont gérés.</li>
+    <li>Connaître ce qui se trouve sur les appareils de l'entreprise.</li>
+    <li>Au moment du départ d'un salarié (<i>offboarding</i>), <b>effacer</b> ses données sur ses appareils, et gérer la sécurité.</li>
+  </ol>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">cutting-edge</td><td class="fr">de pointe</td></tr>
+    <tr><td class="en">to spark</td><td class="fr">déclencher</td></tr>
+    <tr><td class="en">compliant with</td><td class="fr">conforme à</td></tr>
+    <tr><td class="en">to address (a problem)</td><td class="fr">traiter</td></tr>
+    <tr><td class="en">up front</td><td class="fr">d'emblée, dès le départ</td></tr>
+    <tr><td class="en">onboarding · offboarding</td><td class="fr">arrivée · départ d'un salarié</td></tr>
+    <tr><td class="en">diligent</td><td class="fr">appliqué, rigoureux</td></tr>
+    <tr><td class="en">to abide by (a rule)</td><td class="fr">respecter un règlement</td></tr>
+  </table></div>
+</section>
+
+<section class="fiche" id="f17" data-cat="themes" data-title="Déchets électroniques (e-waste)">
+  <header><span class="num">17</span><h2>Déchets électroniques (e-waste)</h2></header>
+  <div class="retenir"><b>Définition</b>
+    <p><i>E-waste refers to all the electronic devices which have reached the end of their lifespan, such as phones, computers and TVs.</i></p></div>
+
+  <div class="cols">
+    <div>
+      <h3>Causes</h3>
+      <ul>
+        <li>Surconsommation : on veut le dernier modèle, par effet de mode (<i>trendy, cutting-edge</i>).</li>
+        <li>Technologies qui évoluent vite : appareils vite <i>outdated</i> (manque de mémoire, de puissance), difficiles à mettre à niveau (<i>upgrade</i>).</li>
+        <li>On ne répare pas les appareils défectueux.</li>
+        <li><b>Obsolescence programmée</b> (<i>planned obsolescence</i>) : des fabricants les font tomber en panne avant la fin de leur durée de vie.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Conséquences</h3>
+      <ul>
+        <li>Une grande partie est expédiée vers des pays émergents et déversée en décharge (<i>landfill, dumped</i>).</li>
+        <li>On y démonte et brûle les déchets pour en extraire cuivre, argent, or : fumées toxiques, pollution de l'air.</li>
+        <li>Plomb, mercure et liquides toxiques s'infiltrent (<i>leach</i>) dans le sol et les nappes phréatiques (<i>water tables</i>).</li>
+        <li>Fumées cancérigènes (<i>carcinogenic</i>), espérance de vie réduite (<i>shorter life expectancy</i>).</li>
+        <li>Pour ces travailleurs informels, c'est un revenu immédiat : ils voudraient le faire de façon moins dangereuse.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Solutions</h3>
+  <p>Recycler (moins d'un cinquième est recyclé, selon le document A de ton cours), concevoir des appareils plus durables (<i>sustainable</i>), réparer et donner une seconde vie (un téléphone dont il suffit de changer l'écran), réglementation nationale, sensibiliser les consommateurs.</p>
+
+  <details class="model"><summary>Introduction modèle pour l'oral</summary>
+    <p><i>This folder is composed of three documents. It deals with global electronic waste: its causes, the hazards it creates and the solutions to reduce it.</i></p></details>
+
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français</th></tr>
+    <tr><td class="en">to discard / to dispose of</td><td class="fr">se débarrasser de</td></tr>
+    <tr><td class="en">lifespan</td><td class="fr">durée de vie</td></tr>
+    <tr><td class="en">sustainable · environmentally friendly</td><td class="fr">durable · écologique</td></tr>
+    <tr><td class="en">to dismantle</td><td class="fr">démonter</td></tr>
+    <tr><td class="en">toxic fumes</td><td class="fr">fumées toxiques</td></tr>
+    <tr><td class="en">heavy metals (lead, mercury)</td><td class="fr">métaux lourds (plomb, mercure)</td></tr>
+    <tr><td class="en">to ship</td><td class="fr">expédier par bateau</td></tr>
+  </table></div>
+</section>
+<div class="group-title" data-group="langue">Langue : grammaire, vocabulaire, erreurs</div>
+
+<section class="fiche" id="f18" data-cat="langue" data-title="Grammaire et constructions à ne pas rater">
+  <header><span class="num">18</span><h2>Grammaire et constructions à ne pas rater</h2></header>
+  <p class="sub">Tes notes de grammaire, complétées par les structures qui reviennent le plus dans les thèmes et les courriers.</p>
+
+  <h3>Les temps de tes notes</h3>
+  <div class="tw"><table>
+    <tr><th>Point</th><th>Règle</th><th>Exemple</th></tr>
+    <tr><td><b>Présent simple</b></td><td>Sujet + base verbale ; <b>-s</b> à la 3<sup>e</sup> personne du singulier. Vérité générale ou action habituelle.</td><td><i>Do you go to the cinema often ? · The hub guarantees interoperability.</i></td></tr>
+    <tr><td><b>Passif</b></td><td><b>be + participe passé</b> ; le temps de <i>be</i> = le temps du verbe à l'actif.</td><td><i>Data is stored on servers. · The files were encrypted.</i></td></tr>
+    <tr><td><b>Present perfect</b></td><td>have / has + participe passé (résultat présent, <i>just, already, since, for</i>).</td><td><i>I have just received your offer.</i></td></tr>
+    <tr><td><b>Prétérit</b></td><td>Passé daté (marqueur de temps : <i>yesterday, in 2022, ago, last year</i>). Passif au prétérit : <i>was / were + p.p.</i></td><td><i>The dish was eaten. · The company was acquired in 2021.</i></td></tr>
+  </table></div>
+
+  <h3>Règles d'or</h3>
+  <ul>
+    <li><b>Après une préposition, le verbe est en -ing</b> : <i>by using, without touching, prevent from breaking, thanks to using</i>. Attention : <i>to</i> est parfois une vraie préposition, donc -ing aussi (<i>resort to using, contribute to reducing, look forward to hearing</i>).<br>
+      <span class="small">Ta note disait « toute préposition autre que <i>to</i> entraîne V-ing » ; la règle est plus sûre ainsi : compare avec l'infinitif (<i>I want to go</i>).</span></li>
+    <li><b>Nom + of + complément précis → the</b> : <i>the security of your data, the use of a firewall</i>. Sauf quantités et catégories : <i>a lot of, a number of, a kind of, a piece of</i>. <span class="small">(Ta note : « tous mots suivis de <i>of</i> sont précédés de <i>the</i> » : trop absolu.)</span></li>
+    <li><b>you haven't got</b> ou <b>you don't have</b> (les deux sont corrects).</li>
+    <li><b>when / while</b> peuvent supprimer le sujet + être : <i>while working from home, when using a public network</i>.</li>
+    <li><b>wait for</b> : toujours <i>for</i> (<i>I am waiting for an answer</i>).</li>
+    <li><b>a / an</b> : <i>an</i> devant un son voyelle (<i>an antivirus, an issue, an internship, an application, an employee, an email</i>).</li>
+    <li><b>Indénombrables</b> : <i>advice, information, damage, data (souvent), software, equipment, news, work</i> : pas de -s, pas de <i>a</i> → <i>a piece of advice, some information</i>.</li>
+    <li><b>should + base verbale</b> (sans <i>to</i>, sans -s) : <i>you should avoid</i>.</li>
+  </ul>
+
+  <h3>Verbes et leurs constructions</h3>
+  <div class="tw"><table>
+    <tr><th>Construction</th><th>Verbes / expressions</th></tr>
+    <tr><td><b>+ V-ing</b></td><td>avoid, risk, consist in, resort to, suffer from, contemplate / consider, aim <b>at</b>, be responsible for, look forward to, stop, keep</td></tr>
+    <tr><td><b>+ to + base verbale</b></td><td>aim <b>to</b>, attempt to, try to, ought to, manage to, would like to, need to</td></tr>
+    <tr><td><b>+ qqn + to + base</b></td><td>enable sb to, allow sb to, advise sb to, ask sb to</td></tr>
+    <tr><td><b>+ qqn + from + V-ing</b></td><td>prevent sb from, deter sb from</td></tr>
+    <tr><td><b>+ qqn + into + V-ing</b></td><td>trick / dupe / deceive sb into</td></tr>
+    <tr><td><b>+ qqn + against</b></td><td>warn sb against sth</td></tr>
+    <tr><td><b>+ qqn + with + qqch</b></td><td>provide sb with sth</td></tr>
+  </table></div>
+
+  <h3>Comparer, opposer, exprimer la condition</h3>
+  <div class="tw"><table>
+    <tr><th>Idée</th><th>Structure</th></tr>
+    <tr><td>Supérieur / inférieur / identique</td><td><i>superior to, inferior to</i> (ne pas oublier <b>to</b>), <i>the same as, unlike</i> (contrairement à)</td></tr>
+    <tr><td>Augmenter de</td><td><i>soar by 600 %</i> (<b>by</b> = de combien), <i>an increase of …</i></td></tr>
+    <tr><td>Opposition</td><td><i>however, despite + nom / V-ing, whereas</i> ; <i>yet</i> en début de phrase (« pourtant »), <i>not yet</i> au milieu (« pas encore »)</td></tr>
+    <tr><td>Condition / durée</td><td><i>provided (that), as long as</i> (tant que) ; <i>since</i> = depuis / puisque, <i>for</i> + durée</td></tr>
+    <tr><td>But</td><td><i>in order to, so as to</i> + base verbale ; <i>so that</i> + proposition</td></tr>
+    <tr><td>Cause / conséquence</td><td><i>thanks to</i> (cause positive), <i>due to</i>, <i>therefore, that is why</i></td></tr>
+    <tr><td>Prépositions fixes</td><td><i>suffer <b>from</b>, saturated <b>with</b>, interested <b>in</b>, thanks <b>for</b>, participate <b>in</b>, contribute <b>to</b></i></td></tr>
+  </table></div>
+
+  <h3>Comme, comme si, grâce à</h3>
+  <p><i>like</i> + nom (<i>like a virus</i>) ; <i>as</i> + proposition (<i>as if</i> pour « comme si ») ; <i>thanks to</i> = grâce à (sens positif).</p>
+</section>
+
+<section class="fiche" id="f19" data-cat="langue" data-title="Vocabulaire à connaître (verbes et faux amis)">
+  <header><span class="num">19</span><h2>Vocabulaire à connaître</h2></header>
+  <p class="sub">Ton tableau « voc » nettoyé et complété. Utilise les boutons « Cacher l'anglais / le français » pour t'auto-tester.</p>
+
+  <h3>Verbes et expressions</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français · construction</th></tr>
+    <tr><td class="en">to participate in</td><td class="fr">participer à · + nom</td></tr>
+    <tr><td class="en">to acquire skills</td><td class="fr">acquérir des compétences</td></tr>
+    <tr><td class="en">to opt for</td><td class="fr">opter pour</td></tr>
+    <tr><td class="en">to contribute to</td><td class="fr">contribuer à · + nom ou V-ing</td></tr>
+    <tr><td class="en">to sort out (a problem)</td><td class="fr">résoudre</td></tr>
+    <tr><td class="en">to design</td><td class="fr">concevoir</td></tr>
+    <tr><td class="en">to threaten · a threat</td><td class="fr">menacer · une menace</td></tr>
+    <tr><td class="en">to replicate</td><td class="fr">se dupliquer</td></tr>
+    <tr><td class="en">to aim at + V-ing / to aim to + base</td><td class="fr">viser à</td></tr>
+    <tr><td class="en">to perform a task</td><td class="fr">réaliser une tâche</td></tr>
+    <tr><td class="en">to advise sb (to) · advice · a tip</td><td class="fr">conseiller · un conseil (indénombrable) · une astuce</td></tr>
+    <tr><td class="en">should · ought to</td><td class="fr">devrait · devrait (registre soutenu)</td></tr>
+    <tr><td class="en">to avoid + V-ing</td><td class="fr">éviter de</td></tr>
+    <tr><td class="en">to break into</td><td class="fr">entrer par effraction</td></tr>
+    <tr><td class="en">to provide sb with sth</td><td class="fr">fournir qqch à qqn</td></tr>
+    <tr><td class="en">to prevent sb from + V-ing</td><td class="fr">empêcher qqn de</td></tr>
+    <tr><td class="en">to risk + V-ing</td><td class="fr">risquer de</td></tr>
+    <tr><td class="en">to deceive / to dupe sb</td><td class="fr">tromper</td></tr>
+    <tr><td class="en">to trick sb into + V-ing</td><td class="fr">amener qqn à faire qqch par la ruse</td></tr>
+    <tr><td class="en">to attempt to</td><td class="fr">tenter de</td></tr>
+    <tr><td class="en">to consist in + V-ing</td><td class="fr">consister à</td></tr>
+    <tr><td class="en">to encrypt</td><td class="fr">chiffrer, crypter</td></tr>
+    <tr><td class="en">to retrieve · to recover</td><td class="fr">récupérer · restaurer</td></tr>
+    <tr><td class="en">to allow · to enable</td><td class="fr">autoriser · permettre</td></tr>
+    <tr><td class="en">to expect</td><td class="fr">s'attendre à</td></tr>
+    <tr><td class="en">to get involved in · to get committed to</td><td class="fr">s'impliquer dans · s'engager dans</td></tr>
+    <tr><td class="en">to grant a bonus</td><td class="fr">accorder une prime</td></tr>
+    <tr><td class="en">to undermine · to erode (authority)</td><td class="fr">saper · éroder</td></tr>
+    <tr><td class="en">to be carried out</td><td class="fr">être réalisé</td></tr>
+    <tr><td class="en">to stick with</td><td class="fr">se limiter à</td></tr>
+    <tr><td class="en">to be negative for / detrimental to</td><td class="fr">nuire à</td></tr>
+    <tr><td class="en">to occur · alongside · upon</td><td class="fr">se produire · aux côtés de · sur</td></tr>
+  </table></div>
+
+  <h3>Noms et adjectifs</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Français · remarque</th></tr>
+    <tr><td class="en">wages (higher / lower)</td><td class="fr">salaires (plus élevés / plus bas)</td></tr>
+    <tr><td class="en">a purchase</td><td class="fr">un achat, un rachat</td></tr>
+    <tr><td class="en">a hard drive</td><td class="fr">un disque dur</td></tr>
+    <tr><td class="en">OS (operating system)</td><td class="fr">système d'exploitation</td></tr>
+    <tr><td class="en">data</td><td class="fr">données (singulier ou pluriel)</td></tr>
+    <tr><td class="en">a network · a node</td><td class="fr">un réseau · un nœud</td></tr>
+    <tr><td class="en">malicious · worldwide</td><td class="fr">malveillant · mondial</td></tr>
+    <tr><td class="en">harmless · harm</td><td class="fr">inoffensif · dégât</td></tr>
+    <tr><td class="en">a backdoor · a security loophole</td><td class="fr">une porte dérobée · une faille de sécurité</td></tr>
+    <tr><td class="en">an attachment</td><td class="fr">une pièce jointe</td></tr>
+    <tr><td class="en">credentials</td><td class="fr">identifiants</td></tr>
+    <tr><td class="en">identity theft</td><td class="fr">usurpation d'identité</td></tr>
+    <tr><td class="en">a ransom</td><td class="fr">une rançon</td></tr>
+    <tr><td class="en">a count-down</td><td class="fr">un compte à rebours</td></tr>
+    <tr><td class="en">a survey</td><td class="fr">une enquête</td></tr>
+    <tr><td class="en">a knock-on effect</td><td class="fr">un effet en cascade</td></tr>
+    <tr><td class="en">stubborn</td><td class="fr">tenace, persistant</td></tr>
+    <tr><td class="en">unequal · inequalities</td><td class="fr">inégal · inégalités</td></tr>
+    <tr><td class="en">a policy</td><td class="fr">une politique (d'entreprise)</td></tr>
+    <tr><td class="en">a folder</td><td class="fr">un dossier</td></tr>
+    <tr><td class="en">retail</td><td class="fr">commerce de détail</td></tr>
+    <tr><td class="en">increasingly</td><td class="fr">de plus en plus</td></tr>
+    <tr><td class="en">handy / convenient</td><td class="fr">pratique</td></tr>
+    <tr><td class="en">abroad</td><td class="fr">à l'étranger</td></tr>
+    <tr><td class="en">at least</td><td class="fr">au minimum</td></tr>
+    <tr><td class="en">on behalf of</td><td class="fr">au nom de</td></tr>
+    <tr><td class="en">a drawback</td><td class="fr">un inconvénient</td></tr>
+  </table></div>
+  <p class="sub"><b>efficient</b> (efficace, qui donne un bon rendement) ≠ <b>effective</b> : dans ton cours, on écrit <i>an efficient and reliable antivirus</i>. Un <b>drive</b> est un périphérique ou un disque (<i>hard drive</i>). Éviter <i>go in</i>.</p>
+
+  <h3>Faux amis fréquents</h3>
+  <div class="tw"><table class="vocab">
+    <tr><th>English</th><th>Ne veut pas dire…</th></tr>
+    <tr><td class="en">eventually</td><td class="fr">finalement, à la fin (≠ éventuellement = possibly)</td></tr>
+    <tr><td class="en">actually</td><td class="fr">en fait (≠ actuellement = currently)</td></tr>
+    <tr><td class="en">to attend</td><td class="fr">assister à (≠ attendre = to wait for)</td></tr>
+    <tr><td class="en">to assist</td><td class="fr">aider (≠ assister à)</td></tr>
+    <tr><td class="en">to stock</td><td class="fr">approvisionner ; « stocker » = to store</td></tr>
+  </table></div>
+
+  <div class="piege"><b>Termes de ton tableau à vérifier</b>
+    <p>« lead floor », « netting », « strenght in », « sandwish corses degre » : je n'ai pas pu les interpréter avec certitude. « sandwich course » signifie bien formation en alternance ; pour les autres, retrouve le contexte dans le cours avant de les apprendre.</p></div>
+</section>
+
+<section class="fiche" id="f20" data-cat="langue" data-title="Mes erreurs récurrentes (analyse de tes notes)">
+  <header><span class="num">20</span><h2>Mes erreurs récurrentes</h2></header>
+  <p class="sub">Relevées dans tes brouillons : ce sont celles qui coûteraient le plus de points.</p>
+
+  <h3>En anglais</h3>
+  <div class="tw"><table>
+    <tr><th>Tu as écrit</th><th>Correct</th><th>Règle</th></tr>
+    <tr><td class="bad">a issue, a antivirus, a internship, a employ…</td><td class="ok">an issue, an antivirus, an internship, an employer</td><td><i>an</i> devant un son voyelle. <b>Erreur n° 1 de tes notes.</b></td></tr>
+    <tr><td class="bad">I am just received…</td><td class="ok">I have just received…</td><td>Present perfect : have + p.p.</td></tr>
+    <tr><td class="bad">very interessing on your proposal</td><td class="ok">very interested in your proposal</td><td><i>interested in</i> (personne) / <i>interesting</i> (chose)</td></tr>
+    <tr><td class="bad">more informations</td><td class="ok">more information</td><td>Indénombrable, comme <i>advice</i></td></tr>
+    <tr><td class="bad">avoid to getting connected</td><td class="ok">avoid getting connected</td><td><i>avoid</i> + V-ing</td></tr>
+    <tr><td class="bad">you risk loosing</td><td class="ok">you risk losing</td><td><i>lose</i> (perdre) ≠ <i>loose</i> (lâche) ; <i>risk</i> + V-ing</td></tr>
+    <tr><td class="bad">viruses cause damages</td><td class="ok">viruses cause damage</td><td><i>damage</i> indénombrable</td></tr>
+    <tr><td class="bad">improve wellbeing on your workplace</td><td class="ok">at your workplace</td><td>Préposition</td></tr>
+    <tr><td class="bad">3 mouths contract · my responds</td><td class="ok">a three-month contract · my response</td><td>Orthographe / nom ≠ verbe</td></tr>
+    <tr><td class="bad">antivirus software prevent</td><td class="ok">antivirus software prevents</td><td><i>software</i> est singulier</td></tr>
+    <tr><td class="bad">« informatique » traduit mot à mot</td><td class="ok">IT, computer science, computing</td><td>Ta note de cours : ce mot n'existe pas en anglais</td></tr>
+  </table></div>
+  <p class="small">Petites fautes d'orthographe à relire : <i>receive, writing, serious, authority, additionally, thankful → grateful, relevant, temporary, permanent, benefit</i>.</p>
+
+  <h3>En français (synthèse)</h3>
+  <div class="tw"><table>
+    <tr><th>Vu dans tes brouillons</th><th>Correct</th></tr>
+    <tr><td class="bad">la jalousie nuie · les taches</td><td class="ok">la jalousie nuit · les tâches</td></tr>
+    <tr><td class="bad">qu'ils sont censé faire · il se plaigne</td><td class="ok">censés · ils se plaignent</td></tr>
+    <tr><td class="bad">le taux de démission à atteint · ont quitter</td><td class="ok">a atteint · ont quitté</td></tr>
+    <tr><td class="bad">d'après les recherches d'un psychologue…</td><td class="ok">supprimer le métalangage : énoncer directement l'idée</td></tr>
+    <tr><td class="bad">« les salariés les mieux payés de la BBC »</td><td class="ok">pas de nom propre hors de l'intro : « de grandes entreprises »</td></tr>
+  </table></div>
+  <p class="small">À surveiller (règles de la fiche 2) : pas de « de plus » en série, pas de chiffres, pas d'exemples, aucune conclusion personnelle, connecteurs de cause et d'opposition présents.</p>
+
+  <h3>À l'oral</h3>
+  <ul>
+    <li>Tes brouillons d'oral sont trop <b>rédigés</b> et longs : garde des mots-clés et une seule phrase modèle par idée.</li>
+    <li>Repérer la <b>structure</b> avant de parler : intro → 3 parties → transition entre parties.</li>
+    <li>Ne dis jamais « the first document » ni « the document A » : <b>document A</b>.</li>
+  </ul>
+</section>
+
+<p class="foot">Sources : notes Notion « Anglais », dossier de cours (corrigés de thèmes, courriers, cybersecurity, IoT, IA, charte réseaux sociaux, entretien d'embauche), sujet zéro n°4 (BTS SIO, U12, session 2021). Les deux vidéos du dossier (IoT, hacking d'une maison connectée) n'ont pas pu être visionnées : leur contenu est repris de tes notes.</p>
+</main>
+</div>
 
 <script>
-let currentLang='en';
-function showTheme(id,btn){
-  document.querySelectorAll('.theme-section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
-  if(btn)btn.classList.add('active');
-  else document.querySelectorAll('.nav-tab').forEach(t=>{if(t.getAttribute('onclick')&&t.getAttribute('onclick').includes("'"+id+"'"))t.classList.add('active');});
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-function toggleLang(){
-  if(currentLang==='fr'){currentLang='en';document.body.classList.replace('show-fr','show-en');document.getElementById('flagIcon').textContent='🇫🇷';document.getElementById('langLabel').textContent='Passer en FR';}
-  else{currentLang='fr';document.body.classList.replace('show-en','show-fr');document.getElementById('flagIcon').textContent='🇬🇧';document.getElementById('langLabel').textContent='Switch to EN';}
-}
-window.addEventListener('scroll',()=>document.getElementById('backTop').classList.toggle('show',window.scrollY>300));
-document.getElementById('backTop').addEventListener('click',e=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+(function () {
+  var fiches = Array.prototype.slice.call(document.querySelectorAll('.fiche'));
+  var groups = Array.prototype.slice.call(document.querySelectorAll('.group-title'));
+  var labels = { cadre: 'Méthode', ecrit: 'Courrier', oral: 'Oral', themes: 'Thèmes', langue: 'Langue' };
+
+  // Sommaire (desktop + mobile)
+  function buildIndex(target) {
+    var html = '';
+    groups.forEach(function (g) {
+      var key = g.getAttribute('data-group');
+      html += '<h2>' + g.textContent + '</h2>';
+      fiches.filter(function (f) { return f.getAttribute('data-cat') === key; }).forEach(function (f) {
+        html += '<a href="#' + f.id + '">' + f.querySelector('.num').textContent + '. ' + f.getAttribute('data-title') + '</a>';
+      });
+    });
+    target.innerHTML = html;
+  }
+  buildIndex(document.getElementById('index-desktop'));
+  buildIndex(document.getElementById('index-mobile'));
+
+  // Filtres
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  function applyFilter(cat) {
+    fiches.forEach(function (f) { f.classList.toggle('hidden', cat !== 'all' && f.getAttribute('data-cat') !== cat); });
+    groups.forEach(function (g) { g.style.display = (cat === 'all' || g.getAttribute('data-group') === cat) ? '' : 'none'; });
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === cat ? 'true' : 'false'); });
+  }
+  chips.forEach(function (c) { c.addEventListener('click', function () { applyFilter(c.getAttribute('data-filter')); }); });
+
+  // Auto-test vocabulaire
+  var bEn = document.getElementById('hide-en'), bFr = document.getElementById('hide-fr');
+  function reset() { Array.prototype.forEach.call(document.querySelectorAll('.vocab td.shown'), function (t) { t.classList.remove('shown'); }); }
+  bEn.addEventListener('click', function () {
+    var on = document.body.classList.toggle('hide-en'); bEn.setAttribute('aria-pressed', on); reset();
+  });
+  bFr.addEventListener('click', function () {
+    var on = document.body.classList.toggle('hide-fr'); bFr.setAttribute('aria-pressed', on); reset();
+  });
+  document.addEventListener('click', function (e) {
+    var td = e.target.closest ? e.target.closest('.vocab td.en, .vocab td.fr') : null;
+    if (td) td.classList.toggle('shown');
+  });
+})();
 </script>
 </body>
 </html>
